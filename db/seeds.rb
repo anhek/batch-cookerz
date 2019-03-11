@@ -17,7 +17,7 @@ puts "user cree"
 	
 
 5.times do 
-	Recipe.create!(name: Faker::Food.dish , description: Faker::Food.description, preparation_time: rand(10..25), cooking_time: rand(10..35), cost: (5..10), recipe_category_id: 1)
+	Recipe.create!(name: Faker::Food.dish , description: Faker::Food.description, preparation_time: rand(10..25), cooking_time: rand(10..35), cost: rand(11.2..76.9).round(2), recipe_category_id: 1)
 end
 
 	puts "recipe cree"
