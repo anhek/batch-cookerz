@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :recipes, through: :comments
   has_many :recipes, through: :likes
-  has_many :menus, through: :menu_users
+  has_many :menus
 end
