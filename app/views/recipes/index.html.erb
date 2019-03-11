@@ -1,0 +1,11 @@
+<h2> Les recettes </h2>
+
+<%@recipes.each do |recipe|%>
+
+  <%=recipe.name%>
+  <%=recipe.description%>
+  <%=recipe.preparation_time%>
+  <%=recipe.cooking_time%>
+  <%=recipe.cost%>
+
+<%end%>
