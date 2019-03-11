@@ -1,8 +1,9 @@
-<h2> Voici les informations de mon profil : </h2>
-<p>Prenom : <%= @user.first_name %></br>
-   Nom de famille :  <%= @user.last_name %></br>
-   Email : <%= @user.email%></br> </p>
+<h2> Voici les informations de mon profil : </h2> <br>
+<p>Prénom : <%= @user.first_name %><br>
+   Nom de famille :  <%= @user.last_name %><br>
+   Email : <%= @user.email%><br> </p>
 
-<%= link_to "Modifier ses informations de profil", edit_user_path(@user.id)%>
+<%= link_to "Modifier ses informations de profil", edit_user_path(@user.id)%> <br>
+<%= link_to "Modifier ses informations personnelles importantes (email et mot de passe)", edit_user_registration_path(@user.id)%>
 
 
