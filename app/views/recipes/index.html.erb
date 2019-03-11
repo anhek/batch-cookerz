@@ -2,10 +2,12 @@
 
 <%@recipes.each do |recipe|%>
 
-  <%=recipe.name%>
-  <%=recipe.description%>
-  <%=recipe.preparation_time%>
-  <%=recipe.cooking_time%>
-  <%=recipe.cost%>
+  <p>
+  Nom : <%=recipe.name%> <br />
+  Description :<%=recipe.description%> <br />
+  Temps de préparation : <%=recipe.preparation_time%> <br />
+  Temps de cuisson :<%=recipe.cooking_time%> <br />
+  Coût : <%=recipe.cost%> € <br /> 
+  </p>
 
 <%end%>
