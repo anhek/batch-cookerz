@@ -6,13 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+ingredient_categories = ["Viande", "Poisson", "Légume", "Fruit", "Légumineuse"]
+
 5.times do |i|
   User.create!(email: "email#{i+1}@gmail.com", password: "raph-le-boss")
 end
 puts "user cree"
 	RecipeCategory.create!(name: "recipe_category")
 	puts "recipecategory cree"
-	IngredientCategory.create!(name: "ingredient_category")
+
+5.times do |i| 
+	IngredientCategory.create!(name: ingredient_categories[i])
+end
 	puts "ingredientcategory cree"
 	
 
@@ -25,7 +30,10 @@ end
 	puts "menu cree"
 	MenuRecipe.create!(menu_id: 1, recipe_id:1)
 	puts "menurecipe cree"
-	Ingredient.create!(name: "ingredient 1", ingredient_category_id: 1)
+
+15.times do 
+	Ingredient.create!(name: Faker::Food.ingredient, calories: rand(50..250), price: rand(1.5..5.5).round(2), ingredient_category_id: rand(1..5))
+end
 	puts "ingredient cree"
 	Composition.create(recipe_id: 1, ingredient_id: 1)
 	puts "composition cree"
