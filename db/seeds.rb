@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 5.times do |i|
-    User.create!(email: "email#{i+1}@gmail.com", password: "raph-le-boss")
+    User.create!(first_name: Faker::Superhero.name, last_name: Faker::Artist.name, email: "email#{i+1}@gmail.com", password: "raph-le-boss")
 end
 puts "user cree"
     RecipeCategory.create!(name: "recipe_category")
