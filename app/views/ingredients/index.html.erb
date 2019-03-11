@@ -1,0 +1,9 @@
+<h2>Les ingrédients</h2>
+
+<%@ingredients.each do |ingredient|%>
+  <p>Nom : <%=ingredient.name%> <br />
+  Calories : <%=ingredient.calories%> <br />
+  Prix : <%=ingredient.price%> € <br />
+  Category : <%=ingredient.ingredient_category.name%></p>
+  
+<%end%>
