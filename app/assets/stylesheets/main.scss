@@ -1,5 +1,7 @@
+@import 'colors.scss';
+
 body {
-  font-family: "Rubik", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  background-color: $grey5;
 }
 
 .block-600 {
