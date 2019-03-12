@@ -1,5 +1,67 @@
+<div class="d-inline-block mb-4 d-flex align-items-center justify-content-center">
+  <%= image_tag 'maarten-van-den-heuvel-400626-unsplash', class:"w-100 position-relative" %>
+  <div class="position-absolute text-center p-5">
+    <h2 class="h1 text-white font-weight-bold">Batch Cookerz</h2>
+    <p class="h2 text-white">Préparez le week-end, assemblez la semaine blabla</p>
+    <div class="input-group input-group-lg mb-3 block-600 mt-5">
+      <input type="text" class="form-control" placeholder="Des ingrédients cools" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" id="button-addon2">Valider</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container p-5">
-  <header class="text-center">
-    <h1>Batch Cookerz</h1>
+
+  <header class="text-center mb-5">
+    <h2>Voici une liste de nos recettes favorites</h2>
   </header>
+
+  <div class="card-deck">
+
+    <div class="card">
+      <!-- <div class="bg-dark d-inline-block mb-4" style="height: 237px; width: 100%;"></div> -->
+      <%= image_tag 'misovg', class:"w-100" %>
+      <div class="card-body">
+        <h4 class="card-title font-weight-bold">Miso végétarien</h4>
+        <p class="card-text">Une super recette batch cooké super bon à</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <!-- <div class="bg-dark d-inline-block mb-4" style="height: 237px; width: 100%;"></div> -->
+      <%= image_tag 'misovg', class:"w-100" %>
+      <div class="card-body">
+        <h4 class="card-title font-weight-bold">Miso végétarien</h4>
+        <p class="card-text">Une super recette batch cooké super bon à</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <!-- <div class="bg-dark d-inline-block mb-4" style="height: 237px; width: 100%;"></div> -->
+      <%= image_tag 'misovg', class:"w-100" %>
+      <div class="card-body">
+        <h4 class="card-title font-weight-bold">Miso végétarien</h4>
+        <p class="card-text">Une super recette batch cooké super bon à</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="text-center p-5">
+    <%= link_to "Voir toutes les recettes", recipes_path, class:"btn btn-primary btn-round-lg btn-lg" %>
+  </footer>
+
+</div>
+
+<div class="bg-primary p-5">
+  <div class="container">
+    <header class="text-center">
+      <h1>Batch Cookerz</h1>
+    </header>
+  </div>
 </div>

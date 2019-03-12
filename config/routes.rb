@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'recipes#index'
+  root 'home#index'
   get 'contact', to: 'single_pages#contact'
   
   devise_for :users
