@@ -1,14 +1,30 @@
-<h2> Les recettes </h2>
+<div class="container p-5">
+  <h2>Les recettes</h2>
+  <div class="row">
+    <div class="col-sm-9">
+      <%@recipes.each do |recipe|%>
+        <div class="row mb-4">
+          <div class="col-8 col-sm-5">
+            <img class="img-fluid mh-100" src="https://cdn-image.foodandwine.com/sites/default/files/1483039291/chickpeas-and-kale-in-spicy-pomodoro-sauce-XL-RECIPE0217.jpg" alt="Card image cap">          
+          </div>
+          <div class="col-4 col-sm-7">
+            <div class="card-body">
+              <h4 class="card-title"><%=recipe.name%></h4>
+              <p class="card-text"><%=recipe.description%></p>
+              <p>Temps de cuisson : <%=recipe.cooking_time%></p>
+              <p>Coût : <%=recipe.cost%> €</p>
+              <%=link_to "Voir la recette", recipe_path(recipe), class:"btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-sm-3 bg-light rounded border">lol</div>
+  </div>
+</div>
 
-<%@recipes.each do |recipe|%>
 
-  <p>
-  Nom : <%=recipe.name%> <br />
-  Description : <%=recipe.description%> <br />
-  Temps de préparation : <%=recipe.preparation_time%> <br />
-  Temps de cuisson : <%=recipe.cooking_time%> <br />
-  Coût : <%=recipe.cost%> € <br /> 
-  <%=link_to "Voir la recette", recipe_path(recipe) %>
-  </p>
 
-<%end%>
+
+
+

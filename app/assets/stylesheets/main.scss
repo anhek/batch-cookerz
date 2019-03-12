@@ -1,8 +1,33 @@
+@import 'colors.scss';
+
 body {
-  font-family: "Rubik", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  background-color: $grey5;
 }
 
+.footer {
+  background-color: $indigo-dark1;
+}
 .block-600 {
   max-width:600px;
   margin: 0 auto;
+}
+
+.block-800 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.btn-round-lg{
+border-radius: 22.5px;
+}
+.btn-round{
+border-radius: 17px;
+}
+.btn-round-sm{
+border-radius: 15px;
+}
+.btn-round-xs{
+border-radius: 11px;
+padding-left: 10px;
+padding-right: 10px;
 }

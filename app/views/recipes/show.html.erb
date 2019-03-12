@@ -1,7 +1,23 @@
 <h2> Voici la recette : <%= @recipe.name%> </h2>
+
 <p>
 	<%= @recipe.cost%><br>
 	<%= @recipe.description%><br>
 	<%= @recipe.preparation_time%><br>
 	<%= @recipe.cooking_time%> 
+</p>
+
+<p>
+
+	<% @comments.each do |comment|%>
+	<p><%=comment.description%>
+	<%=comment.user.nickname%></p>
+	<%end%>
+</p>
+
+<p>
+	<%= form_with model: @comment, url:recipe_comments_path(@recipe.id) do |form| %>
+	<%= form.text_field :description%>
+	<%= form.submit class: "btn btn-secondary"%>
+	<% end%>
 </p>
