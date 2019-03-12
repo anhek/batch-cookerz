@@ -1,5 +1,7 @@
 @import 'colors.scss';
 
+// MAIN
+
 body {
   background-color: $grey5;
 }
@@ -7,6 +9,15 @@ body {
 .footer {
   background-color: $indigo-dark1;
 }
+
+
+// LAYOUTS
+
+.block-400 {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .block-600 {
   max-width:600px;
   margin: 0 auto;
@@ -17,17 +28,6 @@ body {
   margin: 0 auto;
 }
 
-.btn-round-lg{
-border-radius: 22.5px;
-}
-.btn-round{
-border-radius: 17px;
-}
-.btn-round-sm{
-border-radius: 15px;
-}
-.btn-round-xs{
-border-radius: 11px;
-padding-left: 10px;
-padding-right: 10px;
+.form-container {
+  padding: 120px 60px;
 }
