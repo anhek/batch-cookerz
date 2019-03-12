@@ -9,14 +9,19 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = Recipe.new()
-    @ingredients = []
-    params[:recipe][:ingredient].each do |ingredient|
-      if ingredient != '0'
-        @ingredients << ingredient.to_i
-      end
+    recipe = Recipe.new(name: params[:recipe][:name], description: params[:recipe][:description], recipe_category_id: 1)
+    ingredients = recipe.get_ingredients_number_from_new_recipe_form(params[:recipe][:ingredient])
+
+      if recipe.save
+        ingredients.each do |ingredient_id|
+          composition = Composition.new(recipe_id: recipe.id, ingredient_id: ingredient_id)
+          composition.save
+        end
+        redirect_to recipes_path
+    else 
+      render new_recipe_path
+      puts "Désolé, mais la recette n'a pas été enregistrée !"   
     end
-    print "La liste des ingrédients est #{@ingredients}"
   end
 
   def show
@@ -25,10 +30,4 @@ class RecipesController < ApplicationController
     @comment = Comment.new
   end 
   
-  private 
-
-  def recipe_params
-    puts
-    params[:recipe].permit(:name, :description, :preparation_time, :cooking_time)
-  end
 end
