@@ -20,6 +20,6 @@ Email : <%= @user.email%><br />
 </p>
 
 <%= link_to "Modifier ses informations de profil", edit_user_path(@user.id)%> <br>
-<%= link_to "Modifier ses informations personnelles importantes (email et mot de passe)", edit_user_registration_path(@user.id)%>
+<%= link_to "Modifier ses informations personnelles importantes (email et mot de passe)", edit_user_registration_path(@user)%>
 
 
