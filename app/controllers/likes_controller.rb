@@ -4,6 +4,8 @@ class LikesController < ApplicationController
 
     before_action :find_like, only: [:destroy]
 
+    before_action :authenticate_user!
+
   def create
     if already_liked?
       flash[:notice] = "Tu ne peux liker qu'une seule fois !"

@@ -15,19 +15,22 @@
 	<%end%>
 </p>
 
-<p>
-	<%= form_with model: @comment, url:recipe_comments_path(@recipe.id) do |form| %>
-	<%= form.text_field :description%>
-	<%= form.submit class: "btn btn-secondary"%>
-	<% end%>
-</p>
+<% if user_signed_in?%>
+  <p>
+    <%= form_with model: @comment, url:recipe_comments_path(@recipe.id) do |form| %>
+    <%= form.text_field :description%>
+    <%= form.submit class: "btn btn-secondary"%>
+    <% end%>
+  </p>
 
-<p>
-<% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
-<% if pre_like %>
-  <%= button_to 'Unlike', recipe_like_path(@recipe, pre_like), method: :delete %>
-<% else %>
-  <%= button_to 'Like', recipe_likes_path(@recipe), method: :post %>
+  <p>
+    <% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+      <%= button_to 'Unlike', recipe_like_path(@recipe, pre_like), method: :delete %>
+    <% else %>
+      <%= button_to 'Like', recipe_likes_path(@recipe), method: :post %>
+    <% end %>
+  </p>
 <% end %>
-</p>
+
 <p><%= @recipe.likes.count %> <%= (@recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>
