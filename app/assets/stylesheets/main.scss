@@ -1,5 +1,7 @@
 @import 'colors.scss';
 
+// MAIN
+
 body {
   background-color: $grey5;
 }
@@ -7,8 +9,32 @@ body {
 .footer {
   background-color: $indigo-dark1;
 }
+
+
+// LAYOUTS
+
+.block-400 {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.block-500 {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .block-600 {
-  max-width:600px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.block-700 {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.block-700 {
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -17,17 +43,25 @@ body {
   margin: 0 auto;
 }
 
-.btn-round-lg{
-border-radius: 22.5px;
+.form-container {
+  padding: 120px 60px;
+  background-image: image_url('syd-wachs-120739-unsplash-02.jpg');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
-.btn-round{
-border-radius: 17px;
+
+.navbar, .btn {
+  font-family: "Overpass", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
-.btn-round-sm{
-border-radius: 15px;
+
+.navbar-inner {
+    background:transparent;
 }
-.btn-round-xs{
-border-radius: 11px;
-padding-left: 10px;
-padding-right: 10px;
+
+#error_explanation {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
 }
