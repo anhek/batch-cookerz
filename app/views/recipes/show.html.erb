@@ -5,3 +5,10 @@
 	<%= @recipe.preparation_time%><br>
 	<%= @recipe.cooking_time%> 
 </p>
+
+<p>
+<% @comments.each do |comment|%>
+<%= comment.description %>
+<%= comment.user.nickname %>
+<% end%>
+</p>
