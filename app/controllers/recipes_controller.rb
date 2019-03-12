@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @comments = Comment.where(recipe_id: @recipe.id)
-    puts @comments
+    @comment = Comment.new
   end 
   
 end
