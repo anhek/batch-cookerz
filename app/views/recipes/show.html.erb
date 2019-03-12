@@ -15,14 +15,6 @@
 	<%end%>
 </p>
 
-<<<<<<< HEAD
-<p>
-	<%= form_with model: @comment, url:recipe_comments_path(@recipe.id) do |form| %>
-	<%= form.text_field :description%>
-	<%= form.submit class: "btn btn-secondary"%>
-	<% end%>
-</p>
-=======
 <% if user_signed_in?%>
   <p>
     <%= form_with model: @comment, url:recipe_comments_path(@recipe.id) do |form| %>
@@ -44,4 +36,3 @@
 <p><%= @recipe.likes.count %> <%= (@recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
 <p> <%= link_to "Voir les autres recettes", recipes_path(@recipes) %>
->>>>>>> delivery-laurane-likes
