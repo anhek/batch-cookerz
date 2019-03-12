@@ -7,14 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 ingredient_categories = ["Viande", "Poisson", "Légume", "Fruit", "Légumineuse"]
+recipes_categories = ["Végétarienne", "Omnivore", "Végétalienne"]
 
 5.times do |i|
   User.create!(first_name: Faker::Superhero.name, last_name: Faker::Artist.name, email: "email#{i+1}@gmail.com", password: "raph-le-boss")
 end
 puts "Users created"
 
-RecipeCategory.create!(name: "recipe_category")
-puts "Recipe_category created"
+3.times do |i|
+  RecipeCategory.create!(name: recipes_categories[i])
+end
 
 5.times do |i| 
   IngredientCategory.create!(name: ingredient_categories[i])
