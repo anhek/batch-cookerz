@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="container p-5">
   <h2>Les recettes</h2>
   <div class="row">
@@ -10,9 +9,11 @@
           </div>
           <div class="col-4 col-sm-7">
             <div class="card-body">
-              <h5 class="card-title"><%=recipe.name%></h5>
+              <h4 class="card-title"><%=recipe.name%></h4>
               <p class="card-text"><%=recipe.description%></p>
-              <a href="#" ><button class="btn btn-primary">Selectionner</button></a>
+              <p>Temps de cuisson : <%=recipe.cooking_time%></p>
+              <p>Coût : <%=recipe.cost%> €</p>
+              <%=link_to "Voir la recette", recipe_path(recipe), class:"btn btn-primary" %>
             </div>
           </div>
         </div>
@@ -21,19 +22,6 @@
     <div class="col-sm-3 bg-light rounded border">lol</div>
   </div>
 </div>
-=======
-<h2> Les recettes </h2>
 
-<%@recipes.each do |recipe|%>
 
-  <p>
-  Nom : <%=recipe.name%> <br />
-  Description : <%=recipe.description%> <br />
-  Temps de préparation : <%=recipe.preparation_time%> <br />
-  Temps de cuisson : <%=recipe.cooking_time%> <br />
-  Coût : <%=recipe.cost%> € <br /> 
-  <%=link_to "Voir la recette", recipe_path(recipe) %>
-  </p>
 
-<%end%>
->>>>>>> 760693944fa886e58c490ad6ebc2df601fc6dad0
