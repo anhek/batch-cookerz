@@ -16,6 +16,12 @@
         <% end %>
       </li>
       <li class="nav-item">
+        <%= link_to 'Le concept', concept_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'La team', team_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
          <%= link_to 'Contact', contact_path, class: 'nav-link' %>
       </li>
        <%if user_signed_in? %>
