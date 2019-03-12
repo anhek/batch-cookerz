@@ -5,7 +5,7 @@
   <%= form.number_field :preparation_time, placeholder: "Temps de préparation" %> <br />
   <%= form.number_field :cooking_time, placeholder: "Temps de cuisson" %> <br />
   <%for ingredient in Ingredient.all%>
-      <%=form.check_box :ingredient, {multiple: true}, ingredient.id, ''%><%=ingredient.name%><br/>
+      <%=form.check_box :ingredient, {multiple: true}, ingredient.id%> <%=ingredient.name%><br/>
   <%end%>
   <%= form.submit "Proposer la recette" %>
 <% end %>
