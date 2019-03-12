@@ -13,6 +13,7 @@
               <p class="card-text"><%=recipe.description%></p>
               <p>Temps de cuisson : <%=recipe.cooking_time%></p>
               <p>Coût : <%=recipe.cost%> €</p>
+              <p><%= recipe.likes.count %> <%= (recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>
               <%=link_to "Voir la recette", recipe_path(recipe), class:"btn btn-primary" %>
             </div>
           </div>

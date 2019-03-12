@@ -16,6 +16,15 @@
   <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
 <%end%>
 
+<h2> Mes recettes favorites </h2>
+<p>
+  <% @recipes.each do |recipe| %>
+  <%= recipe.name%>
+  <%= link_to "Voir ma recette favorite. ", recipe_path(recipe) %>
+
+  <%end%>
+</p>
+
 <h3>Changer d'avatar ?</h3>
 <%= form_tag user_avatars_path(@user), multipart: true do %>
   <%= file_field_tag :avatar %>
