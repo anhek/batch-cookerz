@@ -3,7 +3,18 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @menus = Menu.where(user_id:params[:id])
-  end
+    @likes = Like.where(user_id:params[:id])
+    recipes_ids = []
+    @likes.each do |like|
+      recipes_ids << like.recipe_id
+    end 
+    puts recipes_ids
+    @recipes =[]
+    recipes_ids.each do |id|
+      @recipes << Recipe.find(id)
+    end 
+  end 
+   
 
   def edit 
     @user = User.find(params[:id])
