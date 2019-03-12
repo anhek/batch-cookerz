@@ -12,7 +12,7 @@
             <div class="card-body">
               <h4 class="card-title"><%=recipe.name%></h4>
               <p class="card-text"><%=recipe.description%>
-              <i class="fas fa-home mr-2"></i> <%=recipe.cooking_time%>
+              <i class="fas fa-stopwatch mr-2"></i><%=recipe.cooking_time%>
               Coût : <%=recipe.cost%> €
               <%= recipe.likes.count %> <%= (recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>
               <%=link_to "Voir la recette", recipe_path(recipe), class:"btn btn-primary" %>
