@@ -2,15 +2,12 @@
 <p>
   Prenom : <%= @user.first_name %><br />
   Nom de famille :  <%= @user.last_name %><br />
+  Pseudo :  <%= @user.nickname%><br />
   Email : <%= @user.email%><br /> 
 </p>
 
 <h2> Ma liste de menus </h2>
-<p>
-  <%= @menus.each do |menu| %>
-  <%= #link_to "Voir mon menu", menu_path(menu) %>
-  <% end %>
-</p>
+
 
 <h3>Avatar actuel</h3>
 <%if @user.avatar.attached?%>
