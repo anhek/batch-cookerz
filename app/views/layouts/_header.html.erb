@@ -1,22 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#"><i class="fas fa-apple-alt"></i> Navbar</a>
+  <%= link_to root_path, class: "navbar-brand" do %>
+  <i class="fas fa-shopping-cart mr-2"></i> 
+  Batch Cookerz
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <%= link_to 'Accueil', root_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contact">Contact</a>
+         <%= link_to 'Contact', contact_path, class: 'nav-link' %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
+       <% if user_signed_in?%>
+        <li class="nav-item">
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "S'inscrire", new_user_registration_path, class: 'nav-link' %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Se connecter", new_user_session_path, class: 'nav-link' %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>
