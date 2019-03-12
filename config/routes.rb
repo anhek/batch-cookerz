@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'home#index'
-
-
-  resources :users, only: [:show, :edit, :update]
+  root 'recipes#index'
   get 'contact', to: 'single_pages#contact'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  devise_for :users
+  resources :recipes, only: [:index]
+  resources :ingredients, only: [:index] 
+  
+  resources :users, only: [:show, :edit, :update] do
+  resources :avatars, only: [:create]
+end
+  
 end
 
 
