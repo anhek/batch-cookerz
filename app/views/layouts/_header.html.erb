@@ -16,10 +16,10 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Le concept', concept_path, class: 'nav-link' %>
+        <%= link_to 'Le Concept', concept_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'La team', team_path, class: 'nav-link' %>
+        <%= link_to 'La Team', team_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
          <%= link_to 'Contact', contact_path, class: 'nav-link' %>
@@ -31,7 +31,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Mon Compte
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
           <% if user_signed_in? %>
             <%= link_to "Mon Profil", user_path(current_user), class: "dropdown-item" %>
             <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item", method: :delete %>
