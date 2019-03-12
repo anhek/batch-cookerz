@@ -18,8 +18,18 @@ body {
   margin: 0 auto;
 }
 
+.block-500 {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .block-600 {
-  max-width:600px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.block-700 {
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -30,8 +40,23 @@ body {
 
 .form-container {
   padding: 120px 60px;
+  background-image: image_url('syd-wachs-120739-unsplash-02.jpg');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-.navbar {
+.navbar, .btn {
   font-family: "Overpass", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.navbar-inner {
+    background:transparent;
+}
+
+#error_explanation {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
 }
