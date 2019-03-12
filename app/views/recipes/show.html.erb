@@ -21,3 +21,6 @@
 	<%= form.submit class: "btn btn-secondary"%>
 	<% end%>
 </p>
+
+<%= button_to 'Like', recipe_likes_path(@recipe), method: :post %>
+<p><%= @recipe.likes.count %> <%= (@recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>

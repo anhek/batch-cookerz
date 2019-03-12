@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
   after_create :send_welcome_email_to_new_user, :send_new_user_email_to_admin
 
+  has_many :likes, dependent: :destroy
+
   def send_welcome_email_to_new_user
     UserMailer.welcome_email_to_new_user(self).deliver_now
   end
