@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'single_pages#contact'
   
   devise_for :users
-  resources :recipes, only: [:index]
+  resources :recipes, only: [:index, :show]
   resources :ingredients, only: [:index] 
   
   resources :users, only: [:show, :edit, :update] do
