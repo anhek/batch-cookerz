@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     @likes.each do |like|
       recipes_ids << like.recipe_id
     end 
-    puts recipes_ids
     @recipes =[]
     recipes_ids.each do |id|
       @recipes << Recipe.find(id)

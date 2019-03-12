@@ -20,6 +20,7 @@
 <p>
   <% @recipes.each do |recipe| %>
   <%= recipe.name%>
+  <%= link_to "Voir ma recette favorite. ", recipe_path(recipe) %>
 
   <%end%>
 </p>
