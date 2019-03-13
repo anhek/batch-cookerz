@@ -17,6 +17,18 @@ RSpec.describe Recipe, type: :model do
       expect(@recipe).to be_a(Recipe)
     end
 
+    describe "#name" do 
+      it { expect(@recipe).to validate_presence_of(:name) }
+    end
+
+    describe "#description" do 
+      it { expect(@recipe).to validate_presence_of(:description) }
+    end
+
+    describe "#preparation_time" do 
+      it { expect(@recipe).to validate_presence_of(:preparation_time) }
+    end
+    
     # describe "#email" do
     #   it { expect(@user).to validate_presence_of(:email) }
     #   it { expect(@user).not_to allow_value("blah").for(:email) }
