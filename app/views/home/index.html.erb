@@ -3,7 +3,10 @@
     <h2 class="text-white mb-4 display-4 font-weight-normal">Préparez le week-end, <br> assemblez la semaine !</h2>
     <h3 class="h5 text-white font-weight-normal"> Composez votre batch en indiquant vos 3 ingrédients préférés</h3>
     <div class="input-group input-group-lg mb-3 block-600 mt-3">
-      <input type="text" class="form-control" placeholder="Des ingrédients cools" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <%= form_tag({:controller => "recipes", :action => "index"}, :method => "get") do %>
+        Store <%= text_field_tag :ingredient %>
+        <%= submit_tag 'Chercher les recettes', name: nil %>
+      <% end %>
       <div class="input-group-append">
         <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
       </div>
