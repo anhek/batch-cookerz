@@ -67,3 +67,6 @@ gem 'devise'
 gem 'dotenv-rails'
 gem 'faker'
 gem "aws-sdk-s3", require: false
+gem 'bootstrap'
+gem 'jquery-rails'
+gem "font-awesome-rails"
