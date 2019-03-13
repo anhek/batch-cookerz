@@ -15,13 +15,13 @@ RSpec.describe User, type: :model do
 
     it "is valid with valid attributes" do
       expect(@user).to be_a(User)
+      expect(@user).not_to be_nil
     end
 
     describe "#email" do
       it { should validate_presence_of(:email) }
       it { expect(@user).not_to allow_value("blah").for(:email) }
       it { expect(@user).to allow_value("a@b.com").for(:email) }
-      it { expect(@user).not_to be_nil }
     end
 
     describe "#password" do

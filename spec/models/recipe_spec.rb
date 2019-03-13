@@ -15,10 +15,12 @@ RSpec.describe Recipe, type: :model do
 
     it "is valid with valid attributes" do
       expect(@recipe).to be_a(Recipe)
+      expect(@recipe).not_to be_nil
     end
 
     describe "#name" do 
       it { expect(@recipe).to validate_presence_of(:name) }
+      
     end
 
     describe "#description" do 
@@ -28,7 +30,20 @@ RSpec.describe Recipe, type: :model do
     describe "#preparation_time" do 
       it { expect(@recipe).to validate_presence_of(:preparation_time) }
     end
+
+    describe "#cooking_time" do 
+      it { expect(@recipe).to validate_presence_of(:cooking_time) }
+    end
     
+    describe "#cost" do 
+      it { expect(@recipe).to validate_presence_of(:cost) }
+    end
+
+    describe "#recipe_category_id" do 
+      it { should validate_presence_of(:recipe_category_id) }
+    end
+
+
     # describe "#email" do
     #   it { expect(@user).to validate_presence_of(:email) }
     #   it { expect(@user).not_to allow_value("blah").for(:email) }
