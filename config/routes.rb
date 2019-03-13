@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'team', to: 'single_pages#team'
   
   devise_for :users
-  resources :recipes, only: [:index, :show] do
+  resources :recipes, only: [:index, :show, :new, :create] do
     resources :comments, only: [:create, :destroy]
     resources :likes
   end
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show, :edit, :update] do
   resources :avatars, only: [:create]
+  resources :menus, only: [:show]
 end
   
 end

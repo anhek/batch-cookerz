@@ -1,0 +1,13 @@
+<h2>Mon menu</h2>
+
+<%@recipes.each do |recipe|%>
+
+  <p>
+    Nom : <%=recipe.recipe.name%><br />
+    Description : <%=recipe.recipe.description%>
+    Temps de préparation : <%=recipe.recipe.preparation_time%><br />
+    Temps de cuisson :<%=recipe.recipe.cooking_time%><br />
+    Prix : <%=recipe.recipe.cost%>
+  </p>
+
+<%end%>

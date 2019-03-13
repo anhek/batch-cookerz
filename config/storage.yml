@@ -12,8 +12,8 @@ amazon:
   access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
   secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
   region: eu-west-3
-  bucket: <%= ENV['AWS_BUCKET'] %>
-
+  bucket: active-storage-batch-cookerz
+  
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS
