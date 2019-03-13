@@ -43,7 +43,10 @@ end
 end
 puts "Ingredients created"
 
-Composition.create(recipe_id: 1, ingredient_id: 1)
+5.times do |i|
+  Composition.create(recipe_id: 1, ingredient_id: i+1)
+end
+
 puts "Composition created"
 
 Comment.create(recipe_id: 1, description: "comment 1", user_id: 1)

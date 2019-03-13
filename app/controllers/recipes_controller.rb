@@ -1,10 +1,22 @@
 class RecipesController < ApplicationController
 
   def index
+    @recipes = Recipe.where(id: 1)
     puts '$' * 60
-    puts params.inspect
-    @recipes = Recipe.all
+    ingredients = params[:ingredient].split(' ')
     
+    @recipes.each do |recipe| 
+      composition = Composition.where(recipe_id: recipe.id)
+      ingredients_ids = []
+      composition.each do |element|
+        ingredients_ids << element.ingredient_id
+      end
+      ingredients = []
+      ingredients_ids.each do |id|
+        ingredients << Ingredient.find(id)
+      end
+    end
+    puts ingredients.inspect
   end
 
   def new 
