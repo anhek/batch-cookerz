@@ -7,7 +7,6 @@ RSpec.describe User, type: :model do
   end
 
   it "has a valid factory" do
-    # teste toujours tes factories pour voir si elles sont valides
     expect(build(:user)).to be_valid
   end
 
@@ -30,17 +29,13 @@ RSpec.describe User, type: :model do
       it { should validate_length_of(:password).is_at_least(6) }
     end
 
-    # describe "#first_name" do
-    #   it { expect(@user).to validate_presence_of(:first_name) }
-    # end
+    describe "#first_name" do
+      it { expect(@user.first_name).to be_a(String) }
+    end
 
-    # describe "#last_name" do
-    #   it { expect(@user).to validate_presence_of(:last_name) }
-    # end
-
-    # describe "#username" do
-    #   it { expect(@user).to validate_length_of(:username).is_at_least(3) }
-    # end
+    describe "#last_name" do
+      it { expect(@user.last_name).to be_a(String) }
+    end
 
   end
 
