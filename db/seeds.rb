@@ -13,9 +13,6 @@ ingredient_categories = ["Viande", "Poisson", "Légume", "Fruit", "Légumineuse"
 end
 puts "Users created"
 
-# RecipeCategory.create!(name: "recipe_category")
-# puts "Recipe_category created"
-
 recipe_categories = ["Omnivore", "Végétarien", "Végane"]
 3.times do |i|
   RecipeCategory.create!(name: recipe_categories[i])

@@ -1,46 +1,47 @@
 require 'rails_helper'
 
-RSpec.describe Recipe, type: :model do
+RSpec.describe Ingredient, type: :model do
 
   before(:each) do 
-    @recipe = FactoryBot.create(:recipe)
+    @ingredient = FactoryBot.create(:ingredient)
   end
 
   it "has a valid factory" do
     # teste toujours tes factories pour voir si elles sont valides
-    expect(build(:recipe)).to be_valid
+    expect(build(:ingredient)).to be_valid
   end
 
   context "validation" do
 
     it "is valid with valid attributes" do
-      expect(@recipe).to be_a(Recipe)
-      expect(@recipe).not_to be_nil
+      expect(@ingredient).to be_a(Ingredient)
+      expect(@ingredient).not_to be_nil
     end
 
     describe "#name" do 
-      it { expect(@recipe).to validate_presence_of(:name) }
+      it { expect(@ingredient).to validate_presence_of(:name) }
+      it { should validate_length_of(:name).is_at_least(3) }
     end
 
-    describe "#description" do 
-      it { expect(@recipe).to validate_presence_of(:description) }
+    describe "#calories" do 
+      it { expect(@ingredient).to validate_presence_of(:calories) }
     end
 
-    describe "#preparation_time" do 
-      it { expect(@recipe).to validate_presence_of(:preparation_time) }
+    describe "#price" do 
+      it { expect(@ingredient).to validate_presence_of(:price) }
     end
 
-    describe "#cooking_time" do 
-      it { expect(@recipe).to validate_presence_of(:cooking_time) }
-    end
+    # describe "#cooking_time" do 
+    #   it { expect(@recipe).to validate_presence_of(:cooking_time) }
+    # end
     
-    describe "#cost" do 
-      it { expect(@recipe).to validate_presence_of(:cost) }
-    end
+    # describe "#cost" do 
+    #   it { expect(@recipe).to validate_presence_of(:cost) }
+    # end
 
-    describe "#recipe_category_id" do 
-      it { should validate_presence_of(:recipe_category_id) }
-    end
+    # describe "#recipe_category_id" do 
+    #   it { should validate_presence_of(:recipe_category_id) }
+    # end
 
 
     # describe "#email" do
