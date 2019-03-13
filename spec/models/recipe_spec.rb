@@ -23,12 +23,35 @@ RSpec.describe Recipe, type: :model do
 
     describe "#description" do 
       it { expect(@recipe).to validate_presence_of(:description) }
+      it { expect(@recipe).not_to be_nil }
     end
 
     describe "#preparation_time" do 
       it { expect(@recipe).to validate_presence_of(:preparation_time) }
+      it { expect(@recipe).not_to allow_value("2").for(:preapration_time) }
+      it { expect(@recipe).to allow_value("40").for(:preapration_time) }
+      it { expect(@recipe).not_to be_nil }
     end
     
+    describe "#cooking_time" do 
+      it { expect(@recipe).to validate_presence_of(:cooking_time) }
+      it { expect(@recipe).not_to allow_value("10").for(:cooking_time) }
+      it { expect(@recipe).to allow_value("45").for(:cooking_time) }
+      it { expect(@recipe).not_to be_nil }
+    end
+
+    describe "#cost" do 
+      it { expect(@recipe).to validate_presence_of(:cost) }
+      it { expect(@recipe).not_to allow_value("10.22").for(:cost) }
+      it { expect(@recipe).to allow_value("10").for(:cost) }
+      it { expect(@recipe).not_to be_nil }
+    end
+
+    describe "#recipe_category_id" do 
+      it { expect(@recipe).to validate_presence_of(:recipe_category_id) }
+      it { expect(@recipe).not_to be_nil }
+    end
+
     # describe "#email" do
     #   it { expect(@user).to validate_presence_of(:email) }
     #   it { expect(@user).not_to allow_value("blah").for(:email) }
