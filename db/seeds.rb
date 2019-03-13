@@ -9,11 +9,17 @@
 ingredient_categories = ["Viande", "Poisson", "Légume", "Fruit", "Légumineuse"]
 
 5.times do |i|
-  User.create!(first_name: Faker::Superhero.name, last_name: Faker::Artist.name, email: "email#{i+1}@gmail.com", password: "raph-le-boss")
+  User.create!(first_name: Faker::Superhero.name, last_name: Faker::Artist.name, email: "email#{i+1}@gmail.com", password: "raphleboss69")
 end
 puts "Users created"
 
-RecipeCategory.create!(name: "recipe_category")
+# RecipeCategory.create!(name: "recipe_category")
+# puts "Recipe_category created"
+
+recipe_categories = ["Omnivore", "Végétarien", "Végane"]
+3.times do |i|
+  RecipeCategory.create!(name: recipe_categories[i])
+end
 puts "Recipe_category created"
 
 5.times do |i| 
