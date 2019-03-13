@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+
   after_create :send_welcome_email_to_new_user, :send_new_user_email_to_admin
 
   has_many :likes, dependent: :destroy
@@ -50,5 +51,5 @@ class User < ApplicationRecord
   def send_new_user_email_to_admin
     AdminMailer.new_user_email_to_admin(self).deliver_now
   end
-  
+
 end
