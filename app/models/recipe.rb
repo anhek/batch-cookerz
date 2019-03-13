@@ -8,4 +8,10 @@ class Recipe < ApplicationRecord
     has_many :ingredients, through: :compositions
     has_many :likes, dependent: :destroy
 
+    validates :name, presence: true
+    validates :description, presence: true
+    validates :preparation_time, presence: true
+    validates :cooking_time, presence: :true
+    validates :cost, presence: :true
+    
 end
