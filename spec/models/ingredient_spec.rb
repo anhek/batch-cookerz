@@ -7,7 +7,6 @@ RSpec.describe Ingredient, type: :model do
   end
 
   it "has a valid factory" do
-    # teste toujours tes factories pour voir si elles sont valides
     expect(build(:ingredient)).to be_valid
   end
 
@@ -20,29 +19,18 @@ RSpec.describe Ingredient, type: :model do
 
     describe "#name" do 
       it { expect(@ingredient).to validate_presence_of(:name) }
-      it { should validate_length_of(:name).is_at_least(3) }
+      it { expect(@ingredient.name).to be_a(String) }
+      it { expect(@ingredient).to validate_length_of(:name).is_at_least(3) }
     end
 
-    describe "#calories" do 
+    describe "#calories" do
+      it { expect(@ingredient.calories).to be_a(Numeric) }
       it { expect(@ingredient).to validate_presence_of(:calories) }
     end
 
     describe "#price" do 
       it { expect(@ingredient).to validate_presence_of(:price) }
     end
-
-    # describe "#cooking_time" do 
-    #   it { expect(@recipe).to validate_presence_of(:cooking_time) }
-    # end
-    
-    # describe "#cost" do 
-    #   it { expect(@recipe).to validate_presence_of(:cost) }
-    # end
-
-    # describe "#recipe_category_id" do 
-    #   it { should validate_presence_of(:recipe_category_id) }
-    # end
-
 
     # describe "#email" do
     #   it { expect(@user).to validate_presence_of(:email) }
@@ -55,18 +43,6 @@ RSpec.describe Ingredient, type: :model do
     #   it { should validate_presence_of(:password) }
     #   it { expect(@user).not_to allow_value("123456").for(:email) }
     #   it { should validate_length_of(:password).is_at_least(6) }
-    # end
-
-    # describe "#first_name" do
-    #   it { expect(@user).to validate_presence_of(:first_name) }
-    # end
-
-    # describe "#last_name" do
-    #   it { expect(@user).to validate_presence_of(:last_name) }
-    # end
-
-    # describe "#username" do
-    #   it { expect(@user).to validate_length_of(:username).is_at_least(3) }
     # end
 
   end

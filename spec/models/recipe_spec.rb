@@ -7,7 +7,6 @@ RSpec.describe Recipe, type: :model do
   end
 
   it "has a valid factory" do
-    # teste toujours tes factories pour voir si elles sont valides
     expect(build(:recipe)).to be_valid
   end
 
