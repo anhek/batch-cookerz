@@ -1,22 +1,28 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.where(id: 1)
     puts '$' * 60
-    ingredients = params[:ingredient].split(' ')
-    
-    @recipes.each do |recipe| 
-      composition = Composition.where(recipe_id: recipe.id)
-      ingredients_ids = []
-      composition.each do |element|
-        ingredients_ids << element.ingredient_id
+    selected_ingredients = params[:ingredient].split(' ')
+    selected_ingredients = selected_ingredients.map(&:to_i)
+    print "Les ingrédients sélectionnés sont : #{selected_ingredients}"
+
+    @recipes = []
+    @all_recipes = Recipe.all       
+    @all_recipes.each do |recipe| # pour chaque recette 
+      composition = Composition.where(recipe_id: recipe.id) # je crée un array qui contient tous les ingredients_ids de la recette
+      ingredients_ids = [] # initialisation d'un tableau d'ingrédients id
+      composition.each do |element| # pour chaque position, 
+        ingredients_ids << element.ingredient_id # je récupère les ingrédients  id de la recette
       end
-      ingredients = []
-      ingredients_ids.each do |id|
-        ingredients << Ingredient.find(id)
+      print ingredients_ids
+      if (selected_ingredients & ingredients_ids).any?
+        puts "$" * 60
+        puts "Je trouve bien les ingrédients"
+        @recipes << Recipe.find(recipe.id)
       end
     end
-    puts ingredients.inspect
+
+    
   end
 
   def new 
@@ -49,6 +55,10 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:ingredient)
+  end
+
+  def included_in?(array)
+    array.to_set.superset?(self.to_set)
   end
 
 end

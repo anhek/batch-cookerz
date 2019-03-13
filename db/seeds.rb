@@ -45,6 +45,7 @@ puts "Ingredients created"
 
 5.times do |i|
   Composition.create(recipe_id: 1, ingredient_id: i+1)
+  Composition.create(recipe_id: 2, ingredient_id: i+1)
 end
 
 puts "Composition created"
