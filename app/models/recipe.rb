@@ -6,6 +6,13 @@ class Recipe < ApplicationRecord
     has_many :menus, through: :menu_recipes
     has_many :ingredients, through: :compositions
     has_many :likes, dependent: :destroy
+    
+    validates :name, presence: true
+    validates :description, presence: true
+    validates :preparation_time, presence: true
+    validates :cooking_time, presence: true
+    validates :cost, presence: true
+    validates :recipe_category_id, presence: true
 
     def get_ingredients_number_from_new_recipe_form(params)
         ingredients  = []
@@ -16,4 +23,6 @@ class Recipe < ApplicationRecord
           end
         return ingredients
     end
+    
+    
 end
