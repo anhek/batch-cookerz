@@ -1,7 +1,14 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.all
+    def index
+      if params[:recipe]
+        puts '$' * 60
+        puts recipe.params.inspect
+      else
+        @recipes = Recipe.all
+      end
+    end
   end
 
   def new 
@@ -30,4 +37,10 @@ class RecipesController < ApplicationController
     @comment = Comment.new
   end 
   
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:ingredient)
+  end
+
 end
