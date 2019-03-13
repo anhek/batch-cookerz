@@ -29,7 +29,7 @@ RSpec.describe User, type: :model do
       it { expect(@user).not_to allow_value("123456").for(:email) }
       it { should validate_length_of(:password).is_at_least(6) }
     end
-    
+
     # describe "#first_name" do
     #   it { expect(@user).to validate_presence_of(:first_name) }
     # end
