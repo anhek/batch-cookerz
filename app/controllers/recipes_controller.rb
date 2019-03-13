@@ -1,14 +1,10 @@
 class RecipesController < ApplicationController
 
   def index
-    def index
-      if params[:recipe]
-        puts '$' * 60
-        puts recipe.params.inspect
-      else
-        @recipes = Recipe.all
-      end
-    end
+    puts '$' * 60
+    puts params.inspect
+    @recipes = Recipe.all
+    
   end
 
   def new 
