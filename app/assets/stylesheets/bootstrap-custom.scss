@@ -1,5 +1,5 @@
 $primary:       $orange1 !default;
-$secondary:     $indigo5 !default;
+$secondary:     $indigo1 !default;
 $success:       $green1 !default;
 $info:          $indigo1 !default;
 $warning:       $red3 !default;
@@ -19,3 +19,9 @@ h1, h2, h3, h4, h5, h6,
 body {
   font-family: $opensans-font-family;
 }
+
+$theme-colors: (
+  "indigo1": $indigo1,
+  "indigo3": $indigo3,
+  "indigo5": $indigo5
+);
