@@ -25,10 +25,14 @@ RSpec.describe Recipe, type: :model do
 
     describe "#description" do 
       it { expect(@recipe).to validate_presence_of(:description) }
+      it { expect(@recipe).not_to be_nil }
     end
 
     describe "#preparation_time" do 
       it { expect(@recipe).to validate_presence_of(:preparation_time) }
+      it { expect(@recipe).not_to allow_value("2").for(:preapration_time) }
+      it { expect(@recipe).to allow_value("40").for(:preapration_time) }
+      it { expect(@recipe).not_to be_nil }
     end
 
     describe "#cooking_time" do 
