@@ -3,20 +3,8 @@ class RecipesController < ApplicationController
   def index
     recipe = Recipe.new
     unless params[:ingredient].to_s.empty? 
-      puts '$' * 60
-      selected_ingredients = params[:ingredient].split
-      puts "Les ingrédients sélectionnés sont #{selected_ingredients}"
-      selected_ingredients_ids = []
-      selected_ingredients.each do |ingredient_name|
-          Ingredient.all.each do |ingredient|
-            if ingredient_name == ingredient.name 
-              selected_ingredients_ids << ingredient.id
-            end
-          end
-        print "Les id des ingrédients sélectionnés sont : #{selected_ingredients_ids}."
-        @recipes = recipe.find_recipes_associated_with_ingredients(selected_ingredients_ids)
-      end
-
+    selected_ingredients = recipe.translate_input_ingredients_into_database_ingredients_ids(params[:ingredient])
+    @recipes = recipe.find_recipes_associated_with_ingredients(selected_ingredients)
     else
     @recipes = Recipe.all
     end
