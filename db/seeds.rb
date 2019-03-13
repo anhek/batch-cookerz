@@ -38,6 +38,8 @@ puts "Menu created"
 	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
 end
 
+Ingredient.create!(name: "carotte", calories: rand(50..250), price: rand(1.5..5.5).round(2), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "patate", calories: rand(50..250), price: rand(1.5..5.5).round(2), ingredient_category_id: rand(1..5))
 15.times do 
   Ingredient.create!(name: Faker::Food.ingredient, calories: rand(50..250), price: rand(1.5..5.5).round(2), ingredient_category_id: rand(1..5))
 end

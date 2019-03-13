@@ -1,28 +1,25 @@
 class RecipesController < ApplicationController
 
   def index
-    puts '$' * 60
-    selected_ingredients = params[:ingredient].split(' ')
-    selected_ingredients = selected_ingredients.map(&:to_i)
-    print "Les ingrédients sélectionnés sont : #{selected_ingredients}"
+    recipe = Recipe.new
+    unless params[:ingredient].to_s.empty? 
+      puts '$' * 60
+      selected_ingredients = params[:ingredient].split
+      puts "Les ingrédients sélectionnés sont #{selected_ingredients}"
+      selected_ingredients_ids = []
+      selected_ingredients.each do |ingredient_name|
+          Ingredient.all.each do |ingredient|
+            if ingredient_name == ingredient.name 
+              selected_ingredients_ids << ingredient.id
+            end
+          end
+        print "Les id des ingrédients sélectionnés sont : #{selected_ingredients_ids}."
+        @recipes = recipe.find_recipes_associated_with_ingredients(selected_ingredients_ids)
+      end
 
-    @recipes = []
-    @all_recipes = Recipe.all       
-    @all_recipes.each do |recipe| # pour chaque recette 
-      composition = Composition.where(recipe_id: recipe.id) # je crée un array qui contient tous les ingredients_ids de la recette
-      ingredients_ids = [] # initialisation d'un tableau d'ingrédients id
-      composition.each do |element| # pour chaque position, 
-        ingredients_ids << element.ingredient_id # je récupère les ingrédients  id de la recette
-      end
-      print ingredients_ids
-      if (selected_ingredients & ingredients_ids).any?
-        puts "$" * 60
-        puts "Je trouve bien les ingrédients"
-        @recipes << Recipe.find(recipe.id)
-      end
+    else
+    @recipes = Recipe.all
     end
-
-    
   end
 
   def new 
