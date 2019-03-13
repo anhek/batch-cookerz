@@ -1,5 +1,5 @@
 <!-- NAV BAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light p-4">
+<nav class="navbar navbar-expand-lg navbar-light bg-white p-4">
   <%= link_to root_path, class: "navbar-brand h2 m-0" do %>
     <i class="fas fa-utensils mr-2"></i>
     Batch Cookerz
@@ -16,13 +16,7 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Le concept', concept_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'La team', team_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-         <%= link_to 'Contact', contact_path, class: 'nav-link' %>
+        <%= link_to 'Le Concept', concept_path, class: 'nav-link' %>
       </li>
        <%if user_signed_in? %>
 
@@ -31,7 +25,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Mon Compte
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
           <% if user_signed_in? %>
             <%= link_to "Mon Profil", user_path(current_user), class: "dropdown-item" %>
             <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item", method: :delete %>

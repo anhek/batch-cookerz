@@ -65,6 +65,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'dotenv-rails'
-gem 'table_print'
 gem 'faker'
 gem "aws-sdk-s3", require: false
+gem 'bootstrap'
+gem 'jquery-rails'
+gem "font-awesome-rails"
