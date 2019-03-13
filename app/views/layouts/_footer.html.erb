@@ -1,8 +1,18 @@
   <footer class="p-5 text-white bg-dark">
     <div class="container">
       <div class="row">
-        <div class="col-sm">
+        <div class="col-sm-6">
           <span class="font-weight-bold">Batch Cookerz</span> <br> Préparez le week-end, assemblez la semaine !
+        </div>
+        <div class="col-sm">
+          <ul>
+            <li class="nav-item">
+              <%= link_to 'La Team', team_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Contact', contact_path, class: 'nav-link' %>
+            </li>
+          </ul>
         </div>
         <div class="col-sm">
           <div class="d-flex justify-content-end">

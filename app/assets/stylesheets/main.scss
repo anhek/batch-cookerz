@@ -48,22 +48,22 @@ body {
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-  &#contact {
-    background-image: image_url('syd-wachs-120739-unsplash-02.jpg');
-  }
-  &#concept {
-    background-image: image_url('webvilla-293-unsplash.jpg');
-  }
-  &#sign_up {
-    background-image: image_url('geo-darwin-39403-unsplash.jpg');
-  }
-  &#log_in {
-    background-image: image_url('webvilla-293-unsplash.jpg');
-  }
+    &#contact {
+      background-image: image_url('syd-wachs-120739-unsplash-02.jpg');
+    }
+    &#concept {
+      background-image: image_url('webvilla-293-unsplash.jpg');
+    }
+    &#sign_up {
+      background-image: image_url('geo-darwin-39403-unsplash.jpg');
+    }
+    &#log_in {
+      background-image: image_url('webvilla-293-unsplash.jpg');
+    }
 }
 
 #home {
-  min-height: 700px;
+  min-height: 800px;
   padding: 30px;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -75,8 +75,10 @@ body {
   font-family: "Overpass", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
-.navbar-inner {
-    background:transparent;
+.navbar-nav {
+  .nav-item {
+    text-transform: uppercase;
+  }
 }
 
 #error_explanation {
