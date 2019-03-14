@@ -43,26 +43,38 @@
   margin: 0 auto;
 }
 
-.form-container {
-  padding: 120px 20px;
+.bg-container {
+  padding: 20px;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-    &#contact {
-      background-image: image_url('syd-wachs-120739-unsplash-02.jpg');
-    }
-    &#concept {
-      background-image: image_url('webvilla-293-unsplash.jpg');
-    }
-    &#sign_up {
-      background-image: image_url('geo-darwin-39403-unsplash.jpg');
-    }
-    &#log_in {
-      background-image: image_url('webvilla-293-unsplash.jpg');
-    }
-    &#index-recipes {
-      background-image: image_url('webvilla-293-unsplash.jpg');
-    }
+
+  @include media-breakpoint-up(sm) {
+    padding: 60px 20px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 120px 20px;
+  }
+
+  &#contact {
+    background-image: image_url('syd-wachs-120739-unsplash-02.jpg');
+  }
+  &#concept {
+    background-image: image_url('webvilla-293-unsplash.jpg');
+  }
+  &#sign_up {
+    background-image: image_url('geo-darwin-39403-unsplash.jpg');
+  }
+  &#log_in {
+    background-image: image_url('webvilla-293-unsplash.jpg');
+  }
+  &#index-recipes {
+    background-image: image_url('webvilla-293-unsplash.jpg');
+  }
+  &#show-recipes {
+    background-image: image_url('webvilla-293-unsplash.jpg');
+  }
 }
 
 // HOME PAGE
