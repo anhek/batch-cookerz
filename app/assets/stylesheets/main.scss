@@ -88,8 +88,24 @@ body {
   }
 }
 
-.avatar {
+.avatar-profile {
   img {
-    max-width: 300px;
+   
+    vertical-align: middle;
+    width: 300px;
+    height:300px;
+    border-radius: 50%;
+    padding: 5px; /* Some padding */
+  }
+}
+
+.avatar-comments{
+  img {
+   
+    vertical-align: middle;
+    width: 300px;
+    height:300px;
+    border-radius: 50%;
+    padding: 5px; /* Some padding */
   }
 }

@@ -10,15 +10,20 @@
 <h2> Ma liste de menus </h2>
 
 
+
+
+
 <h3>Avatar actuel</h3>
-<div class="avatar">
+<div class="avatar-profile">
+
   <%if @user.avatar.attached?%>
-    <%= image_tag @user.avatar %>
+    <%= image_tag @user.avatar%>
   <%else%>
     <%= @user.default_image %> 
     <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
   <%end%>
 </div>
+
 
 <h2> Mes recettes favorites </h2>
 <p>
