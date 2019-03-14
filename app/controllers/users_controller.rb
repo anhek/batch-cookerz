@@ -4,15 +4,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @menus = Menu.where(user_id:params[:id])
     @likes = Like.where(user_id:params[:id])
-    
-    recipes_ids = []
-    @likes.each do |like|
-      recipes_ids << like.recipe_id
-    end 
-    @recipes =[]
-    recipes_ids.each do |id|
-      @recipes << Recipe.find(id)
-    end 
+    @recipes = @user.find_liked_recipes(@likes)
   end 
    
 

@@ -55,4 +55,17 @@ class User < ApplicationRecord
   def attribute_menu_to_new_user
     Menu.create!(user_id: User.last.id, number_of_recipes: 0)
   end
+
+  def find_liked_recipes(likes)
+    recipes_ids = []
+    likes.each do |like|
+      recipes_ids << like.recipe_id
+    end 
+    recipes =[]
+    recipes_ids.each do |id|
+      recipes << Recipe.find(id)
+    end 
+    return recipes
+  end
+
 end
