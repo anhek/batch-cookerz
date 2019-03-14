@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  
+  devise_for :users
+  
   root 'home#index'
   get 'contact', to: 'single_pages#contact'
   get 'concept', to: 'single_pages#concept'
   get 'team', to: 'single_pages#team'
   
-  devise_for :users
+ 
   resources :ingredients, only: [:index] 
   resources :menu_recipes, only: [:index, :create]
 
