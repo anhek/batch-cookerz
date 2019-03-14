@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :recipes, only: [:index, :show, :new, :create] do
     resources :comments, only: [:create, :destroy]
-    resources :likes
+    resources :likes, only: [:create, :destroy]
   end
   
   resources :ingredients, only: [:index] 
