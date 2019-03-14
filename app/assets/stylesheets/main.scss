@@ -95,17 +95,28 @@ body {
     width: 300px;
     height:300px;
     border-radius: 50%;
-    padding: 5px; /* Some padding */
+    padding: 5px;
   }
 }
 
 .avatar-comments{
   img {
    
-    vertical-align: middle;
-    width: 300px;
-    height:300px;
+    vertical-align: left;
     border-radius: 50%;
-    padding: 5px; /* Some padding */
+    width: 50px;
+    height:50px;
+    padding: 5px;
   }
+}
+
+.container-comment{
+  font-size: 62.5%;
+  border: 1px solid #7CC480;
+  box-shadow: 1px 1px 1px black;
+  margin: 25px 20px 25px;
+}
+
+.p-comment{
+  vertical-align:middle;
 }

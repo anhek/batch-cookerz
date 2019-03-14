@@ -58,7 +58,7 @@ class User < ApplicationRecord
   end 
 
   def thumbnail
-    return self.avatar.variant(resize: '200x200')
+    return self.avatar.variant(resize: '100x100')
   end
 
 
