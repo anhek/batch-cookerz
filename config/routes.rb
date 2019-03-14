@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'menu_recipes/create'
   root 'home#index'
   get 'contact', to: 'single_pages#contact'
   get 'concept', to: 'single_pages#concept'

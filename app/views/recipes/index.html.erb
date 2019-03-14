@@ -27,6 +27,9 @@
                   </span>
                 </div>
                 <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3" %>
+                <%if user_signed_in?%>
+                  <%=link_to "Ajouter à mon penu", menu_recipes_path, controller: "menu_recipes", action: "create", class:"recipe-link btn btn-outline-primary px-3" %>
+                <%end%>
               </div>
             </div>
           </div>
