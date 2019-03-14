@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
 
-  after_create :send_welcome_email_to_new_user, :send_new_user_email_to_admin
+  after_create :send_welcome_email_to_new_user, :send_new_user_email_to_admin, :attribute_menu_to_new_user
 
   has_many :likes, dependent: :destroy
   
@@ -52,4 +52,7 @@ class User < ApplicationRecord
     AdminMailer.new_user_email_to_admin(self).deliver_now
   end
 
+  def attribute_menu_to_new_user
+    Menu.create!(user_id: User.last.id, number_of_recipes: 0)
+  end
 end
