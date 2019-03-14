@@ -1,0 +1,14 @@
+
+.recipe-info {
+
+  .title, .the-icons, .recipe-link {
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .title, .the-icons, .recipe-link {
+      text-align: left;
+    }
+  }
+
+}

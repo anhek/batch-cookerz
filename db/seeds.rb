@@ -31,11 +31,6 @@ puts "Ingredient_categories created"
 end
 puts "Recipe created"
 
-Menu.create!(number_of_recipes: 1, user_id: 1)
-puts "Menu created"
-
-	Menu.create!(number_of_recipes:3 , user_id: 1)
-
 3.times do |i|
 	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
 end

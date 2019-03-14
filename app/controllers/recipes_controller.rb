@@ -8,6 +8,8 @@ class RecipesController < ApplicationController
     else
     @recipes = Recipe.all
     end
+
+    @menu_recipe = MenuRecipe.new
   end
 
   def new 

@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   # before_create :default_image
 
-  after_create :send_welcome_email_to_new_user, :send_new_user_email_to_admin
+  after_create :send_welcome_email_to_new_user, :send_new_user_email_to_admin, :attribute_menu_to_new_user
 
   has_many :likes, dependent: :destroy
   
@@ -53,6 +53,7 @@ class User < ApplicationRecord
     AdminMailer.new_user_email_to_admin(self).deliver_now
   end
 
+<<<<<<< HEAD
   def default_image
     self.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'user_default_picture.jpg')), filename: 'user_default_picture.jpg', content_type: 'image/jpg')
   end 
@@ -61,5 +62,22 @@ class User < ApplicationRecord
     return self.avatar.variant(resize: '100x100')
   end
 
+=======
+  def attribute_menu_to_new_user
+    Menu.create!(user_id: User.last.id, number_of_recipes: 0)
+  end
+
+  def find_liked_recipes(likes)
+    recipes_ids = []
+    likes.each do |like|
+      recipes_ids << like.recipe_id
+    end 
+    recipes =[]
+    recipes_ids.each do |id|
+      recipes << Recipe.find(id)
+    end 
+    return recipes
+  end
+>>>>>>> delivery
 
 end
