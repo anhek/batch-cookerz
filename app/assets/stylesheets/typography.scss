@@ -50,7 +50,7 @@ h3, .h3 {
 
   @include media-breakpoint-up(xl) {
     background-color: yellow;
-    font-size: 2.4em;
+    font-size: 2.4rem;
   }
 }
 
@@ -65,7 +65,7 @@ h4, .h4 {
 
   @include media-breakpoint-up(xl) {
     background-color: yellow;
-    font-size: 2.1em;
+    font-size: 2.1rem;
   }
 }
 
@@ -80,7 +80,7 @@ h5, .h5 {
 
   @include media-breakpoint-up(xl) {
     background-color: yellow;
-    font-size: 1.8em;
+    font-size: 1.8rem;
   }
 }
 
@@ -95,6 +95,68 @@ h6, .h6 {
 
   @include media-breakpoint-up(xl) {
     background-color: yellow;
-    font-size: 1.6em;
+    font-size: 1.6rem;
+  }
+}
+
+
+// Type display classes
+.display-1 {
+  background-color: red;
+  font-size: 3rem;
+
+  @include media-breakpoint-up(sm) {
+    background-color: blue;
+    font-size: 3.3rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    background-color: yellow;
+    font-size: 3.6rem;
+  }
+}
+
+.display-2 {
+  background-color: red;
+  font-size: 2.7rem;
+
+  @include media-breakpoint-up(sm) {
+    background-color: blue;
+    font-size: 3rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    background-color: yellow;
+    font-size: 3.3rem;
+  }
+}
+
+.display-3 {
+  background-color: red;
+  font-size: 2.4rem;
+
+  @include media-breakpoint-up(sm) {
+    background-color: blue;
+    font-size: 2.7rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    background-color: yellow;
+    font-size: 3rem;
+  }
+}
+
+.display-4 {
+  background-color: red;
+  font-size: 2.1rem;
+
+  @include media-breakpoint-up(sm) {
+    background-color: blue;
+    font-size: 2.4rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    background-color: yellow;
+    font-size: 2.7rem;
   }
 }
