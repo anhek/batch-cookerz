@@ -2,14 +2,14 @@
 
 .block {
   margin: 0 auto;
-  padding: $spacer * 1.5;
+  padding: $spacer * 3 $spacer * 1.5;
 
   @include media-breakpoint-up(sm) {
-    padding: $spacer * 2;
+    padding: $spacer * 3.5 $spacer * 2;
   }
 
   @include media-breakpoint-up(xl) {
-    padding: $spacer * 3;
+    padding: $spacer * 4 $spacer * 3;
   }
 }
 
@@ -81,5 +81,13 @@
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */  
-  background-image: image_url('maarten-van-den-heuvel-400626-unsplash.jpg');  
+  background-image: image_url('maarten-van-den-heuvel-400626-unsplash.jpg');
+
+  @include media-breakpoint-up(sm) {
+    min-height: 600px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    min-height: 800px;
+  }
 }
