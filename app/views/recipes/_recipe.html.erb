@@ -1,0 +1,33 @@
+<div class="row">
+
+  <div class="col-sm-4 d-flex align-items-center">
+    <%= link_to recipe_path(recipe), class: "img-fluid rounded" do %>
+      <img class="img-fluid rounded" src="https://cdn-image.foodandwine.com/sites/default/files/1483039291/chickpeas-and-kale-in-spicy-pomodoro-sauce-XL-RECIPE0217.jpg" alt="Card image cap">
+    <% end %>
+  </div>
+
+  <div class="col-sm-8">
+    <div class="recipe-info py-3">  
+      <%= link_to recipe_path(recipe), class: "title h5" do %>
+        <%=recipe.name%>
+      <% end %>
+      <p class="description"><%=recipe.description%></p>
+      <div class="the-icons my-3 text-grey1 h6 font-weight-normal">
+        <span class="mr-4">
+          <i class="far fa-clock mr-1"></i> <%=recipe.cooking_time%> mn
+        </span>
+        <span class="mr-4">
+          <i class="fas fa-tag mr-1"></i> <%= recipe.cost%> €
+        </span>
+        <span class="mr-4">
+          <i class="far fa-thumbs-up mr-1"></i> <%= recipe.likes.count %>
+        <!-- <%= recipe.likes.count %> <%= (recipe.likes.count) == 1 ? 'Like' : 'Likes'%> -->
+        </span>
+      </div>
+      <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3 btn-lg" %>
+    </div>
+  </div>
+
+</div>
+
+<hr class="my-4">

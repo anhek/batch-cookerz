@@ -1,5 +1,5 @@
 $primary:       $orange1 !default;
-$secondary:     $indigo1 !default;
+$secondary:     $indigo-dark2 !default;
 $success:       $green1 !default;
 $info:          $indigo1 !default;
 $warning:       $red3 !default;
@@ -21,6 +21,7 @@ body {
 }
 
 $theme-colors: (
+  "grey1": $grey1,
   "indigo1": $indigo1,
   "indigo3": $indigo3,
   "indigo5": $indigo5
