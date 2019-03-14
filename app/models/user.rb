@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  # before_create :default_image
 
   after_create :send_welcome_email_to_new_user, :send_new_user_email_to_admin
 
@@ -51,5 +52,9 @@ class User < ApplicationRecord
   def send_new_user_email_to_admin
     AdminMailer.new_user_email_to_admin(self).deliver_now
   end
+
+  def default_image
+  self.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'user_default_picture.jpg')), filename: 'user_default_picture.jpg', content_type: 'image/jpg')
+  end 
 
 end

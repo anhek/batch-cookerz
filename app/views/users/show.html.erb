@@ -1,3 +1,4 @@
+<div class="container">
 <h2> Voici les informations de mon profil </h2>
 <p>
   Prenom : <%= @user.first_name %><br />
@@ -10,11 +11,14 @@
 
 
 <h3>Avatar actuel</h3>
-<%if @user.avatar.attached?%>
-  <%= image_tag @user.avatar, alt: 'avatar' %>
-<%else%>
-  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
-<%end%>
+<div class="avatar">
+  <%if @user.avatar.attached?%>
+    <%= image_tag @user.avatar %>
+  <%else%>
+    <%= @user.default_image %> 
+    <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+  <%end%>
+</div>
 
 <h2> Mes recettes favorites </h2>
 <p>
@@ -37,3 +41,4 @@
 <%= link_to "Modifier ses informations personnelles importantes (email et mot de passe)", edit_user_registration_path(@user)%>
 
 
+</div>
