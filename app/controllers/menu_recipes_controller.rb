@@ -6,9 +6,11 @@ class MenuRecipesController < ApplicationController
     menu_recipe = MenuRecipe.new(recipe_id: params[:recipe_id], menu_id: params[:menu_id])
     
     if menu_recipe.save
-      puts "La recette a bien été ajoutée à ton menu !"
+      flash[:success] = "La recette a bien été ajoutée à ton menu !"
+      redirect_to user_path(current_user)
     else
-      puts "Désolé, la recette n'a pas été ajoutée !"
+      flash[:error] = "Désolé, la recette n'a pas été ajoutée !"
+      redirect_to user_path(current_user)
     end
   end
 end
