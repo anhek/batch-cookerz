@@ -28,7 +28,7 @@
         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
           <% if user_signed_in? %>
             <%= link_to "Mon Profil", user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Se déconnnnecter", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+            <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item", method: :delete %>
           <% else %>
             <%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item" %>
