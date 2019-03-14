@@ -7,10 +7,8 @@ class MenuRecipesController < ApplicationController
     
     if menu_recipe.save
       puts "La recette a bien été ajoutée à ton menu !"
-      redirect_to recipes_path
     else
       puts "Désolé, la recette n'a pas été ajoutée !"
-      redirect_to recipes_path
     end
   end
 end
