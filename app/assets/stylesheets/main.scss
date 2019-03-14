@@ -78,15 +78,14 @@ body {
   font-family: "Overpass", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
-.navbar-nav {
-  .nav-item {
-    text-transform: uppercase;
-  }
-}
-
 #error_explanation {
   ul {
     list-style-type: none;
     padding-left: 0;
   }
+}
+
+.material-icons {
+  vertical-align: middle;
+  font-size: inherit;
 }
