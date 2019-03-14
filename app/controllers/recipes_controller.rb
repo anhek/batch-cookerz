@@ -36,7 +36,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @comments = Comment.where(recipe_id: @recipe.id)
     @comment = Comment.new
-    @user = User.find(current_user.id)
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
   end 
   
   private
