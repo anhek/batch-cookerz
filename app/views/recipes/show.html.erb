@@ -12,7 +12,11 @@
 	<% @comments.each do |comment|%>
   <div class="container-comment">
   <div class="avatar-comments">
+  <%if @user.avatar.attached?%>
    <%=image_tag @user.thumbnail, alt: 'avatar'%>
+   <%else%>
+   <%=image_tag @user.default_image.thumbnail, alt: 'avatar'%>
+	<%end%>
 	<p-comment><%=comment.description%>
 	<%=comment.user.nickname%></p-comment>
    </div>
@@ -43,6 +47,6 @@
 <% end %>
 
 <p><%= @recipe.likes.count %> <%= (@recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-<p><%= button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-outline-primary px-3", method: "post" %></p>
+<p><%# button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-outline-primary px-3", method: "post" %></p>
 
-<p> <%= link_to "Aller sur les autres recettes", recipes_path(@recipes) %>
+<p> <%# link_to "Aller sur les autres recettes", recipes_path(@recipes) %>
