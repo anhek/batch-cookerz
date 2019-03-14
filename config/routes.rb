@@ -10,12 +10,13 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
   
-  resources :ingredients, only: [:index] 
-  
   resources :users, only: [:show, :edit, :update] do
-  resources :avatars, only: [:create]
-  resources :menus, only: [:show]
-end
+    resources :avatars, only: [:create]
+    resources :menus, only: [:show]
+  end
+
+  resources :ingredients, only: [:index] 
+  resources :menu_recipes, only: [:create]
   
 end
 
