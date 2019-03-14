@@ -53,7 +53,6 @@ class User < ApplicationRecord
     AdminMailer.new_user_email_to_admin(self).deliver_now
   end
 
-<<<<<<< HEAD
   def default_image
     self.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'user_default_picture.jpg')), filename: 'user_default_picture.jpg', content_type: 'image/jpg')
   end 
@@ -62,7 +61,6 @@ class User < ApplicationRecord
     return self.avatar.variant(resize: '100x100')
   end
 
-=======
   def attribute_menu_to_new_user
     Menu.create!(user_id: User.last.id, number_of_recipes: 0)
   end
@@ -78,6 +76,5 @@ class User < ApplicationRecord
     end 
     return recipes
   end
->>>>>>> delivery
 
 end
