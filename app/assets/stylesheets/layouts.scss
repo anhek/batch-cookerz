@@ -1,0 +1,85 @@
+// LAYOUTS
+
+.block {
+  margin: 0 auto;
+  padding: $spacer * 1.5;
+
+  @include media-breakpoint-up(sm) {
+    padding: $spacer * 2;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: $spacer * 3;
+  }
+}
+
+.block-400 {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.block-500 {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.block-600 {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.block-700 {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.block-800 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.block-1000 {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.form-container {
+  padding: 120px 20px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+    &#contact {
+      background-image: image_url('syd-wachs-120739-unsplash-02.jpg');
+    }
+    &#concept {
+      background-image: image_url('webvilla-293-unsplash.jpg');
+    }
+    &#sign_up {
+      background-image: image_url('geo-darwin-39403-unsplash.jpg');
+    }
+    &#log_in {
+      background-image: image_url('webvilla-293-unsplash.jpg');
+    }
+    &#index-recipes {
+      background-image: image_url('webvilla-293-unsplash.jpg');
+    }
+}
+
+// HOME PAGE
+
+// #home {
+//   min-height: 800px;
+//   padding: 30px;
+//   background-position: center; /* Center the image */
+//   background-repeat: no-repeat; /* Do not repeat the image */
+//   background-size: cover; /* Resize the background image to cover the entire container */  
+//   background-image: image_url('maarten-van-den-heuvel-400626-unsplash.jpg');
+// }
+
+#home {
+  min-height: 500px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */  
+  background-image: image_url('maarten-van-den-heuvel-400626-unsplash.jpg');  
+}
