@@ -14,19 +14,22 @@
               <div class="recipe-info py-3">
                 <h3 class="title text-indigo-dark3"><%=recipe.name%></h3>
                 <p class="description"><%=recipe.description%></p>
-                <div class="the-icons my-3 text-muted h6">
+                <div class="the-icons my-3 text-muted h6 d-flex align-items-start">
                   <span class="mr-3">
-                    <i class="fas fa-stopwatch mr-2"></i><%=recipe.cooking_time%> mn
+                    <i class="material-icons">timer</i> <%=recipe.cooking_time%> mn
                   </span>
                   <span class="mr-3">
-                    <i class="fas fa-money-bill mr-2"></i> <%= recipe.cost%> €
+                    <i class="material-icons">shopping_cart</i> <%= recipe.cost%> €
                   </span>
                   <span class="mr-3">
-                    <i class="fas fa-thumbs-up mr-2"></i> <%= recipe.likes.count %>
+                    <i class="material-icons">thumb_up</i> <%= recipe.likes.count %>
                   <!-- <%= recipe.likes.count %> <%= (recipe.likes.count) == 1 ? 'Like' : 'Likes'%> -->
                   </span>
                 </div>
                 <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3" %>
+                <%#if user_signed_in?%>
+                  <%# button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-outline-primary px-3", method: "post" %>
+                <%#end%>
               </div>
             </div>
           </div>

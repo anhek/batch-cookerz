@@ -8,6 +8,8 @@ class RecipesController < ApplicationController
     else
     @recipes = Recipe.all
     end
+
+    @menu_recipe = MenuRecipe.new
   end
 
   def new 
@@ -34,6 +36,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @comments = Comment.where(recipe_id: @recipe.id)
     @comment = Comment.new
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
   end 
   
   private

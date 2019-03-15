@@ -78,15 +78,42 @@ body {
   font-family: "Overpass", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
-.navbar-nav {
-  .nav-item {
-    text-transform: uppercase;
-  }
-}
-
 #error_explanation {
   ul {
     list-style-type: none;
     padding-left: 0;
   }
+}
+
+.avatar-profile {
+  img {
+   
+    vertical-align: middle;
+    width: 300px;
+    height:300px;
+    border-radius: 50%;
+    padding: 5px;
+  }
+}
+
+.avatar-comments{
+  img {
+   
+    vertical-align: left;
+    border-radius: 50%;
+    width: 50px;
+    height:50px;
+    padding: 5px;
+  }
+}
+
+.container-comment{
+  font-size: 62.5%;
+  border: 1px solid #7CC480;
+  box-shadow: 1px 1px 1px black;
+  margin: 25px 20px 25px;
+}
+
+.p-comment{
+  vertical-align:middle;
 }

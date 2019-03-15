@@ -1,3 +1,4 @@
+<div class="container">
 <h2> Voici la recette : <%= @recipe.name%> </h2>
 
 <p>
@@ -7,21 +8,33 @@
 	<%= @recipe.cooking_time%> 
 </p>
 
-<p>
-
+<div>
 	<% @comments.each do |comment|%>
-	<p><%=comment.description%>
-	<%=comment.user.nickname%></p>
+  <div class="container-comment">
+  <div class="avatar-comments">
+  <%if @user.avatar.attached?%>
+   <%=image_tag @user.thumbnail, alt: 'avatar'%>
+   <%else%>
+   <%=image_tag @user.default_image.thumbnail, alt: 'avatar'%>
 	<%end%>
-</p>
+	<p-comment><%=comment.description%>
+	<%=comment.user.nickname%></p-comment>
+   </div>
+   </div>
+	<%end%>
+</p-comment>
 
 <% if user_signed_in?%>
-  <p>
+  <div class="container-comment">
+  <p-comment>
     <%= form_with model: @comment, url:recipe_comments_path(@recipe.id) do |form| %>
     <%= form.text_field :description%>
+    <p-comment-submit>
     <%= form.submit class: "btn btn-secondary"%>
+    </p-comment-submit>
     <% end%>
-  </p>
+  </p-comment>
+  </div>
 
   <p>
     <% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
@@ -34,5 +47,6 @@
 <% end %>
 
 <p><%= @recipe.likes.count %> <%= (@recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<p><%# button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-outline-primary px-3", method: "post" %></p>
 
-<p> <%= link_to "Aller sur les autres recettes", recipes_path(@recipes) %>
+<p> <%# link_to "Aller sur les autres recettes", recipes_path(@recipes) %>
