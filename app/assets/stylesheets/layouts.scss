@@ -15,32 +15,26 @@
 
 .block-400 {
   max-width: 400px;
-  margin: 0 auto;
 }
 
 .block-500 {
   max-width: 500px;
-  margin: 0 auto;
 }
 
 .block-600 {
   max-width: 600px;
-  margin: 0 auto;
 }
 
 .block-700 {
   max-width: 700px;
-  margin: 0 auto;
 }
 
 .block-800 {
   max-width: 800px;
-  margin: 0 auto;
 }
 
 .block-1000 {
   max-width: 1000px;
-  margin: 0 auto;
 }
 
 .bg-container {
@@ -79,15 +73,6 @@
 
 // HOME PAGE
 
-// #home {
-//   min-height: 800px;
-//   padding: 30px;
-//   background-position: center; /* Center the image */
-//   background-repeat: no-repeat; /* Do not repeat the image */
-//   background-size: cover; /* Resize the background image to cover the entire container */  
-//   background-image: image_url('maarten-van-den-heuvel-400626-unsplash.jpg');
-// }
-
 #home {
   min-height: 500px;
   background-position: center; /* Center the image */
@@ -101,5 +86,83 @@
 
   @include media-breakpoint-up(xl) {
     min-height: 800px;
+  }
+}
+
+
+// FOOTER 
+
+#footer {
+  
+  .col-sm {
+    margin-bottom: 1.5rem;
+  }
+
+  #brand {
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      text-align: left;
+    }
+
+    h4 {
+      color: $primary;
+    }
+
+    p { 
+      color: $white;
+    }
+  }
+
+  #sitemap {
+    text-align: center;
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li a {
+        padding: 0 0 5px 0;
+        color: $indigo1;
+        &:hover {
+          color: $indigo3;
+        }
+      }
+    }
+  }
+
+  #social-links {
+
+    p {
+      text-align: center;
+      color: $indigo1;
+
+      @include media-breakpoint-up(sm) {
+        text-align: right;
+      }
+    }
+
+    #social-icons {
+      display: flex !important;
+      justify-content: center !important;
+
+      @include media-breakpoint-up(sm) {
+        justify-content: end !important;
+      }
+
+      a {
+        margin: .5rem 1rem;
+        color: $indigo3;
+        &:hover {
+          color: $indigo5;
+        }
+        @include media-breakpoint-up(sm) {
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+    }
   }
 }
