@@ -1,0 +1,7 @@
+<%= form_with model: @user, method: 'PATCH' do |form| %>
+
+  Prénom :<%= form.text_field :first_name%>
+  Nom de famille :<%= form.text_field :last_name%>
+  Pseudo :<%= form.text_field :nickname%>
+  <%= form.submit %>
+<% end %><br>
