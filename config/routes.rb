@@ -1,20 +1,27 @@
 Rails.application.routes.draw do
+  
+  devise_for :users
+  
   root 'home#index'
   get 'contact', to: 'single_pages#contact'
   get 'concept', to: 'single_pages#concept'
   get 'team', to: 'single_pages#team'
   
-  devise_for :users
-  resources :recipes, only: [:index, :show] do
+ 
+  resources :ingredients, only: [:index] 
+  resources :menu_recipes, only: [:index, :create]
+
+  resources :recipes, only: [:index, :show, :new, :create] do
     resources :comments, only: [:create, :destroy]
-    resources :likes
+    resources :likes, only: [:create, :destroy]
   end
   
-  resources :ingredients, only: [:index] 
-  
   resources :users, only: [:show, :edit, :update] do
-  resources :avatars, only: [:create]
-end
+    resources :avatars, only: [:create]
+    resources :menus, only: [:show]
+  end
+
+
   
 end
 

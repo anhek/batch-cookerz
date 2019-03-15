@@ -24,7 +24,10 @@
         <!-- <%= recipe.likes.count %> <%= (recipe.likes.count) == 1 ? 'Like' : 'Likes'%> -->
         </span>
       </div>
-      <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3 btn-lg" %>
+      <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3" %>
+      <%#if user_signed_in?%>
+        <%# button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-outline-primary px-3", method: "post" %>
+      <%#end%>
     </div>
   </div>
 
