@@ -63,5 +63,5 @@ class Recipe < ApplicationRecord
     return recipes
   end
 
-
+  
 end
