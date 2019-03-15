@@ -1,10 +1,11 @@
-  <footer class="p-5 text-white bg-dark">
+  <footer class="p-5 text-white bg-dark" id="footer">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
-          <span class="font-weight-bold">Batch Cookerz</span> <br> Préparez le week-end, assemblez la semaine !
+        <div id="brand" class="col-sm">
+          <h4 class="font-weight-bold">Batch Cookerz</h4>
+          <p>Préparez tous vos repas le week-end, réassemblez la semaine !</p>
         </div>
-        <div class="col-sm">
+        <div id="sitemap" class="col-sm">
           <ul>
             <li class="nav-item">
               <%= link_to 'La Team', team_path, class: 'nav-link' %>
@@ -12,13 +13,23 @@
             <li class="nav-item">
                 <%= link_to 'Contact', contact_path, class: 'nav-link' %>
             </li>
+            <li class="nav-item">
+                <%= link_to 'Contact', contact_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Contact', contact_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Contact', contact_path, class: 'nav-link' %>
+            </li>
           </ul>
         </div>
-        <div class="col-sm">
-          <div class="d-flex justify-content-end">
-            <a href="#" class="h1"><i class="fab fa-facebook mx-3 text-white"></i></a>
-            <a href="#" class="h1"><i class="fab fa-twitter mx-3 text-white"></i></a>
-            <a href="#" class="h1"><i class="fab fa-pinterest mx-3 text-white"></i></a>
+        <div id="social-links" class="col-sm">
+          <p class="h5">Suivez-nous sur les réseaux sociaux</p>
+          <div id="social-icons">
+            <a href="#" class="h3"><i class="fab fa-facebook text-white"></i></a>
+            <a href="#" class="h3"><i class="fab fa-twitter text-white"></i></a>
+            <a href="#" class="h3"><i class="fab fa-pinterest text-white"></i></a>
           </div>
         </div>
       </div>

@@ -71,6 +71,8 @@
   }
 }
 
+// HOME PAGE
+
 #home {
   min-height: 500px;
   background-position: center; /* Center the image */
@@ -84,5 +86,69 @@
 
   @include media-breakpoint-up(xl) {
     min-height: 800px;
+  }
+}
+
+
+// FOOTER 
+
+#footer {
+  
+  .col-sm {
+    margin-bottom: 1.5rem;
+  }
+
+  #brand {
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      text-align: left;
+    }
+
+    h4 {
+      color: $indigo1;
+    }
+  }
+
+  #sitemap {
+    text-align: center;
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li a {
+        padding: 0 0 5px 0;
+      }
+    }
+  }
+
+  #social-links {
+
+    p {
+      text-align: center;
+      color: $indigo1;
+
+      @include media-breakpoint-up(sm) {
+        text-align: right;
+      }
+    }
+    #social-icons {
+      display: flex !important;
+      justify-content: center !important;
+
+        @include media-breakpoint-up(sm) {
+          justify-content: end !important;
+        }
+    }
+
+    a {
+      margin: .5rem;
+
+        @include media-breakpoint-up(sm) {
+          margin: .5rem;
+          display: inline-block;
+        }
+    }
   }
 }
