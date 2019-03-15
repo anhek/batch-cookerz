@@ -1,0 +1,9 @@
+<h2> Ma liste de menus </h2>
+
+<p>
+  <%i = 1%>
+  <%@menus.each do |menu|%>
+    <%= link_to "Voir mon menu n°#{i}", user_menu_path(menu) %> , édité pour la dernière fois le : <%=menu.updated_at%>
+    <%i += 1%>
+  <%end%>
+</p>
