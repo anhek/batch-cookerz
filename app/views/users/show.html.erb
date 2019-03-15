@@ -7,49 +7,10 @@
   Email : <%= @user.email%><br /> 
 </p>
 
-<h2> Ma liste de menus </h2>
-
-<p>
-  <%i = 1%>
-  <%@menus.each do |menu|%>
-    <%= link_to "Voir mon menu n°#{i}", user_menu_path(menu) %> , édité pour la dernière fois le : <%=menu.updated_at%>
-    <%i += 1%>
-  <%end%>
-</p>
-
-
-
-
-
-<h3>Avatar actuel</h3>
-<div class="avatar-profile">
-
-  <%if @user.avatar.attached?%>
-    <%= image_tag @user.avatar%>
-  <%else%>
-    <%= @user.default_image %> 
-    <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
-  <%end%>
-</div>
-
-
-<h2> Mes recettes favorites </h2>
-<p>
-  <% @recipes.each do |recipe| %>
-  <%= recipe.name%>
-  <%= link_to "Voir ma recette favorite. ", recipe_path(recipe) %><br />
-
-  <%end%>
-</p>
-
-<h3>Changer d'avatar ?</h3>
-<%= form_tag user_avatars_path(@user), multipart: true do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "Mettre à jour" %>
-<% end %>
-
-</p>
-
+<%= render "layouts/history_menus" %>
+<%= render "avatar"%>
+<%= render "layouts/favorite_recipes"%>
+<%= render "avatar_edit"%>
 <%= link_to "Modifier ses informations de profil", edit_user_path(@user.id)%> <br>
 <%= link_to "Modifier ses informations personnelles importantes (email et mot de passe)", edit_user_registration_path(@user)%>
 

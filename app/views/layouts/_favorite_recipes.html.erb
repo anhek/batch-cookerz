@@ -1,0 +1,8 @@
+<h2> Mes recettes favorites </h2>
+<p>
+  <% @recipes.each do |recipe| %>
+  <%= recipe.name%>
+  <%= link_to "Voir ma recette favorite. ", recipe_path(recipe) %><br />
+
+  <%end%>
+</p>

@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  #layout 'history_menus' /#pour utiliser ce render, les views des menus doivent etre dans un fichier /layouts/menus
+  #layout 'favorite_recipes' 
+
   def show
     @user = User.find(params[:id])
     @menus = Menu.where(user_id:params[:id])
