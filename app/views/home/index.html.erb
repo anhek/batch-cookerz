@@ -5,14 +5,15 @@
     <h1 class="text-white mb-4 display-2 font-weight-normal">Préparez tous vos repas le week-end, <br> réassemblez la semaine !</h1>
     <h2 class="h5 text-white font-weight-normal"> Composez votre batch cooking en indiquant vos 3 ingrédients préférés</h3>
 
-    <div class="input-group input-group-lg mb-3 block-800 mt-3">
-      <input type="text" class="form-control" placeholder="Des ingrédients cools" aria-label="Recipient's username" aria-describedby="button-addon2">
-      <div class="input-group-append">
-        <button class="btn btn-primary" type="button" id="button-addon2">
-          <i class="fas fa-search mr-1"></i>
-        </button>
-      </div>
-    </div>
+      <%= form_tag({:controller => "recipes", :action => "index"}, :method => "get", class:'input-group input-group-lg') do %>
+        <!-- <input type="text" class="form-control" aria-label="Text input with segmented dropdown button"> -->
+        <%= text_field_tag :ingredient %>
+        <div class="input-group-append">
+          <!-- <button class="btn btn-primary" type="button">Button</button> -->
+          <%= submit_tag 'Chercher les recettes', name: nil, class:'btn btn-primary' %>
+        </div>
+      <% end %>
+      
   </div>
 </div>
 
