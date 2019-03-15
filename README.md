@@ -1,24 +1,22 @@
-# Batch Cookerz
+# Batch Cookerz ![alt text](assets/images/logo.png)
+---
+### Team members 
+Antonin Nhek  - @Antonin
+Mallaury Bajas  - @Mallau
+Raphaël De Gregorio  - @Raph
+Laurane Petit  - @Laurane
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Description
 
-Things you may want to cover:
+Batch Cookerz is an amazing web application where you can find some recipes to make a menu with less ingredients for one week ! This application allows to eat home made food during the week without too much preparation! You can organize you're time to cook between 2 ans 3 hours during the week-end. 
 
-* Ruby version
+### Installation
+1. clone this repository
+2. execute 'bundle install'
+3. execute 'rails db:create'
+4. execute 'rails db:migrate'
+5. execute 'rails db:seed'
+##### Now you can navigate in our work, enjoy ! 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Link online
+http://www.batchcookerz.fr
