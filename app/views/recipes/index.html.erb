@@ -1,43 +1,17 @@
-<div class="form-container" id="index-recipes">
-  <div class="block-800 p-5 bg-indigo1 rounded-top text-center">
+<div class="bg-container" id="index-recipes">
+
+  <div class="block block-800 bg-indigo1 rounded-top text-center">
     <h2 class="text-white">Les recettes</h2>
   </div>
-  <div class="block-800 p-5 bg-white rounded-bottom"> 
+
+  <div class="block block-800 bg-white rounded-bottom"> 
     <div class="row">
       <div class="col-sm-12">
-        <%@recipes.each do |recipe|%>
-          <div class="row">
-            <div class="col-sm-4">
-              <img class="img-fluid mh-100 rounded" src="https://cdn-image.foodandwine.com/sites/default/files/1483039291/chickpeas-and-kale-in-spicy-pomodoro-sauce-XL-RECIPE0217.jpg" alt="Card image cap">
-            </div>
-            <div class="col-sm-8">
-              <div class="recipe-info py-3">
-                <h3 class="title text-indigo-dark3"><%=recipe.name%></h3>
-                <p class="description"><%=recipe.description%></p>
-                <div class="the-icons my-3 text-muted h6 d-flex align-items-start">
-                  <span class="mr-3">
-                    <i class="material-icons">timer</i> <%=recipe.cooking_time%> mn
-                  </span>
-                  <span class="mr-3">
-                    <i class="material-icons">shopping_cart</i> <%= recipe.cost%> €
-                  </span>
-                  <span class="mr-3">
-                    <i class="material-icons">thumb_up</i> <%= recipe.likes.count %>
-                  <!-- <%= recipe.likes.count %> <%= (recipe.likes.count) == 1 ? 'Like' : 'Likes'%> -->
-                  </span>
-                </div>
-                <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3" %>
-                <%#if user_signed_in?%>
-                  <%# button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-outline-primary px-3", method: "post" %>
-                <%#end%>
-              </div>
-            </div>
-          </div>
-          <hr class="my-4">
-        <% end %>
+        <%= render @recipes %>
       </div>
     </div>
   </div>
+
 </div>
 
 

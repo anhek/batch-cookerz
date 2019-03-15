@@ -1,11 +1,137 @@
-@import 'colors.scss';
-
 body {
-  font-family: "Open Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;  
+  font-family: "Open Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  color: $grey1;
+}
+
+a:hover {
+  text-decoration: none;
+  color: lighten($secondary, .5);
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: "Overpass", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-  color: $orange1;
+  color: $secondary;
   font-weight: 700;
+}
+
+h1, .h1 {
+  font-size: 2.4rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 2.7rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 3em;
+  }
+}
+
+h2, .h2 {
+  font-size: 2.1rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 2.4rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 2.7em;
+  }
+}
+
+h3, .h3 {
+  font-size: 1.8rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 2.1rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 2.4rem;
+  }
+}
+
+h4, .h4 {
+  font-size: 1.5rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.8rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 2.1rem;
+  }
+}
+
+h5, .h5 {
+  font-size: 1.2rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.5rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 1.8rem;
+  }
+}
+
+h6, .h6 {
+  font-size: 1rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.1rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 1.2rem;
+  }
+}
+
+
+// Type display classes
+.display-1 {
+  font-size: 3rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 3.3rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 3.6rem;
+  }
+}
+
+.display-2 {
+  font-size: 2.7rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 3rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 3.3rem;
+  }
+}
+
+.display-3 {
+  font-size: 2.4rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 2.7rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 3rem;
+  }
+}
+
+.display-4 {
+  font-size: 2.1rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 2.4rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 2.7rem;
+  }
 }

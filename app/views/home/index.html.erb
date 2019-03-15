@@ -1,75 +1,41 @@
 <!-- JUMBOTRON -->
-<div class="d-flex align-items-center justify-content-center" id="home">
+<div class="block d-flex align-items-center justify-content-center" id="home">
   <div class="text-center">
-    <h2 class="text-white mb-4 display-4 font-weight-normal">Préparez le week-end, <br> assemblez la semaine !</h2>
-    <h3 class="h5 text-white font-weight-normal"> Composez votre batch en indiquant vos 3 ingrédients préférés</h3>
-    <div class="input-group input-group-lg mb-3 block-600 mt-3">
-      <%= form_tag({:controller => "recipes", :action => "index"}, :method => "get") do %>
-        Store <%= text_field_tag :ingredient %>
-        <%= submit_tag 'Chercher les recettes', name: nil %>
+    <h2 class="text-white mb-4 display-2 font-weight-normal">Préparez le week-end, <br> assemblez la semaine !</h2>
+    <h3 class="h6 text-white font-weight-normal"> Composez votre batch en indiquant vos 3 ingrédients préférés</h3>
+
+      <%= form_tag({:controller => "recipes", :action => "index"}, :method => "get", class:'input-group input-group-lg') do %>
+        <%= text_field_tag :ingredient %>
+        <div class="input-group-append">
+          <%= submit_tag 'Chercher les recettes', name: nil, class:'btn btn-primary' %>
+        </div>
       <% end %>
-      <div class="input-group-append">
-        <button class="btn btn-primary" type="button" id="button-addon2"><i class="material-icons">search</i></button>
-      </div>
-    </div>
+
   </div>
 </div>
 
-<div class="bg-dark p-6">
-  <div class="block-800">
-    <div class="">
-      <header class="text-center text-white mb-4">
-        <h2>Bienvenue dans la communauté des Batch Cookerz ! </h2>
-      </header>
-      <section>
-        <h4 class="h4 text-white text-center">Le batch cooking, comment ? pour qui ? pourquoi ? <br> Ici se retrouve tout ceux qui aiment cuisiner et manger de bons petits plats. Grace à notre site, tu pourras cuisiner tes repas pour toute la semaine en quelques heures, lorsque ton emploi du temps te le permettra !</h4>
-      </section>
-    </div>
+<div class="bg-dark">
+  <div class="block block-1000">
+    <header class="text-center text-white mb-4">
+      <h3 class="text-primary">Bienvenue dans la communauté <br>des Batch Cookerz ! </h3>
+    </header>
+    <section>
+      <p class="h5 text-white text-center font-weight-normal">Le batch cooking, comment ? pour qui ? pourquoi ? <br> Ici se retrouve tout ceux qui aiment cuisiner et manger de bons petits plats. Grace à notre site, tu pourras cuisiner tes repas pour toute la semaine en quelques heures, lorsque ton emploi du temps te le permettra !</p>
+    </section>
   </div>
 </div>
 
-<div class="container p-6 px-4">
+<div class="block container">
 
   <header class="text-center mb-5">
-    <h2 class="text-dark">Voici une liste de nos recettes favorites</h2>
+    <h3 class="h4 text-dark">Nos recettes du moment</h2>
   </header>
 
   <div class="card-deck">
-
-    <div class="card">
-      <!-- <div class="bg-dark d-inline-block mb-4" style="height: 237px; width: 100%;"></div> -->
-      <%= image_tag 'misovg', class:"w-100" %>
-      <div class="card-body">
-        <h4 class="card-title font-weight-bold">Miso végétarien</h4>
-        <p class="card-text">Une super recette batch cooké super bon à</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-
-    <div class="card">
-      <!-- <div class="bg-dark d-inline-block mb-4" style="height: 237px; width: 100%;"></div> -->
-      <%= image_tag 'misovg', class:"w-100" %>
-      <div class="card-body">
-        <h4 class="card-title font-weight-bold">Miso végétarien</h4>
-        <p class="card-text">Une super recette batch cooké super bon à</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-
-    <div class="card">
-      <!-- <div class="bg-dark d-inline-block mb-4" style="height: 237px; width: 100%;"></div> -->
-      <%= image_tag 'misovg', class:"w-100" %>
-      <div class="card-body">
-        <h4 class="card-title font-weight-bold">Miso végétarien</h4>
-        <p class="card-text">Une super recette batch cooké super bon à</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-
   </div>
 
   <footer class="text-center p-5">
-    <%= link_to "Voir toutes les recettes", recipes_path, class:"btn btn-primary rounded-pill btn-lg" %>
+    <%= link_to "Voir toutes les recettes", recipes_path, class:"btn btn-outline-primary btn-lg" %>
   </footer>
 
 </div>
