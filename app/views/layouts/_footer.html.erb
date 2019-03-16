@@ -6,20 +6,27 @@
           <p>Préparez tous vos repas le week-end, réassemblez la semaine !</p>
         </div>
         <div id="sitemap" class="col-sm">
+          <p class="h5">Plan du site</p>
           <ul>
             <li class="nav-item">
-              <%= link_to 'La Team', team_path, class: 'nav-link' %>
+              <%= link_to "Accueil", root_path, class: 'nav-link d-inline-block' %>
             </li>
             <li class="nav-item">
-                <%= link_to 'Voir toutes les recettes', recipes_path, class: 'nav-link' %>
+                <%= link_to 'Les recettes', recipes_path, class: 'nav-link d-inline-block' %>
             </li>
             <li class="nav-item">
-                <%= link_to 'Contactez-nous', contact_path, class: 'nav-link' %>
+              <%= link_to "L'équipe", team_path, class: 'nav-link d-inline-block' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Le concept', concept_path, class: 'nav-link d-inline-block' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Contactez-nous', contact_path, class: 'nav-link d-inline-block' %>
             </li>
           </ul>
         </div>
         <div id="social-links" class="col-sm">
-          <p class="h5">Suivez-nous sur les réseaux sociaux</p>
+          <p class="h5">Rejoignez-nous <br> sur les réseaux sociaux</p>
           <div id="social-icons">
             <a href="#" class="h3"><i class="fab fa-facebook"></i></a>
             <a href="#" class="h3"><i class="fab fa-twitter"></i></a>

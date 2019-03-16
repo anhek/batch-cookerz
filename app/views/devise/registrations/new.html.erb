@@ -1,7 +1,10 @@
 <div class="bg-container" id="sign_up">
   <div class="block block-500 bg-white text-center p-5 rounded">
 
-  <h2 class="mb-4">Créer un compte</h2>
+  <h2 class="mb-2">Créer un compte</h2>
+
+  <p class="mb-4">Rejoignez notre communauté de Batch Cookerz pour sauvegarder votre liste de recettes favorites et partagez les vôtres !</p>
+
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 

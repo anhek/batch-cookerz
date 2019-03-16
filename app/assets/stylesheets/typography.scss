@@ -32,10 +32,6 @@ h2, .h2 {
   @include media-breakpoint-up(sm) {
     font-size: 2.4rem;
   }
-
-  @include media-breakpoint-up(xl) {
-    font-size: 2.7em;
-  }
 }
 
 h3, .h3 {
@@ -44,44 +40,28 @@ h3, .h3 {
   @include media-breakpoint-up(sm) {
     font-size: 2.1rem;
   }
-
-  @include media-breakpoint-up(xl) {
-    font-size: 2.4rem;
-  }
 }
 
 h4, .h4 {
   font-size: 1.5rem;
 
   @include media-breakpoint-up(sm) {
-    font-size: 1.8rem;
-  }
-
-  @include media-breakpoint-up(xl) {
-    font-size: 2.1rem;
+    font-size: 1.7rem;
   }
 }
 
 h5, .h5 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 
   @include media-breakpoint-up(sm) {
-    font-size: 1.5rem;
-  }
-
-  @include media-breakpoint-up(xl) {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 }
 
 h6, .h6 {
-  font-size: 1rem;
+  font-size: 1.1rem;
 
   @include media-breakpoint-up(sm) {
-    font-size: 1.1rem;
-  }
-
-  @include media-breakpoint-up(xl) {
     font-size: 1.2rem;
   }
 }

@@ -8,11 +8,10 @@
 
   <div class="col-sm-8">
     <div class="recipe-info py-3">  
-      <%= link_to recipe_path(recipe), class: "title h5" do %>
-        <%=recipe.name%>
+      <%= link_to recipe_path(recipe), class: "title h4" do %>
+        <%= recipe.name %>
       <% end %>
-      <p class="description"><%=recipe.description%></p>
-      <div class="the-icons my-3 text-grey1 h6 font-weight-normal">
+      <div class="the-icons my-2 text-grey1 h6 font-weight-normal">
         <span class="mr-4">
           <i class="far fa-clock mr-1"></i> <%=recipe.cooking_time%> mn
         </span>
@@ -24,6 +23,7 @@
         <!-- <%= recipe.likes.count %> <%= (recipe.likes.count) == 1 ? 'Like' : 'Likes'%> -->
         </span>
       </div>
+      <p class="description"><%=recipe.description%></p>
       <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3" %>
       <%#if user_signed_in?%>
         <%# button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-outline-primary px-3", method: "post" %>

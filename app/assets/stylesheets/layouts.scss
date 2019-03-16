@@ -89,6 +89,15 @@
   }
 }
 
+// RECIPE INDEX PAGE
+
+#index-recipes {
+  .col-sm-12 {
+    hr:last-child {
+      display: none;
+    }
+  }
+}
 
 // FOOTER 
 
@@ -116,6 +125,14 @@
 
   #sitemap {
     text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      text-align: left;
+    }
+
+    p {
+      color: $indigo1;
+    }
 
     ul {
       list-style-type: none;
