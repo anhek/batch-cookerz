@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  # before_create :default_image
+  before_create :default_image
 
   after_create :send_welcome_email_to_new_user, :send_new_user_email_to_admin, :attribute_menu_to_new_user
 
