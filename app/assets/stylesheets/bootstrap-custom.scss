@@ -28,6 +28,10 @@ $theme-colors: (
   "indigo-dark3": $indigo-dark3
 );
 
+.alert {
+  border-radius: 0 !important;
+}
+
 
 // // CUSTOMIZED SPACERS
 

@@ -1,11 +1,11 @@
 <!-- JUMBOTRON -->
 <div class="block d-flex align-items-center justify-content-center" id="home">
   <div class="text-center">
-    <h2 class="text-white mb-4 display-2 font-weight-normal">Préparez le week-end, <br> assemblez la semaine !</h2>
-    <h3 class="h6 text-white font-weight-normal"> Composez votre batch en indiquant vos 3 ingrédients préférés</h3>
+    <h2 class="text-white mb-4 display-2 font-weight-normal">Préparez vos repas une seule fois, <br> assemblez la semaine !</h2>
+    <h3 class="h6 text-white font-weight-normal">Composez votre batch-cooking en indiquant des ingrédients</h3>
 
       <%= form_tag({:controller => "recipes", :action => "index"}, :method => "get", class:'input-group input-group-lg') do %>
-        <%= text_field_tag :ingredient %>
+        <%= text_field_tag :ingredient, "", class: 'form-control rounded-left' %>
         <div class="input-group-append">
           <%= submit_tag 'Chercher les recettes', name: nil, class:'btn btn-primary' %>
         </div>
@@ -20,7 +20,7 @@
       <h3 class="text-primary">Bienvenue dans la communauté <br>des Batch Cookerz ! </h3>
     </header>
     <section>
-      <p class="h5 text-white text-center font-weight-normal">Le batch cooking, comment ? pour qui ? pourquoi ? <br> Ici se retrouve tout ceux qui aiment cuisiner et manger de bons petits plats. Grace à notre site, tu pourras cuisiner tes repas pour toute la semaine en quelques heures, lorsque ton emploi du temps te le permettra !</p>
+      <p class="h5 text-white text-center font-weight-normal">Le batch cooking, comment ? pour qui ? pourquoi ? <br> Ici se retrouve tous ceux qui aiment cuisiner et manger de bons petits plats. Grace à notre site, tu pourras cuisiner tes repas pour toute la semaine en quelques heures le week-end.</p>
     </section>
   </div>
 </div>
