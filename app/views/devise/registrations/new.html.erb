@@ -1,7 +1,7 @@
 <div class="bg-container" id="sign_up">
   <div class="block block-500 bg-white text-center p-5 rounded">
 
-  <h2 class="mb-4">Inscription</h2>
+  <h2 class="mb-4">Créer un compte</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -24,7 +24,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Créer mon compte", class:"btn btn-lg btn-primary mb-3" %>
+      <%= f.submit "S'enregistrer", class:"btn btn-lg btn-primary mb-3" %>
     </div>
   <% end %>
 
