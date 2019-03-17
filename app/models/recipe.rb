@@ -63,5 +63,7 @@ class Recipe < ApplicationRecord
     return recipes
   end
 
+  has_one_attached :picture 
+  
   
 end
