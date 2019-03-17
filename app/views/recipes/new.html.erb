@@ -5,6 +5,7 @@
   <%= form.text_field :description, placeholder: "Description" %> <br />
   <%= form.number_field :preparation_time, placeholder: "Temps de préparation" %> <br />
   <%= form.number_field :cooking_time, placeholder: "Temps de cuisson" %> <br />
+  <% render 'picture'%>
   <%for ingredient in Ingredient.all%>
       <%=form.check_box :ingredient, {multiple: true}, ingredient.id%> <%=ingredient.name%><br/>
   <%end%>
