@@ -1,5 +1,5 @@
 <h2>Proposer une nouvelle recette<h2>
-<%= form_with model: @recipe do |form| %>
+<%= form_with model: @recipe, method: 'CREATE' do |form| %>
   <%= form.text_field :name, placeholder: "Nom" %> <br />
   <%= form.collection_select :recipe_category, RecipeCategory.order(:name),:id,:name, include_blank: true %><br />
   <%= form.text_field :description, placeholder: "Description" %> <br />
