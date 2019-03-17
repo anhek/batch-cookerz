@@ -1,41 +1,70 @@
 <!-- JUMBOTRON -->
-<div class="block d-flex align-items-center justify-content-center" id="home">
-  <div class="text-center">
-    <h2 class="text-white mb-4 display-2 font-weight-normal">Préparez vos repas une seule fois, <br> assemblez la semaine !</h2>
-    <h3 class="h6 text-white font-weight-normal">Composez votre batch-cooking en indiquant des ingrédients</h3>
+<section class="block d-flex flex-column justify-content-center align-items-center" id="home">
+    <header class="text-center">
+      <h2 class="text-white mb-4 display-2 font-weight-normal">Préparez vos repas une seule fois, <br>et assemblez la semaine !</h2>
+      <h3 class="h5 text-white font-weight-normal">Composez votre batch-cooking en indiquant des ingrédients</h3>
+    </header>
+    <div id="search-bar">
+    <%= form_tag({:controller => "recipes", :action => "index"}, :method => "get", class:'input-group input-group-lg') do %>
+      <%= text_field_tag :ingredient, "", class: 'form-control rounded-left' %>
+      <div class="input-group-append">
+        <%= submit_tag 'Chercher les recettes', name: nil, class:'btn btn-primary' %>
+      </div>
+    <% end %>
+    </div>
+</section>
 
-      <%= form_tag({:controller => "recipes", :action => "index"}, :method => "get", class:'input-group input-group-lg') do %>
-        <%= text_field_tag :ingredient, "", class: 'form-control rounded-left' %>
-        <div class="input-group-append">
-          <%= submit_tag 'Chercher les recettes', name: nil, class:'btn btn-primary' %>
-        </div>
-      <% end %>
-
-  </div>
-</div>
-
-<div class="bg-dark">
-  <div class="block block-1000">
+<section class="bg-dark">
+  <div class="block block-800">
     <header class="text-center text-white mb-4">
       <h3 class="text-primary">Bienvenue dans la communauté <br>des Batch Cookerz ! </h3>
     </header>
-    <section>
-      <p class="h5 text-white text-center font-weight-normal">Le batch cooking, comment ? pour qui ? pourquoi ? <br> Ici se retrouve tous ceux qui aiment cuisiner et manger de bons petits plats. Grace à notre site, tu pourras cuisiner tes repas pour toute la semaine en quelques heures le week-end.</p>
-    </section>
+    <article>
+      <p class="h4 text-white text-center font-weight-normal">Le batch cooking, comment ? pour qui ? pourquoi ? <br> Ici se retrouve tous ceux qui aiment cuisiner et manger de bons petits plats. Grace à notre site, tu pourras cuisiner tes repas pour toute la semaine en quelques heures le week-end.</p>
+    </article>
   </div>
-</div>
+</section>
 
-<div class="block container">
+<section class="bg-white">
+  <div class="block block-1000">
+    <header class="text-center mb-4"> 
+      <h3 class="h2 text-secondary">Composez votre batch-cooking <br> <span class="h3 font-weight-normal">selon votre régime alimentaire</span></h3>
+    </header>
+    <div class="row">
 
-  <header class="text-center mb-5">
-    <h3 class="h4 text-dark">Nos recettes du moment</h2>
-  </header>
+      <div class="col-sm">
+        <div class="bg-vegan d-inline-block mb-4 rounded d-flex align-items-center justify-content-center" style="height: 260px; width: 100%;">
+          <h3 class="text-white text-center py-3 px-4 position-absolute">Végétalien</h3>
+        </div>
+      </div>
 
-  <div class="card-deck">
+      <div class="col-sm">
+        <div class="bg-vegetarian d-inline-block mb-4 rounded d-flex align-items-center justify-content-center" style="height: 260px; width: 100%;">
+          <h3 class="text-white text-center py-3 px-4 position-absolute">Végétarien</h3>
+        </div>
+      </div>
+
+      <div class="col-sm">
+        <div class="bg-omnivore d-inline-block mb-4 rounded d-flex align-items-center justify-content-center" style="height: 260px; width: 100%;">
+          <h3 class="text-white text-center py-3 px-4 position-absolute">Omnivore</h3>
+        </div>
+      </div>
+
+    </div>
+    <footer class="text-center p-3">
+      <%= link_to "Voir nos dernières recettes", recipes_path, class:"h5" %>
+    </footer>
   </div>
+</section>
 
-  <footer class="text-center p-5">
-    <%= link_to "Voir toutes les recettes", recipes_path, class:"btn btn-outline-primary btn-lg" %>
-  </footer>
-
-</div>
+<section class="bg-indigo5 ">
+  <div class="block container">
+    <header class="text-center mb-5">
+      <h3>En manque d'inspiration ?</h3>
+      <h3 class="h4 font-weight-normal">Nos recettes du moment</h2>
+    </header>
+    <footer class="text-center p-5">
+      <%= link_to "Voir toutes les recettes", recipes_path, class:"btn btn-outline-primary btn-lg" %>
+    </footer>
+  </div>
+</section>
