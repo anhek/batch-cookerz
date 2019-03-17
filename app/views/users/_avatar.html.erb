@@ -1,8 +1,6 @@
-<h3>Avatar actuel</h3>
-<div class="avatar-profile">
-
+<div class="avatar-profile d-flex justify-content-center mb-3">
   <%if @user.avatar.attached?%>
-    <%= image_tag @user.avatar%>
+    <%= image_tag @user.avatar %>
   <%else%>
     <%= @user.default_image %> 
     <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>

@@ -61,7 +61,7 @@
     background-image: image_url('geo-darwin-39403-unsplash.jpg');
   }
   &.log_in {
-    background-image: image_url('webvilla-293-unsplash.jpg');
+    background-image: image_url('syd-wachs-120739-unsplash-02.jpg');
   }
   &#index-recipes {
     background-image: image_url('webvilla-293-unsplash.jpg');
@@ -69,41 +69,9 @@
   &#show-recipes {
     background-image: image_url('webvilla-293-unsplash.jpg');
   }
-}
-
-// HOME PAGE
-
-#home {
-  min-height: 500px;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */  
-  background-image: image_url('maarten-van-den-heuvel-400626-unsplash.jpg');
-
-  @include media-breakpoint-up(sm) {
-    min-height: 600px;
-  }
-
-  @include media-breakpoint-up(xl) {
-    min-height: 800px;
-  }
-}
-
-a.diet-choice {
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  width: 100%;
-  height: 280px;
-  display: inline-block;
-
-  &.diet-vegan {
-    background-image: image_url('the-creative-exchange-1309304-unsplash');
-    &:hover {
-      background-color: red;
-    }
-  }
-
+  &#user-profile {
+    background-image: image_url('webvilla-293-unsplash.jpg');
+  }  
 }
 
 // RECIPE INDEX PAGE
@@ -196,7 +164,6 @@ a.diet-choice {
           }
         }
       }
-
     }
   }
 }

@@ -1,8 +1,19 @@
-<h2> Mes recettes favorites </h2>
-<p>
-  <% @recipes.each do |recipe| %>
-  <%= recipe.name%>
-  <%= link_to "Voir ma recette favorite. ", recipe_path(recipe) %><br />
+<div class="mb-5">
 
-  <%end%>
-</p>
+  <h4> <i class="far fa-thumbs-up mr-1"></i> Mes recettes favorites </h4>
+  <div class="table-responsive">
+    <table class="table">
+      <% i = 1 %>
+      <tbody>  
+        <% @recipes.each do |recipe| %>
+          <tr>
+            <th scope="row"><%= i %></th>
+            <td class="font-weight-bold"><%= recipe.name%> <i class="fas fa-seedling text-vegan ml-2"></td>
+            <td><%= link_to "Voir la recette", recipe_path(recipe) %></td>
+          </tr>
+          <% i += 1 %>
+        <%end%>
+      </tbody>  
+    </table>
+  </div>
+</div>

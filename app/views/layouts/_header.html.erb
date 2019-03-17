@@ -18,7 +18,7 @@
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Le concept', concept_path, class: 'nav-link' %>
+          <%= link_to 'Le Concept', concept_path, class: 'nav-link' %>
         </li>
 
         <%if user_signed_in?%>
@@ -33,8 +33,12 @@
             </a>
             <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
               <% if user_signed_in? %>
-                <%= link_to "Profil", user_path(current_user), class: "dropdown-item" %>
-                <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+                <%= link_to user_path(current_user), class: "dropdown-item text-right" do %>
+                Mon Profil <i class="fas fa-user-circle ml-2"></i>
+                <% end %>
+                <%= link_to destroy_user_session_path, class: "dropdown-item text-right", method: :delete do %>
+                Me déconnecter <i class="fas fa-sign-out-alt ml-2"></i>
+                <% end %>
               <% end %>
             </div>
           </li>
