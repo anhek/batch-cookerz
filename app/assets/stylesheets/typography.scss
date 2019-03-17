@@ -1,6 +1,9 @@
+$overpass-font-family: "Overpass", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+$opensans-font-family: "Open Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+
 body {
-  font-family: "Open Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-  color: $grey1;
+  font-family: $opensans-font-family;
+  color: $grey-dark5;
 }
 
 a:hover {
@@ -8,8 +11,9 @@ a:hover {
   color: lighten($secondary, .5);
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  font-family: "Overpass", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $overpass-font-family;
   color: $secondary;
   font-weight: 700;
 }

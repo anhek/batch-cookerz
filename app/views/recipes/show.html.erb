@@ -1,58 +1,8 @@
+<% content_for(:title, @recipe.name) %>
+
 <div class="bg-container" id="show-recipes">
-  <div class="block block-800 bg-white rounded-top text-center"">
 
-    <h2> <%= @recipe.name%> </h2>
-
-    <p>
-      <%= @recipe.cost %><br>
-      <%= @recipe.description %><br>
-      <%= @recipe.preparation_time %><br>
-      <%= @recipe.cooking_time %> 
-    </p>
-
-    <% @comments.each do |comment|%>
-    <div class="container-comment">
-
-      <div class="avatar-comments">
-        <%if comment.user.avatar.attached? %>
-          <%= image_tag comment.user.avatar, alt: 'avatar' %>
-        <% else %>
-          <%= image_tag comment.user.default_image, alt: 'avatar' %>
-        <% end %>
-      </div>
-
-      <div>
-        <p><%= comment.description %></p>
-        <p><%= comment.user.nickname %></p>
-      </div>
-    </div>
-    <% end %>
-
-<% if user_signed_in?%>
-
-  <div class="container-comment">
-    <%= form_with model: @comment, url:recipe_comments_path(@recipe.id) do |form| %>
-    <%= form.text_field :description%>
-    <%= form.submit class: "btn btn-secondary"%>
-    <% end%>
-  </div>
-
-  <p>
-    <% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
-    <% if pre_like %>
-      <%= button_to 'Unlike', recipe_like_path(@recipe, pre_like), method: :delete %>
-    <% else %>
-      <%= button_to 'Like', recipe_likes_path(@recipe), method: :post %>
-    <% end %>
-  </p>
-<% end %>
-
-<p> <%= @recipe.likes.count %> <%= (@recipe.likes.count) == 1 ? 'Like' : 'Likes'%> </p>
-<p> <%# button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-outline-primary px-3", method: "post" %> </p>
-
-<p> <%= link_to "Voir les autres recettes", recipes_path(@recipes) %>
-
-
-</div>
+  <%= render "recipes/recipe_content" %>
+  <%= render "recipes/recipe_comments" %>
 
 </div>

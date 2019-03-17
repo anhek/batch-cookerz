@@ -1,0 +1,92 @@
+  <div class="block block-800 bg-white rounded text-center mb-4 mb-lg-5">
+
+    <header class="recipe-title mb-3 mb-md-4">
+      <h1 class="h2 mb-0"> <%= @recipe.name%> </h1>
+      <p>Recette proposé par Matthieu</p>
+    </header>
+
+
+    <div class="row mb-4">
+      <div class="col-12 col-md-8 pr-md-0">
+        <%= image_tag("the-creative-exchange-1309304-unsplash", class:"w-100")%>
+      </div>
+      <div class="col-12 col-md-4 pl-md-0">
+        <div class="bg-dark p-4 h-100">
+          <div class="the-icons text-white text-left h4 font-weight-normal">
+            <ul class="list-unstyled">
+              <li class="mb-2 h2 text-white">
+              <% if user_signed_in?%>
+                <% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
+                <% if pre_like %>
+                  <%= link_to recipe_like_path(@recipe, pre_like), method: :delete do %>
+                    <i class="fas fa-heart mr-1"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to recipe_likes_path(@recipe), method: :post do %>
+                    <i class="far fa-heart mr-1"></i>
+                  <% end %>
+                <% end %>
+                <%= @recipe.likes.count %> <%= (@recipe.likes.count) == 1 ? '' : ''%>
+                <% else %>
+                  <i class="far fa-heart mr-1"></i> <%= @recipe.likes.count %>
+              <% end %>
+              </li>
+              <li class="mb-2">
+                <span class="h6 text-indigo2">Préparation</span><br>
+                <span class="h5 text-indigo4"><i class="far fa-clock mr-1"></i></span> <%=@recipe.preparation_time%> mn
+              </li>
+              <li class="mb-2">
+                <span class="h6 text-indigo2">Temps</span><br>
+                <span class="h5 text-indigo4"><i class="far fa-clock mr-1"></i></span> <%=@recipe.cooking_time%> mn
+              </li>
+              <li class="mb-2">
+                <span class="h6 text-indigo2">Prix</span><br>
+                 <span class="h5 text-indigo4"><i class="fas fa-tag mr-1"></i></span> <%= @recipe.cost%> €
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="recipe-picture mb-4">
+      <%= image_tag("the-creative-exchange-1309304-unsplash", class:"w-100 rounded", style: "height: 400px")%>
+    </div> -->
+
+    <article class="recipe-content text-left mb-5">
+    
+      <div class="row">
+        <div class="col-12">
+          <div class="ingredients p-5 bg-grey5 rounded mb-4">
+            <h3 class="h4">Ingrédients</h3>
+            <ul>
+              <li>6 tomates (mûres)</li>
+              <li>4 poivrons verts</li> 
+              <li>2 oignons</li>
+              <li>2 gousses d'ail</li>
+              <li>Poivre</li>
+              <li>Sel</li>
+          </div> 
+        </div>
+
+        <div class="col-12">
+          <div class="preparation p-5 border border-grey3 rounded">
+            <h3 class="h4">Préparation</h3>
+            <%= @recipe.description %><br>
+            <p>Commencez par la pâte à ravioli. Versez la farine dans un saladier et ajoutez peu à peu l’eau en mélangeant. Une fois toute l’eau utilisée, travaillez la pâte avec les mains jusqu’à l’obtention d’une texture élastique. Au début ça colle un peu aux mains mais plus vous travaillez la pâte et moins ça sera le cas. Cette étape peut être réalisée au pétrin. Filmez et laissez reposer à température ambiante pendant au moins 30 minutes.<br><br>
+
+            Ensuite préparez la farce. Pelez l’ail, l’oignon et panais. Emincez finement l’oignon et le panais avant de les faire dorer à la poêle. Ajoutez l’ail écrasé et laissez cuire jusqu’à ce que l’oignon soit transparent. Réservez.<br><br>
+
+            Placez vos morceaux de courge cuite dans un saladier et écrasez-les au presse-purée (ou à la fourchette). Ajoutez la purée de sésame, la maïzena, la levure maltée, le psyllium et le contenu de la poêle (oignon, ail et panais). Mélangez bien et assaisonnez avec la muscade, le sel et le poivre.<br><br>
+
+            Une fois la pâte reposée, farinez votre plan de travail et votre rouleau. Étalez cette pâte le plus finement possible. N’hésitez pas à refariner au fur et à mesure le plan de travail et le rouleau pour éviter que ça colle. Cette étape peut être réalisée à la machine à pâte si vous en avez une.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <%# button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-outline-primary px-3", method: "post" %>
+
+    <%= link_to "Voir les autres recettes", recipes_path(@recipes), class: 'btn btn-outline-primary btn-lg' %>
+
+  </div>
