@@ -9,7 +9,7 @@
   }
 
   @include media-breakpoint-up(xl) {
-    padding: $spacer * 4 $spacer * 3;
+    padding: $spacer * 5 $spacer * 3;
   }
 }
 
@@ -87,6 +87,23 @@
   @include media-breakpoint-up(xl) {
     min-height: 800px;
   }
+}
+
+a.diet-choice {
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  width: 100%;
+  height: 280px;
+  display: inline-block;
+
+  &.diet-vegan {
+    background-image: image_url('the-creative-exchange-1309304-unsplash');
+    &:hover {
+      background-color: red;
+    }
+  }
+
 }
 
 // RECIPE INDEX PAGE

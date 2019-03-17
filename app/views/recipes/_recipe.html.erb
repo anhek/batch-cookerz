@@ -8,9 +8,10 @@
 
   <div class="col-sm-8">
     <div class="recipe-info py-3">  
-      <%= link_to recipe_path(recipe), class: "title h4" do %>
+      <%= link_to recipe_path(recipe), class: "title h4 mr-2" do %>
         <%= recipe.name %>
-      <% end %>
+      <% end %> 
+      <span class="h5"> <i class="fas fa-seedling text-vegan"></i> <i class="fas fa-drumstick-bite text-omnivore"></i> <i class="fas fa-cheese text-vegetarian"></i> </span>
       <div class="the-icons my-2 text-grey1 h6 font-weight-normal">
         <span class="mr-4">
           <i class="far fa-clock mr-1"></i> <%=recipe.cooking_time%> mn
