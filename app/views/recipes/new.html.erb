@@ -7,7 +7,7 @@
   <%= form.number_field :cooking_time, placeholder: "Temps de cuisson" %> <br />
   <%= form.select :price_indicator, options_for_select([['€',1],['€€',2],['€€€',3],['€€€€',4],['€€€€€',5]])%>
 
-  <%= render 'picture'%>
+  
   <%for ingredient in Ingredient.all%>
       <%=form.check_box :ingredient, {multiple: true}, ingredient.id%> <%=ingredient.name%><br/>
   <%end%>
