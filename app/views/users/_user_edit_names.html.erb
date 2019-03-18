@@ -1,0 +1,24 @@
+<div class="col-12 col-md-8">
+  <div class="user-content bg-white p-4 p-lg-5 rounded">
+
+    <h3 class="h2 font-weight-normal"><i class="far fa-user mr-1 mb-3"></i> Éditer mon profil</h3>
+
+    <%= form_with model: @user, method: 'PATCH', class: 'mb-3' do |f| %>
+      <%= f.label 'Prénom' %>
+      <%= f.text_field :first_name, class: 'form-control mb-3', placeholder: @user.first_name %>
+      <%= f.label 'Nom' %>
+      <%= f.text_field :last_name, class: 'form-control mb-3', placeholder: @user.last_name %>
+      <%= f.label 'Pseudo' %>
+      <%= f.text_field :nickname, class: 'form-control mb-4', placeholder: @user.nickname %>
+      <%= f.submit 'Mettre à jour', class:"btn btn-primary" %>
+    <% end %>
+
+    <hr class="bg-grey5">
+
+    <%= render 'avatar_edit'%>
+    
+    <div class="text-center">
+      <%= link_to 'Retournez à la page de profil', user_path(current_user), class: 'btn btn-outline-secondary mt-5' %>
+    </div>
+  </div>
+</div>

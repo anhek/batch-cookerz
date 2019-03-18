@@ -32,20 +32,24 @@
               <% end %>
               </li>
               <li class="mb-2">
-                <span class="h6 text-indigo2">Préparation</span><br>
+                <span class="h6 text-indigo2">Temps de préparation</span><br>
                 <span class="h5 text-indigo4"><i class="far fa-clock mr-1"></i></span> <%=@recipe.preparation_time%> mn
               </li>
               <li class="mb-2">
-                <span class="h6 text-indigo2">Temps</span><br>
+                <span class="h6 text-indigo2">Temps de cuisson</span><br>
                 <span class="h5 text-indigo4"><i class="far fa-clock mr-1"></i></span> <%=@recipe.cooking_time%> mn
               </li>
               <li class="mb-4">
-                <span class="h6 text-indigo2">Prix</span><br>
+                <span class="h6 text-indigo2">Tranche de prix</span><br>
                  <span class="h5 text-white"><%@recipe.price_indicator.times do %>€
                   <%end%>
               </li>
               <%if user_signed_in?%>
-                <%= button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-indigo1 px-3", method: "post" %>
+                <li class="mb-4">
+                  <%= link_to menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-indigo1 py-2 w-100 text-uppercase", method: "post" do %>
+                    <small>Ajouter à mon</small> <br> <span class="h5 text-white">menu</span>
+                  <% end %>
+                </li>
               <% end %>
             </ul>
           </div>
@@ -53,15 +57,11 @@
       </div>
     </div>
 
-    <!-- <div class="recipe-picture mb-4">
-      <%= image_tag("the-creative-exchange-1309304-unsplash", class:"w-100 rounded", style: "height: 400px")%>
-    </div> -->
-
     <article class="recipe-content text-left mb-5">
     
       <div class="row">
         <div class="col-12">
-          <div class="ingredients p-5 bg-grey5 rounded mb-4">
+          <div class="ingredients p-4 p-md-5 bg-grey5 rounded mb-4">
             <h3 class="h4">Ingrédients</h3>
             <ul>
               <li>6 tomates (mûres)</li>
@@ -74,7 +74,7 @@
         </div>
 
         <div class="col-12">
-          <div class="preparation p-5 border border-grey3 rounded">
+          <div class="preparation p-4 p-md-5 border border-grey3 rounded">
             <h3 class="h4">Préparation</h3>
             <%= @recipe.description %><br>
             <p>Commencez par la pâte à ravioli. Versez la farine dans un saladier et ajoutez peu à peu l’eau en mélangeant. Une fois toute l’eau utilisée, travaillez la pâte avec les mains jusqu’à l’obtention d’une texture élastique. Au début ça colle un peu aux mains mais plus vous travaillez la pâte et moins ça sera le cas. Cette étape peut être réalisée au pétrin. Filmez et laissez reposer à température ambiante pendant au moins 30 minutes.<br><br>
