@@ -84,6 +84,19 @@
   }
 }
 
+// HEADER
+
+header .navbar-nav {
+
+  .nav-item:first-child {
+    margin-top: $spacer * 1;
+    @include media-breakpoint-up(lg) {
+      margin-top: 0;
+    }
+  } 
+} 
+
+
 // FOOTER 
 
 #footer {
@@ -116,7 +129,7 @@
     }
 
     p {
-      color: $indigo1;
+      color: $white;
     }
 
     ul {
@@ -125,7 +138,7 @@
 
       li a {
         padding: 0 0 5px 0;
-        color: $indigo1;
+        color: $indigo4;
         &:hover {
           color: $indigo3;
         }
@@ -137,7 +150,7 @@
 
     p {
       text-align: center;
-      color: $indigo1;
+      color: $white;
 
       @include media-breakpoint-up(sm) {
         text-align: right;
