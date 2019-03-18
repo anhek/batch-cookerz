@@ -11,7 +11,7 @@ class Recipe < ApplicationRecord
     validates :description, presence: true
     validates :preparation_time, presence: true
     validates :cooking_time, presence: true
-    validates :cost, presence: true
+    validates :price_indicator, presence: true
     validates :recipe_category_id, presence: true
 
   
