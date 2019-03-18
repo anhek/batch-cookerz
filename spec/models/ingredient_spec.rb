@@ -28,10 +28,6 @@ RSpec.describe Ingredient, type: :model do
       it { expect(@ingredient).to validate_presence_of(:calories) }
     end
 
-    describe "#price" do 
-      it { expect(@ingredient).to validate_presence_of(:price) }
-    end
-
     # describe "#email" do
     #   it { expect(@user).to validate_presence_of(:email) }
     #   it { expect(@user).not_to allow_value("blah").for(:email) }
