@@ -9,7 +9,7 @@ class MenusController < ApplicationController
   private
 
   def is_my_menu!
-    if User.find(params[:user_id]) != current_user.id
+    if User.find(params[:user_id]).id != current_user.id
       flash[:error]= "Reste sur ton menu !"
       redirect_to root_path
     end

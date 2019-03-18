@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end 
 
   def is_my_profile!
-    if User.find(params[:id]) != current_user.id
+    if User.find(params[:id]).id != current_user.id
       flash[:error]= "Reste sur ton profil !"
       redirect_to root_path
     end
