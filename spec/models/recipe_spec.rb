@@ -37,8 +37,8 @@ RSpec.describe Recipe, type: :model do
       it { expect(@recipe).to validate_presence_of(:cooking_time) }
     end
     
-    describe "#cost" do 
-      it { expect(@recipe).to validate_presence_of(:cost) }
+    describe "#price_indicator" do 
+      it { expect(@recipe).to validate_presence_of(:price_indicator) }
     end
 
     describe "#recipe_category_id" do 

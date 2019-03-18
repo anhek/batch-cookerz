@@ -27,7 +27,7 @@ puts "Ingredient_categories created"
 
 
 5.times do 
-  Recipe.create!(name: Faker::Food.dish , description: Faker::Food.description, preparation_time: rand(10..25), cooking_time: rand(10..35), cost: rand(11.2..76.9).round(2), recipe_category_id: 1)
+  Recipe.create!(name: Faker::Food.dish , description: Faker::Food.description, preparation_time: rand(10..25), cooking_time: rand(10..35), price_indicator: rand(1..5).round(2), recipe_category_id: 1)
 end
 puts "Recipe created"
 
@@ -35,10 +35,10 @@ puts "Recipe created"
 	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
 end
 
-Ingredient.create!(name: "carotte", calories: rand(50..250), price: rand(1.5..5.5).round(2), ingredient_category_id: rand(1..5))
-Ingredient.create!(name: "patate", calories: rand(50..250), price: rand(1.5..5.5).round(2), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
 15.times do 
-  Ingredient.create!(name: Faker::Food.ingredient, calories: rand(50..250), price: rand(1.5..5.5).round(2), ingredient_category_id: rand(1..5))
+  Ingredient.create!(name: Faker::Food.ingredient, calories: rand(50..250), ingredient_category_id: rand(1..5))
 end
 puts "Ingredients created"
 
@@ -49,7 +49,7 @@ end
 
 puts "Composition created"
 
-Comment.create(recipe_id: 1, description: "comment 1", user_id: 1)
+Comment.create(recipe_id: 1, description: "Super ! J'adore cette recette :)", user_id: 1)
 puts "Comment created"
 
 Like.create(recipe_id: 1, user_id: 1)

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :pictures, only: [:create]
   end
   
-  resources :users, only: [:show, :edit, :update] do
+  resources :users, only: [:show, :edit, :update, :destroy] do
     resources :avatars, only: [:create]
     resources :menus, only: [:show] do 
       resources :shopping_lists, only: [:create]

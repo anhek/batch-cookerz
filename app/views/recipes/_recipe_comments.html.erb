@@ -1,0 +1,39 @@
+<div class="block block-800 bg-grey5 p-4 p-md-5 rounded-top">
+  <h3 class="text-center mb-3"><i class="far fa-comments mr-2"></i> <%= @comments.count %> avis sur cette recette</h3>
+  <% @comments.each do |comment|%>
+    <div class="container-comment mb-3 mr-0">
+      <div class="row">
+        <div class="col-3 col-sm-2 pr-2 pr-md-0">
+          <div class="avatar-comments d-flex justify-content-center">
+            <%if comment.user.avatar.attached? %>
+              <%= image_tag comment.user.avatar, alt: 'avatar', class: 'w-100' %>
+            <% else %>
+              <%= image_tag comment.user.default_image, alt: 'avatar', class: 'w-100' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-9 col-sm-10 pl-2 pl-md-0">
+          <div class="bg-white p-3 rounded">
+            <h5 class="h6 text-grey1 mb-0"><i class="fas fa-at"></i> <%= comment.user.nickname %></h5>
+            <p class="mb-2"><small>Posté le <%= comment.created_at.strftime("%A, %d %b %Y %l:%M %p") %></small></p> 
+            <p class="mb-0 pb-2"><%= comment.description %></p>
+            <% if current_user == comment.user %>
+              <%=button_to 'X', recipe_comment_path(@recipe, comment_id: comment.id), method: 'delete', class:'btn btn-primary'%>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% if user_signed_in? %>
+<div class="block block-800 container-comment p-4 p-md-5 rounded-bottom bg-secondary">
+  <h3 class="text-center text-white text-center mb-3"><i class="fas fa-comment"></i> Ajouter un avis</h3>
+  <%= form_with model: @comment, url:recipe_comments_path(@recipe.id) do |form| %>
+  <%= form.text_area :description, rows: 6, class:"form-control", placeholder: "Ton message" %><br>
+  <div class="text-center">
+    <%= form.submit "Envoyer", class: "btn btn-primary btn-lg px-5" %>
+  </div>
+  <% end %>
+</div>
+<% end %>

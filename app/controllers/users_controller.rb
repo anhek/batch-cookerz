@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate_user!, only: [:show, :edit, :update]
+  before_action :is_my_profile!
   #layout 'history_menus' /#pour utiliser ce render, les views des menus doivent etre dans un fichier /layouts/menus
   #layout 'favorite_recipes' 
 
@@ -31,4 +32,10 @@ class UsersController < ApplicationController
     user_params = params.require(:user).permit(:first_name, :last_name, :nickname)
   end 
 
+  def is_my_profile!
+    if User.find(params[:id]).id != current_user.id
+      flash[:error]= "Reste sur ton profil !"
+      redirect_to root_path
+    end
+  end 
 end 

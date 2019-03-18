@@ -1,5 +1,6 @@
 class MenuRecipesController < ApplicationController
- 
+   before_action :authenticate_user!, only: [:create]
+
   def create
     puts '$' * 60
     puts params.inspect

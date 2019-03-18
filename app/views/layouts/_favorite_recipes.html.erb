@@ -1,6 +1,6 @@
 <div class="mb-5">
 
-  <h4> <i class="far fa-thumbs-up mr-1"></i> Mes recettes favorites </h4>
+  <h4> <i class="far fa-heart mr-1"></i> Mes recettes favorites </h4>
   <div class="table-responsive">
     <table class="table">
       <% i = 1 %>
@@ -10,6 +10,12 @@
             <th scope="row"><%= i %></th>
             <td class="font-weight-bold"><%= recipe.name%> <i class="fas fa-seedling text-vegan ml-2"></td>
             <td><%= link_to "Voir la recette", recipe_path(recipe) %></td>
+            <%like = Like.find_by(user_id: current_user.id, recipe_id: recipe.id)%>
+            <td>
+            <%= link_to recipe_like_path(recipe, like), method: :delete do %>
+              <i class="fas fa-heart mr-1"></i>
+            <%end%>
+            </td>
           </tr>
           <% i += 1 %>
         <%end%>

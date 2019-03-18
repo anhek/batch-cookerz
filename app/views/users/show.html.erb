@@ -3,27 +3,10 @@
 
     <div class="row">
 
-      <div class="col-12 col-md-4">
-        <div class="user-info bg-white">
-
-          <%= render "avatar"%>
-          <h4 class="mb-2"><%= @user.first_name %> <%= @user.last_name %></h4>
-          <h5 class="h6 text-grey1 mb-0"> <i class="fas fa-at text-grey2"></i> <%= @user.nickname%></h6>
-          <p> <i class="fas fa-envelope text-grey2 mr-2"></i> <%= @user.email%></p>
-          <div class="user-links">
-            <%= link_to edit_user_path(@user.id) do %>
-              <i class="fas fa-user"></i> Éditer mon profil
-            <% end %><br>
-            <%= link_to edit_user_registration_path(@user) do %>
-              <i class="fas fa-lock"></i> Modifier infos connexion
-            <% end %>
-          </div>
-
-        </div>
-      </div>
+      <%= render 'user_sidebar' %>
 
       <div class="col-12 col-md-8">
-        <div class="user-content bg-grey5">
+        <div class="user-content bg-grey5 p-4 p-lg-5">
           <h1 class="mt-3 font-weight-normal mr-1"><i class="far fa-user-circle"></i> Mon profil</h1>
           <p class="h5 mb-5 text-grey1 font-weight-normal">Bienvenue sur votre espace personnel.<br>Retrouvez vos recettes favorites et tous les menus que vous avez composés.<p>
           <%= render "layouts/favorite_recipes"%>

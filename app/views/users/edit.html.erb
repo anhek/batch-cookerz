@@ -1,4 +1,11 @@
-<h2> Veuillez remplir le formulaire suivant afin de modifier les informations de votre profil. </h2> <br>
-<%= render 'form'%>
-<%= render 'avatar_edit'%>
-<%= link_to "Modifier ses informations personnelles importantes (email et mot de passe)", edit_user_registration_path(@user.id)%>
+<div class="bg-container" id="user-profile">
+  <div class="block-1000 rounded mx-auto">
+
+    <div class="row">
+      <%= render 'users/user_sidebar' %>
+      <%= render 'user_edit_names'%>
+    </div>
+  </div>
+</div>
+
+<!-- <%= link_to "Modifier ses informations personnelles importantes (email et mot de passe)", edit_user_registration_path(@user.id)%> -->
