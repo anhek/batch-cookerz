@@ -26,9 +26,11 @@
       </div>
       <p class="description"><%=recipe.description%></p>
       <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3" %>
-      <%#if user_signed_in?%>
-        <%# button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-outline-primary px-3", method: "post" %>
-      <%#end%>
+      <%if user_signed_in?%>
+      <div class="d-inline-block">
+        <%= button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-outline-secondary px-3", method: "post" %>
+      </div>
+      <% end%>
     </div>
   </div>
 

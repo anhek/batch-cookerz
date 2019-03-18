@@ -1,27 +1,38 @@
-  <div class="block block-800 bg-white rounded">
-
-    <% @comments.each do |comment|%>
-      <div class="container-comment">
-        <div class="avatar-comments">
-          <%if comment.user.avatar.attached? %>
-            <%= image_tag comment.user.avatar, alt: 'avatar' %>
-          <% else %>
-            <%= image_tag comment.user.default_image, alt: 'avatar' %>
-          <% end %>
+<div class="block block-800 bg-white rounded-top">
+  <h3 class="text-center mb-3"><i class="far fa-comments mr-2"></i> <%= @comments.count %> avis sur cette recette</h3>
+  <% @comments.each do |comment|%>
+    <div class="container-comment mb-3 mr-0">
+      <div class="row">
+        <div class="col-3 col-sm-2 pr-2 pr-md-0">
+          <div class="avatar-comments d-flex justify-content-center">
+            <%if comment.user.avatar.attached? %>
+              <%= image_tag comment.user.avatar, alt: 'avatar', class: 'w-100 border border-grey4' %>
+            <% else %>
+              <%= image_tag comment.user.default_image, alt: 'avatar', class: 'w-100' %>
+            <% end %>
+          </div>
         </div>
-        <div>
-          <p><%= comment.description %></p>
-          <p><%= comment.user.nickname %></p>
+        <div class="col-9 col-sm-10 pl-2 pl-md-0">
+          <div class="bg-grey5 p-3 rounded">
+            <h5 class="text-grey1"><i class="fas fa-at"></i> <%= comment.user.nickname %></h5>
+            <p class="mb-0 pb-2"><%= comment.description %></p>
+          </div>
+          <div class="p-2 rounded-bottom">
+            <p class="mb-0"><small><i class="far fa-calendar-alt mr-1"></i> <%= comment.created_at.strftime("%A, %d %b %Y %l:%M %p") %></small></p> 
+          </div>
         </div>
       </div>
-    <% end %>
-
-    <% if user_signed_in?%>
-      <div class="container-comment">
-        <%= form_with model: @comment, url:recipe_comments_path(@recipe.id) do |form| %>
-        <%= form.text_field :description%>
-        <%= form.submit class: "btn btn-secondary"%>
-        <% end%>
-      </div>
-    <% end %>
+    </div>
+  <% end %>
+</div>
+<% if user_signed_in? %>
+<div class="block block-800 container-comment p-4 p-md-5 rounded-bottom bg-secondary">
+  <h3 class="text-center text-white text-center mb-3"><i class="fas fa-comment"></i> Ajouter un avis</h3>
+  <%= form_with model: @comment, url:recipe_comments_path(@recipe.id) do |form| %>
+  <%= form.text_area :description, rows: 6, class:"form-control", placeholder: "Ton message" %><br>
+  <div class="text-center">
+    <%= form.submit "Envoyer", class: "btn btn-primary btn-lg px-5" %>
   </div>
+  <% end %>
+</div>
+<% end %>
