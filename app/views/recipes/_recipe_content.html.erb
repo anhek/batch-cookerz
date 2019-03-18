@@ -39,11 +39,14 @@
                 <span class="h6 text-indigo2">Temps</span><br>
                 <span class="h5 text-indigo4"><i class="far fa-clock mr-1"></i></span> <%=@recipe.cooking_time%> mn
               </li>
-              <li class="mb-2">
+              <li class="mb-4">
                 <span class="h6 text-indigo2">Prix</span><br>
                  <span class="h5 text-indigo4"><i class="fas fa-tag mr-1"></i></span> <%@recipe.price_indicator.times do %>€
                   <%end%>
               </li>
+              <%if user_signed_in?%>
+                <%= button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-indigo1 px-3", method: "post" %>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -85,8 +88,6 @@
         </div>
       </div>
     </article>
-
-    <%# button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-outline-primary px-3", method: "post" %>
 
     <%= link_to "Voir les autres recettes", recipes_path(@recipes), class: 'btn btn-outline-primary btn-lg' %>
 
