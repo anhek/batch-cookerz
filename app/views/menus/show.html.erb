@@ -7,7 +7,8 @@
     Description : <%=recipe.recipe.description%>
     Temps de préparation : <%=recipe.recipe.preparation_time%><br />
     Temps de cuisson :<%=recipe.recipe.cooking_time%><br />
-    Prix : <%=recipe.recipe.cost%>
+    Prix : <%recipe.recipe.price_indicator.times do %>€
+    <%end%>
   </p>
 
 <%end%>

@@ -17,7 +17,8 @@
           <i class="far fa-clock mr-1"></i> <%=recipe.cooking_time%> mn
         </span>
         <span class="mr-4">
-          <i class="fas fa-tag mr-1"></i> <%= recipe.cost%> €
+          <i class="fas fa-tag mr-1"></i> <%recipe.price_indicator.times do %>€
+        <%end%>
         </span>
         <span class="mr-4">
           <i class="far fa-heart mr-1"></i> <%= recipe.likes.count %>
