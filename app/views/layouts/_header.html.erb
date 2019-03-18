@@ -26,7 +26,9 @@
           <li class="nav-item">
             <%= link_to "Mon Menu", user_menu_path(current_user, id: Menu.where(user_id: current_user.id).last.id), class: 'nav-link' %>
           </li>
-
+          <li class="nav-item">
+            <%= link_to "Proposer Une Nouvelle Recette", new_recipe_path, class: 'nav-link' %>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Mon Compte
