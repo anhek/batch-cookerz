@@ -12,7 +12,7 @@ class LikesController < ApplicationController
     else 
     @recipe.likes.create(user_id: current_user.id)
     end 
-    redirect_to recipe_path(@recipe)
+    redirect_to request.referrer
   end
 
   def destroy
@@ -22,7 +22,7 @@ class LikesController < ApplicationController
     else
       @like.destroy
     end
-    redirect_to recipe_path(@recipe)
+    redirect_to request.referrer
 end
 
 
