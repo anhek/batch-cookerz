@@ -18,7 +18,7 @@
             <p class="mb-2"><small>Posté le <%= comment.created_at.strftime("%A, %d %b %Y %l:%M %p") %></small></p> 
             <p class="mb-0 pb-2"><%= comment.description %></p>
             <% if current_user == comment.user %>
-              <%=button_to 'X', recipe_comment_path(@recipe), method: 'delete', class:'btn btn-primary'%>
+              <%=button_to 'X', recipe_comment_path(@recipe, comment_id: comment.id), method: 'delete', class:'btn btn-primary'%>
             <%end%>
           </div>
         </div>
