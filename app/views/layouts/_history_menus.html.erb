@@ -9,8 +9,7 @@
           <th scope="row"><%= i %></th>
           <td class="font-weight-bold" colspan="2"> Mon menu n°<%= i %></td>
           <td><%= link_to "Voir le menu", user_menu_path(menu) %></td>      
-          <!-- <td><%= link_to "Voir le menu n°#{i}", user_menu_path(menu) %></td>
-          <td>Mis à jour le <%= menu.updated_at.strftime("%d-%m-%Y") %></td> -->
+          <td><%= link_to "Voir la liste de courses ", user_menu_shopping_list_path(current_user, menu)%>
           <% i += 1 %>
         <%end%>
       </tbody>
