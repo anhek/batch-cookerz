@@ -2,7 +2,7 @@
 
   <header class="recipe-title mb-3 mb-md-4">
     <h1 class="h2 mb-0"> <%= @recipe.name%> </h1>
-    <p>Recette proposée par <%= @user.first_name%></p>
+    <p>Recette proposée par <%= @recipe.user.nickname%></p>
   </header>
 
 
