@@ -6,13 +6,13 @@
       <div id="search-bar">
         <%= form_tag({:controller => "recipes", :action => "index"}, :method => "get", class:'input-group input-group-lg d-flex justify-content-center') do %>
           <%= text_field_tag :ingredient, "", class: 'form-control w-100 rounded' %>
-          <div class="input-group-append text-center mt-4">
+          <div class="text-center mt-4 w-100 block block-500 p-0">
           <div class="row search-buttons">
-            <div class="col-12 col-md-6 pr-md-2">
+            <div class="col-12 col-sm-6 pr-md-2 pb-3 pb-sm-0">
               <%= submit_tag 'Recherche', name: nil, class:'w-100 btn btn-primary btn-lg rounded' %>
             </div>
-            <div class="col-12 col-md-6 pl-md-2">
-              <%= link_to "Voir toutes les recettes", recipes_path(@recipes), class: 'd-block w-100 btn btn-indigo1 btn-lg' %>
+            <div class="col-12 col-sm-6 pl-md-2">
+              <%= link_to "Toutes les recettes", recipes_path(@recipes), class: 'd-block w-100 btn btn-indigo1 btn-lg' %>
             </div>
           </div>
         <% end %>
