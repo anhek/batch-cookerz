@@ -2,8 +2,8 @@
 
   <div class="block block-800 bg-white p-4 p-md-5 rounded text-center">
     <header class="p-4 text-center">
-      <h2><i class="fas fa-clipboard-list mr-1"></i> Mon menu</h2>
-      <p class="intro mb-3 mb-md-4">Voici la liste des recettes que tu as sélectionné pour ton menu.</p>
+      <h2><i class="fas fa-clipboard-list mr-1"></i> Mon menu batch-cooking</h2>
+      <p class="intro mb-3 mb-md-4">Voici les recettes que tu as sélectionné pour réaliser ton menu batch-cooking. Tu peux aussi générer une liste pour faciliter tes courses.</p>
       <%= link_to user_menu_shopping_lists_path(menu_id: params[:id]), class: "btn btn-primary mb-3 mb-md-4", method: :post do %> 
         <i class="fas fa-shopping-cart mr-1"></i> Générer ma liste de courses
       <%end%>

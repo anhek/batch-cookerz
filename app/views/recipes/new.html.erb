@@ -32,6 +32,10 @@
         <%= f.number_field :cooking_time, class: 'form-control mb-4', required: true  %>
       </div>
       <div class="form-group">
+        <%= f.label 'Image', class: 'h6 text-secondary font-weight-bold' %>
+        <%= f.file_field :picture, class: 'form-control mb-4', required: true  %>
+      </div>
+      <div class="form-group">
         <%= f.label 'Ingrédients', class: 'h6 text-secondary font-weight-bold' %><br>
         <% for ingredient in Ingredient.all %>
             <%= f.check_box :ingredient, {multiple: true}, ingredient.id %> <%= ingredient.name %><br/>
