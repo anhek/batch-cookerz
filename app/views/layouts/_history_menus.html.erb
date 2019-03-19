@@ -12,7 +12,12 @@
             <td><%= link_to "Voir le menu", user_menu_path(current_user, menu) %></td>
             <% if menu.shopping_list != nil %>      
             <td><%= link_to "Voir la liste de courses ", user_menu_shopping_list_path(current_user, menu, menu.shopping_list.id)%>
+            <td><%= link_to 'X', user_menu_path(current_user, menu), method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer le menu ?' }, class: "btn btn-danger" %></td>
+            <%else%>
+            <td></td>
+            <td></td>
             <%end%>
+            
             <% i += 1 %>
           </tr>
         <%end%>

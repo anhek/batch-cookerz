@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show, :edit, :update, :destroy] do
     resources :avatars, only: [:create]
-    resources :menus, only: [:show] do 
+    resources :menus, only: [:show, :destroy] do 
       resources :shopping_lists, only: [:show,:create]
     end
   end
