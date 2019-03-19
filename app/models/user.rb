@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :recipes, through: :comments
   has_many :recipes, through: :likes
   has_many :menus
-
+  has_many :recipes
   has_one_attached :avatar
 
   before_create :default_image

@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = Recipe.new(name: params[:recipe][:name], description: params[:recipe][:description], price_indicator: params[:recipe][:price_indicator].to_i, cooking_time: params[:recipe][:cooking_time], preparation_time: params[:recipe][:preparation_time], recipe_category_id: params[:recipe][:recipe_category])
+    recipe = Recipe.new(name: params[:recipe][:name], description: params[:recipe][:description], price_indicator: params[:recipe][:price_indicator].to_i, cooking_time: params[:recipe][:cooking_time], preparation_time: params[:recipe][:preparation_time], recipe_category_id: params[:recipe][:recipe_category], user_id: current_user.id)
     ingredients = recipe.get_ingredients_number_from_new_recipe_form(params[:recipe][:ingredient])
 
       if recipe.save
