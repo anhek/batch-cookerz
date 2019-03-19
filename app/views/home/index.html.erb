@@ -72,6 +72,21 @@
   </div>
 </section>
 
+<section class="bg-indigo5 ">
+  <div class="block container">
+    <header class="text-center mb-5">
+      <h3>Decouvrez les ingredients du moment...</h3>
+      <h3 class="h4 font-weight-normal">
+        <%@ingredients_rand.each do |ingredient|%>
+     <div class=ingredient-cloud> <%=ingredient.name%>
+     </div>
+      <%end%> </h2>
+    </header>
+    <footer class="text-center p-5">
+    </footer>
+  </div>
+</section>
+
 <!-- <section>
 <%= image_tag("test", width: '100%')%>
 </section> -->
