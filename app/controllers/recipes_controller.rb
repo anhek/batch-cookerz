@@ -18,22 +18,29 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = Recipe.new(name: params[:recipe][:name], description: params[:recipe][:description], price_indicator: params[:recipe][:price_indicator].to_i, cooking_time: params[:recipe][:cooking_time], preparation_time: params[:recipe][:preparation_time], recipe_category_id: params[:recipe][:recipe_category], user_id: current_user.id)
-    ingredients = recipe.get_ingredients_number_from_new_recipe_form(params[:recipe][:ingredient])
+    @recipe = Recipe.new(name: params[:recipe][:name], description: params[:recipe][:description], price_indicator: params[:recipe][:price_indicator].to_i, cooking_time: params[:recipe][:cooking_time], preparation_time: params[:recipe][:preparation_time], recipe_category_id: params[:recipe][:recipe_category])
+    ingredients = @recipe.get_ingredients_number_from_new_recipe_form(params[:recipe][:ingredient])
 
-      if recipe.save
-        ingredients.each do |ingredient_id|
-          composition = Composition.new(recipe_id: recipe.id, ingredient_id: ingredient_id)
-          composition.save
-        end
-        redirect_to recipes_path
+    if @recipe.save
+      ingredients.each do |ingredient_id|
+        composition = Composition.new(recipe_id: @recipe.id, ingredient_id: ingredient_id)
+        composition.save
+      end
+      saving_picture
+      flash[:success] = "Ta recette a bien été sauvegardée !"
+      redirect_to recipe_path(@recipe.id)
     else 
       render new_recipe_path
-      puts "Désolé, mais la recette n'a pas été enregistrée !"
+      flash[:error] = "Désolé, ta recette n'a pas été sauvegardée !"
       puts recipe.errors.full_messages
     end
   end
 
+  def saving_picture
+    @recipe = Recipe.find(@recipe.id)
+    @recipe.picture.attach(params[:picture])
+  end
+  
   def show
     @recipe = Recipe.find(params[:id])
     @comments = Comment.where(recipe_id: @recipe.id)
@@ -45,8 +52,8 @@ class RecipesController < ApplicationController
   
   private
 
-  def recipe_params
-    params.require(:recipe).permit(:ingredient)
+  def post_params
+    params.require(:recipe).permit(:ingredient, :picture)
   end
 
   def included_in?(array)

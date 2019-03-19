@@ -33,6 +33,10 @@
   max-width: 800px;
 }
 
+.block-900 {
+  max-width: 900px;
+}
+
 .block-1000 {
   max-width: 1000px;
 }
@@ -82,7 +86,11 @@
       display: none;
     }
   }
+    hr:last-child {
+      display: none;
+    }  
 }
+
 
 // HEADER
 

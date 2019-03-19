@@ -8,7 +8,11 @@
 
   <div class="row mb-4">
     <div class="col-12 col-md-8 pr-md-0">
-      <%= image_tag("the-creative-exchange-1309304-unsplash", class:"w-100")%>
+      <%if @recipe.picture.attached? %>
+        <%= image_tag @recipe.picture %>
+      <%else%>
+        <%= image_tag("the-creative-exchange-1309304-unsplash", class:"w-100") %>
+      <%end%>
     </div>
     <div class="col-12 col-md-4 pl-md-0">
       <div class="bg-dark p-4 h-100">
