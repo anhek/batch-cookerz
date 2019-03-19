@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :menus, only: [:show]
   end
 
-resources :recipe_categories, only: [:index]
+  resources :recipe_categories, only: [:show] 
   
 end
 
