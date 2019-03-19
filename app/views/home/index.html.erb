@@ -35,21 +35,21 @@
       <div class="col-sm-4">
         <div class="d-inline-block">
           <%= image_tag("the-creative-exchange-1309304-unsplash", class:"w-100 rounded-top" )%>
-          <h3 class="h4 font-weight-normal test text-white rounded-bottom text-center py-2 px-4 bg-vegan">Végétalien</h3>
+          <h3 class="h4 font-weight-normal test text-white rounded-bottom text-center py-2 px-4 bg-vegan"><%= button_to "Végétalien", recipe_category_path(id: 3), method: :get, class:"recipe-link btn btn-outline-secondary px-3" %></h3>
         </div>
       </div>
 
       <div class="col-sm-4">
         <div class="d-inline-block">
           <%= image_tag("brooke-lark-229136-unsplash", class:"w-100 rounded-top" )%>
-          <h3 class="h4 font-weight-normal test text-white rounded-bottom text-center py-2 px-4 bg-vegetarian">Végétarien</h3>
+          <h3 class="h4 font-weight-normal test text-white rounded-bottom text-center py-2 px-4 bg-vegetarian"><%= button_to "Végétarien", recipe_category_path(id: 2), method: :get, class:"recipe-link btn btn-outline-secondary px-3" %></h3>
         </div>
       </div>
 
       <div class="col-sm-4">
         <div class="d-inline-block">
           <%= image_tag("mariana-medvedeva-561531-unsplash", class:"w-100 rounded-top" )%>
-          <h3 class="h4 font-weight-normal test text-white rounded-bottom text-center py-2 px-4 bg-omnivore">Omnivore</h3>
+          <h3 class="h4 font-weight-normal test text-white rounded-bottom text-center py-2 px-4 bg-omnivore"><%= button_to "Omnivore", recipe_category_path(id: 1), method: :get, class:"recipe-link btn btn-outline-secondary px-3" %></h3>
         </div>
       </div>
 
