@@ -4,7 +4,9 @@
     <header class="p-4 text-center">
       <h2><i class="fas fa-clipboard-list mr-1"></i> Mon menu</h2>
       <p class="intro mb-3 mb-md-4">Voici la liste des recettes que tu as sélectionné pour ton menu.</p>
-      <a href="#" class="btn btn-primary mb-3 mb-md-4"><i class="fas fa-shopping-cart mr-1"></i> Générer ma liste de courses </a>
+      <%= link_to user_menu_shopping_lists_path(menu_id: params[:id]), class: "btn btn-primary mb-3 mb-md-4", method: :post do %> 
+        <i class="fas fa-shopping-cart mr-1"></i> Générer ma liste de courses
+      <%end%>
     </header>
 
     <hr class="mb-4 mt-0">

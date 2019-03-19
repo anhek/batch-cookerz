@@ -1,0 +1,8 @@
+<h2>Ma liste de courses</h2>
+
+<%@id_sum_hash.each do |key, value|%>
+  <p> <%=key%>
+  <%value.each do |value|%>
+    <%=value[1]%>
+  <%end%>
+<%end%>
