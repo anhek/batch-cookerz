@@ -1,6 +1,7 @@
 class Ingredient < ApplicationRecord
 
   belongs_to :ingredient_category
+  has_many :compositions
   has_many :recipes, through: :compositions
 
   validates :name, presence: true, length: { in: 3..50 }

@@ -5,6 +5,7 @@ class Recipe < ApplicationRecord
     has_many :comments
     has_many :users, through: :comments
     has_many :menus, through: :menu_recipes
+    has_many :compositions
     has_many :ingredients, through: :compositions
     has_many :likes, dependent: :destroy
     

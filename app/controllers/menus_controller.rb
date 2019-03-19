@@ -1,9 +1,17 @@
 class MenusController < ApplicationController
   before_action :authenticate_user!, only: [:show]
   before_action :is_my_menu!
+
   def show
     @menu = Menu.find(params[:id])
     @menu_recipe = MenuRecipe.where(menu_id: params[:id])
+  end
+
+  def destroy
+    @menu = Menu.find(params[:id])
+    @menu.destroy
+    redirect_to user_path
+  
   end
 
   private
