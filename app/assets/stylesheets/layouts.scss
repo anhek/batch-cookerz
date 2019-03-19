@@ -100,18 +100,14 @@ header .navbar-nav {
 // FOOTER 
 
 #footer {
-  
-  .col-sm {
-    margin-bottom: 1.5rem;
+  text-align: center; 
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
   }
-
+    
   #brand {
-    text-align: center;
-
-    @include media-breakpoint-up(sm) {
-      text-align: left;
-    }
-
+    
     h4 {
       color: $primary;
     }
@@ -122,56 +118,40 @@ header .navbar-nav {
   }
 
   #sitemap {
-    text-align: center;
-
-    @include media-breakpoint-up(sm) {
-      text-align: left;
-    }
-
+    
     p {
       color: $white;
     }
 
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-
-      li a {
-        padding: 0 0 5px 0;
-        color: $indigo4;
-        &:hover {
-          color: $indigo3;
-        }
-      }
+    ul li a {
+      padding: 0 0 5px 0;
+      color: $indigo4;
+      &:hover {
+        color: $indigo3;
+    }
     }
   }
 
-  #social-links {
+  .social-links {
 
     p {
-      text-align: center;
       color: $white;
-
-      @include media-breakpoint-up(sm) {
+      text-align: center;
+      @include media-breakpoint-up(md) {
         text-align: right;
       }
     }
 
-    #social-icons {
-      display: flex !important;
-      justify-content: center !important;
-
-      @include media-breakpoint-up(sm) {
-        justify-content: end !important;
-      }
+    .social-icons {
 
       a {
         margin: .5rem 1rem;
-        color: $indigo3;
+        display: inline-block;
+        color: $white;
         &:hover {
           color: $indigo5;
         }
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up(md) {
           &:last-child {
             margin-right: 0;
           }

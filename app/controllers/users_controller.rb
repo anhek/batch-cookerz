@@ -6,8 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @menus = Menu.where(user_id:params[:id])
-    @likes = Like.where(user_id:params[:id])
+    @menus = Menu.where(user_id: params[:id])
+    @likes = Like.where(user_id: params[:id])
     @recipes = @user.find_liked_recipes(@likes)
   end 
    
