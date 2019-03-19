@@ -2,25 +2,25 @@
 <section class="block d-flex flex-column justify-content-center align-items-center" id="home">
     <header class="text-center">
       <h2 class="text-white mb-4 display-2 font-weight-normal">Préparez vos repas une seule fois, <br>et assemblez la semaine !</h2>
-      <h3 class="h5 text-white font-weight-normal">Composez votre batch-cooking en indiquant des ingrédients</h3>
-    </header>
-    <div id="search-bar">
-    <%= form_tag({:controller => "recipes", :action => "index"}, :method => "get", class:'input-group input-group-lg') do %>
-      <%= text_field_tag :ingredient, "", class: 'form-control rounded-left' %>
-      <div class="input-group-append">
-        <%= submit_tag 'Chercher les recettes', name: nil, class:'btn btn-primary' %>
+      <h3 class="h5 text-white font-weight-normal mb-3">Composez votre batch-cooking en indiquant des ingrédients</h3>
+      <div id="search-bar">
+        <%= form_tag({:controller => "recipes", :action => "index"}, :method => "get", class:'input-group input-group-lg d-flex justify-content-center') do %>
+          <%= text_field_tag :ingredient, "", class: 'form-control w-100 rounded' %>
+          <div class="input-group-append text-center">
+            <%= submit_tag 'Chercher les recettes', name: nil, class:'btn btn-primary mt-4 rounded' %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-    </div>
+    </header>
 </section>
 
 <section class="bg-dark">
-  <div class="block block-800">
+  <div class="block block-900">
     <header class="text-center text-white mb-4">
       <h3 class="text-primary">Bienvenue dans la communauté <br>des Batch Cookerz ! </h3>
     </header>
     <article>
-      <p class="h4 text-white text-center font-weight-normal">Le batch cooking, comment ? pour qui ? pourquoi ? <br> Ici se retrouve tous ceux qui aiment cuisiner et manger de bons petits plats. Grace à notre site, tu pourras cuisiner tes repas pour toute la semaine en quelques heures le week-end.</p>
+      <p class="h4 text-white text-center font-weight-normal">Le batch cooking, comment ? pour qui ? pourquoi ? <br> Ici se retrouve tous ceux qui aiment cuisiner et manger de bons petits plats. Grace à notre site, vous pourrez cuisiner vos repas pour toute la semaine en quelques heures le week-end.</p>
     </article>
   </div>
 </section>

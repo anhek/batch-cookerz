@@ -7,7 +7,8 @@ class Recipe < ApplicationRecord
     has_many :menus, through: :menu_recipes
     has_many :ingredients, through: :compositions
     has_many :likes, dependent: :destroy
-    
+    has_one_attached :picture
+
     validates :name, presence: true
     validates :description, presence: true
     validates :preparation_time, presence: true
@@ -62,9 +63,6 @@ class Recipe < ApplicationRecord
       end
     end
     return recipes
-  end
-
-  has_one_attached :picture 
-  
+  end  
   
 end
