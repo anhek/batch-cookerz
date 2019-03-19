@@ -1,6 +1,7 @@
 class Recipe < ApplicationRecord
     
     belongs_to :recipe_category
+    belongs_to :user
     has_many :users, through: :likes
     has_many :comments
     has_many :users, through: :comments
@@ -8,7 +9,8 @@ class Recipe < ApplicationRecord
     has_many :compositions
     has_many :ingredients, through: :compositions
     has_many :likes, dependent: :destroy
-    
+    has_one_attached :picture
+
     validates :name, presence: true
     validates :description, presence: true
     validates :preparation_time, presence: true
@@ -63,9 +65,6 @@ class Recipe < ApplicationRecord
       end
     end
     return recipes
-  end
-
-  has_one_attached :picture 
-  
+  end  
   
 end
