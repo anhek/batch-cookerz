@@ -37,38 +37,24 @@ class ShoppingListsController < ApplicationController
       @ingredients << Ingredient.find_by(id: composition.ingredient_id)
     end
     
-    # puts "Les noms des recettes incluses :"
-    recipes.each do |recipe|
-      # puts recipe.name
-    end
-
-    # puts "Le nombre de compositions :"
-    # puts compositions.count
-
-
-    # puts "Le nombre d'ingrédients avant : "
-    # puts @ingredients.count
-    @grouped_ingredients = @ingredients.group_by(&:id)
+    @grouped_ingredients = @ingredients.group_by(&:name)
     puts "Le nombre d'ingrédients après"
     puts @grouped_ingredients.count
 
-    sums = []
+    @id_sum_hash = Hash.new
     @grouped_ingredients.each do |key, value|
-      id_sum_hash = Hash.new
       sum_for_one_ingredient = 0
+      unit_for_one_ingredient = ""
       compositions.each do |composition|
-        if key == composition.ingredient_id 
+        if key == composition.ingredient.name
           sum_for_one_ingredient += composition.quantity
+          unit_for_one_ingredient = composition.unit
         end
       end
-      id_sum_hash[key] = sum_for_one_ingredient
-      sums << id_sum_hash
+      
+      @id_sum_hash[key] = { "sum" => sum_for_one_ingredient }
+      @id_sum_hash[key].merge!({'unit' => unit_for_one_ingredient})
     end
-    # puts "Le hash final ressemble à : "
-    # print sums
-
-  
-
-
+    print @id_sum_hash
   end
 end

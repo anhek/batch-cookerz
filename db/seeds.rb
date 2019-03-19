@@ -43,8 +43,8 @@ end
 puts "Ingredients created"
 
 5.times do |i|
-  Composition.create(recipe_id: 1, ingredient_id: i+1, quantity: 2)
-  Composition.create(recipe_id: 2, ingredient_id: i+1, quantity: 3)
+  Composition.create(recipe_id: 1, ingredient_id: i+1, quantity: 2, unit: 'test')
+  Composition.create(recipe_id: 2, ingredient_id: i+1, quantity: 3, unit: 'test')
 end
 
 puts "Composition created"
