@@ -17,23 +17,28 @@ class RecipesController < ApplicationController
 
   def new 
     @recipe = Recipe.new
+    @recipe_categories = RecipeCategory.all
+    @price_indicators = ["€", "€ €", "€ € €", "€ € € €", "€ € € € €"]
   end
 
   def create
+    puts '$' * 60
+    puts params.inspect
     @recipe = Recipe.new(
       name: params[:name], 
       description: params[:description], 
+      recipe_category_id: params[:recipe_category].to_i,
       price_indicator: params[:price_indicator].to_i, 
       cooking_time: params[:cooking_time], 
       preparation_time: params[:preparation_time], 
-      recipe_category_id: 1,
       user_id: current_user.id)
-    ingredients = "pomme", "patate"
+      ingredients_ids = params[:ingredient_ids]
+
 
     if @recipe.save
       @recipe.picture.attach(params[:picture])
-      ingredients.each do |ingredient_id|
-        composition = Composition.new(recipe_id: @recipe.id, ingredient_id: ingredient_id)
+      ingredients_ids.each do |ingredient_id|
+        composition = Composition.new(recipe_id: @recipe.id, ingredient_id: ingredient_id.to_i)
         composition.save
       end
       # saving_picture
