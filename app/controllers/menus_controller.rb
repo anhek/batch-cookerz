@@ -10,7 +10,7 @@ class MenusController < ApplicationController
   def destroy
     @menu = Menu.find(params[:id])
     @menu.destroy
-    redirect_to user_path
+    redirect_to user_path(current_user)
   
   end
 

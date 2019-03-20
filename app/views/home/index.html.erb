@@ -1,6 +1,6 @@
 <!-- JUMBOTRON -->
 <section class="block d-flex flex-column justify-content-center align-items-center" id="home">
-    <header class="text-center">
+    <header class="text-center block block-1000">
       <h2 class="text-white mb-4 display-2 font-weight-normal">Préparez vos repas une seule fois, <br>et assemblez la semaine !</h2>
       <h3 class="h5 text-white font-weight-normal mb-3">Composez votre batch-cooking en indiquant des ingrédients</h3>
       <div id="search-bar">
@@ -10,6 +10,7 @@
             'data-delimiter' => ', ', 
             :multiple => true, 
             :size => 75, 
+            'data-noMatchesLabel' => 'Ingrédient non trouvé',
             'data-auto-focus' => true, 
             :append_to => "#proposed_ingredients",
            class: 'form-control w-100 rounded' %>
