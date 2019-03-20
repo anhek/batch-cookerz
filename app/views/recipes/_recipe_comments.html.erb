@@ -1,5 +1,11 @@
 <div class="block block-800 bg-grey5 p-4 p-md-5 rounded-top">
-  <h3 class="text-center mb-3"><i class="far fa-comments mr-2"></i> <%= @comments.count %> avis sur cette recette</h3>
+  <h3 class="text-center mb-3"><i class="far fa-comments mr-2"></i>
+    <% if @comments.empty? %>
+      Il n'y a aucun avis sur cette recette 
+    <% else %>
+      <%= @comments.count %> avis sur cette recette
+    <% end %>
+  </h3>
   <% @comments.each do |comment|%>
     <div class="container-comment mb-3 mr-0">
       <div class="row">
@@ -14,11 +20,19 @@
         </div>
         <div class="col-9 col-sm-10 pl-2 pl-md-0">
           <div class="bg-white p-3 rounded">
-            <h5 class="h6 text-grey1 mb-0"><i class="fas fa-at"></i> <%= comment.user.nickname %></h5>
+            <h5 class="h6 text-grey1 mb-0"><i class="fas fa-at"></i>
+              <% if comment.user.nickname == nil %>
+                A définir
+              <% else %>
+                <%= comment.user.nickname %>
+              <% end %>
+            </h5>
             <p class="mb-2"><small>Posté le <%= comment.created_at.strftime("%A, %d %b %Y %l:%M %p") %></small></p> 
             <p class="mb-0 pb-2"><%= comment.description %></p>
             <% if current_user == comment.user %>
-              <%= button_to 'X', recipe_comment_path(@recipe, comment_id: comment.id), method: 'delete', class:'btn btn-primary' %>
+              <%= link_to recipe_comment_path(@recipe, comment_id: comment.id), method: 'delete', class:'text-danger' do %>
+                <i class="far fa-trash-alt mr-2"></i>Supprimer
+              <% end %>
             <%end%>
           </div>
         </div>
