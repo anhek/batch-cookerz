@@ -8,6 +8,7 @@ class MenusController < ApplicationController
   end
 
   def destroy
+    @recipe = Recipe.find(params[:recipe_id])
     @menu = Menu.find(params[:id])
     @menu.destroy
     redirect_to user_path
