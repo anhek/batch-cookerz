@@ -1,4 +1,4 @@
-<div class="block block-800 bg-grey5 p-4 p-md-5 rounded-top">
+<div class="block block-900 bg-grey5 p-4 p-md-5 rounded-top">
   <h3 class="text-center mb-3"><i class="far fa-comments mr-2"></i>
     <% if @comments.empty? %>
       Il n'y a aucun avis sur cette recette 
@@ -41,7 +41,7 @@
   <% end %>
 </div>
 <% if user_signed_in? %>
-<div class="block block-800 container-comment p-4 p-md-5 rounded-bottom bg-secondary">
+<div class="block block-900 container-comment p-4 p-md-5 rounded-bottom bg-secondary">
   <h3 class="text-center text-white text-center mb-3"><i class="fas fa-comment"></i> Ajouter un avis</h3>
   <%= form_with model: @comment, url:recipe_comments_path(@recipe.id) do |form| %>
   <%= form.text_area :description, rows: 6, class:"form-control", placeholder: "Ton message" %><br>
