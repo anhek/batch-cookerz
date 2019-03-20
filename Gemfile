@@ -75,4 +75,5 @@ gem "aws-sdk-s3", require: false
 gem 'bootstrap'
 gem 'jquery-rails'
 gem "font-awesome-rails"
-
+gem 'jquery-ui-rails'
+gem 'rails-jquery-autocomplete'

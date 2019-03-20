@@ -30,8 +30,7 @@ class Recipe < ApplicationRecord
   end
   
   def translate_input_ingredients_into_database_ingredients_ids(params)
-    puts '$' * 60
-    selected_ingredients = params.split() # je récupère les ingrédients sélectionnés en splittant à chaque espace
+    selected_ingredients = params.split(', ') # je récupère les ingrédients sélectionnés en splittant à chaque espace
     puts "Les ingrédients sélectionnés sont #{selected_ingredients}"
     selected_ingredients_ids = [] # initialisation du tableau qui va contenir les ids d'ingrédients
     selected_ingredients.each do |ingredient_name| # pour chaque nom d'ingrédient entré dans ma barre de recherche
@@ -50,7 +49,7 @@ class Recipe < ApplicationRecord
     puts '$' * 60
     print "Les ingrédients sélectionnés sont : #{selected_ingredients}"
     recipes = []
-    all_recipes = Recipe.all       
+    all_recipes = Recipe.all
     all_recipes.each do |recipe| # pour chaque recette 
       composition = Composition.where(recipe_id: recipe.id) # je crée un array qui contient tous les ingredients_ids de la recette
       ingredients_ids = [] # initialisation d'un tableau d'ingrédients id
@@ -65,6 +64,10 @@ class Recipe < ApplicationRecord
       end
     end
     return recipes
+  end  
+
+  def picture_300
+    return self.picture.variant(resize: '300x300')
   end  
   
 end
