@@ -3,16 +3,23 @@ class MenuRecipesController < ApplicationController
    autocomplete :recipe, :name
 
   def create
-    puts '$' * 60
-    puts params.inspect
-    menu_recipe = MenuRecipe.new(recipe_id: params[:recipe_id], menu_id: params[:menu_id])
-    
+    if params[:menu_recipe]
+      recipe = Recipe.find_by(name: params[:menu_recipe][:recipe_id])
+      menu = Menu.find(params[:menu_recipe][:menu_id].to_i)
+      menu_recipe = MenuRecipe.new(recipe_id: recipe.id, menu_id: menu.id)
+    else
+      recipe = Recipe.find(params[:recipe_id])
+      menu = Menu.find(params[:menu_id])
+      menu_recipe = MenuRecipe.new(recipe_id: recipe.id, menu_id: menu.id)
+    end
+
     if menu_recipe.save
       flash[:success] = "La recette a bien été ajoutée à ton menu !"
-      redirect_to user_path(current_user)
+      redirect_to user_menu_path(current_user, menu)
     else
       flash[:error] = "Désolé, la recette n'a pas été ajoutée !"
-      redirect_to user_path(current_user)
+      puts menu_recipe.errors.full_messages
+      redirect_to user_menu_path(current_user, menu)
     end
   end
 end

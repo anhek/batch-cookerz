@@ -13,7 +13,8 @@
         <%end%>
       <% end %>
       <%= form_for @menu_recipe do |f| %>
-        <%= f.autocomplete_field :menu_id, autocomplete_recipe_name_menu_recipes_path%>
+        <%= f.autocomplete_field :recipe_id, autocomplete_recipe_name_menu_recipes_path%>
+        <%= f.hidden_field :menu_id, :value => params[:id] %>
         <%= f.submit "Ajouter à mon menu" %>
       <%end%>
     </header>
