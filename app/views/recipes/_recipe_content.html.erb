@@ -9,7 +9,7 @@
   <div class="row mb-4">
     <div class="col-12 col-md-8 pr-md-0">
       <%if @recipe.picture.attached? %>
-        <%= image_tag @recipe.picture %>
+        <%= image_tag @recipe.picture, class:"w-100" %>
       <%else%>
         <%= image_tag("the-creative-exchange-1309304-unsplash", class:"w-100") %>
       <%end%>
@@ -70,6 +70,11 @@
 
   <article class="recipe-content text-left mb-5">
   
+    <%= form_tag recipe_pictures_path(@recipe), multipart: true do %>
+      <%= file_field_tag :picture %>
+      <%= submit_tag "mettre à jour" %>
+    <% end %>
+      
     <div class="row">
       <div class="col-12">
         <div class="ingredients p-4 p-md-5 bg-grey5 rounded mb-4">
