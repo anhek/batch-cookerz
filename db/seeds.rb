@@ -24,7 +24,7 @@ end
 puts "Ingredient_categories created"
 
 
-5.times do 
+12.times do 
   Recipe.create!(name: Faker::Food.dish , description: Faker::Food.description, preparation_time: rand(10..25), cooking_time: rand(10..35), price_indicator: rand(1..5).round(2), recipe_category_id: 1, user_id:1)
 end
 puts "Recipe created"

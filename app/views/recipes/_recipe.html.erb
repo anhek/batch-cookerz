@@ -1,17 +1,22 @@
-<div class="row">
 
-  <div class="col-sm-4 d-flex align-items-center">
+  <div class="col-sm-6 col-md-4 px-2 pb-3">
     <%= link_to recipe_path(recipe), class: "img-fluid rounded" do %>
       <img class="img-fluid rounded" src="https://cdn-image.foodandwine.com/sites/default/files/1483039291/chickpeas-and-kale-in-spicy-pomodoro-sauce-XL-RECIPE0217.jpg" alt="Card image cap">
     <% end %>
-  </div>
 
-  <div class="col-sm-8">
     <div class="recipe-info py-3">  
       <%= link_to recipe_path(recipe), class: "title h4 mr-2" do %>
         <%= recipe.name %>
       <% end %> 
-      <span class="h5"> <i class="fas fa-seedling text-vegan" data-toggle="tooltip" data-placement="top" title="Végétalien"></i> <i class="fas fa-drumstick-bite text-omnivore " data-toggle="tooltip" data-placement="top" title="Omnivore"></i> <i class="fas fa-cheese text-vegetarian" data-toggle="tooltip" data-placement="top" title="Végétarien"></i> </span>
+      <span class="h5">
+        <% if recipe.recipe_category.id == 1 %>
+          <i class="fas fa-cheese text-vegetarian" data-toggle="tooltip" data-placement="top" title="Végétarien"></i>
+        <% elsif recipe.recipe_category.id == 2 %>
+          <i class="fas fa-drumstick-bite text-omnivore " data-toggle="tooltip" data-placement="top" title="Omnivore"></i>
+        <% elsif recipe.recipe_category.id == 3 %>
+          <i class="fas fa-seedling text-vegan" data-toggle="tooltip" data-placement="top" title="Végétalien"></i>
+        <% end %>
+      </span>
       <div class="the-icons my-2 text-grey1 h6 font-weight-normal">
         <span class="mr-4">
           <i class="fas fa-tag mr-1"></i> <%recipe.price_indicator.times do %>€
@@ -38,7 +43,6 @@
           <% end %>
         </span>
       </div>
-      <p class="description"><%= recipe.description %></p>
       <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3" %>
       <%if user_signed_in?%>
         <div class="d-inline-block">
@@ -46,8 +50,7 @@
         </div>
       <% end%>
     </div>
+
   </div>
 
-</div>
-
-<hr class="my-4">
+<!-- <hr class="my-4"> -->
