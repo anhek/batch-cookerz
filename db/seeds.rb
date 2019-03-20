@@ -111,17 +111,10 @@ Terminer en nappant de crème, sel, poivre.
 Etape 7
 
 Mettre au four pendant au moins une heure. 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Plus la température est basse et le temps de cuisson long, plus les pommes seront fondantes...", preparation_time: 30, cooking_time: 60, price_indicator: 1, recipe_category_id: 2, user_id:4)
-=======
+
 Plus la température est basse et le temps de cuisson long, plus les pommes seront fondantes...", preparation_time: 30, cooking_time: 60, price_indicator: 1, recipe_category_id: 1, user_id:4)
 
->>>>>>> delivery-mallau-seed
-=======
-Plus la température est basse et le temps de cuisson long, plus les pommes seront fondantes...", preparation_time: 30, cooking_time: 60, price_indicator: 1, recipe_category_id: 1, user_id:4)
 
->>>>>>> delivery-mallau-bdd
 Recipe.create!(name: "Tagliatelles au gorgonzola" , description: "Etape 1
 
 Faire revenir dans une noix de beurre les courgettes émincées et l'oignon dans une poêle, saler, poivrer et faire cuire pendant 5 minutes.
@@ -130,17 +123,8 @@ Etape 2
 Ajouter le Gorgonzola coupé en morceaux puis mélanger sur feu doux.
 Etape 3
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 2, user_id:3)
-=======
-Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 1, user_id:3)
 
->>>>>>> delivery-mallau-seed
-=======
-Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 1, user_id:3)
-
->>>>>>> delivery-mallau-bdd
 Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
 
 Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
