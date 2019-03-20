@@ -86,7 +86,8 @@ Etape 2
 Faites colorer le beurre dans une poêle, puis ajoutez les scampis. Ajoutez l'éclat d'ail pressé et le poivre. Ajoutez la crème fraîche et le concentré de tomate. Mélangez le tout.
 Etape 3
 
-Servez les scampis avec du pain à l'ail ou des pâtes.", preparation_time: 10, cooking_time: 7, price_indicator: 5, recipe_category_id: 1, user_id:3)
+Servez les scampis avec du pain à l'ail ou des pâtes.", preparation_time: 10, cooking_time: 7, price_indicator: 5, recipe_category_id: 2, user_id:3)
+
 Recipe.create!(name: "Gratin dauphinois" , description: "Etape 1
 
 Préchauffer le four à 120°C (thermostat 4).
@@ -111,11 +112,16 @@ Etape 7
 
 Mettre au four pendant au moins une heure. 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Plus la température est basse et le temps de cuisson long, plus les pommes seront fondantes...", preparation_time: 30, cooking_time: 60, price_indicator: 1, recipe_category_id: 2, user_id:4)
 =======
 Plus la température est basse et le temps de cuisson long, plus les pommes seront fondantes...", preparation_time: 30, cooking_time: 60, price_indicator: 1, recipe_category_id: 1, user_id:4)
 
 >>>>>>> delivery-mallau-seed
+=======
+Plus la température est basse et le temps de cuisson long, plus les pommes seront fondantes...", preparation_time: 30, cooking_time: 60, price_indicator: 1, recipe_category_id: 1, user_id:4)
+
+>>>>>>> delivery-mallau-bdd
 Recipe.create!(name: "Tagliatelles au gorgonzola" , description: "Etape 1
 
 Faire revenir dans une noix de beurre les courgettes émincées et l'oignon dans une poêle, saler, poivrer et faire cuire pendant 5 minutes.
@@ -125,11 +131,16 @@ Ajouter le Gorgonzola coupé en morceaux puis mélanger sur feu doux.
 Etape 3
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 2, user_id:3)
 =======
 Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 1, user_id:3)
 
 >>>>>>> delivery-mallau-seed
+=======
+Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 1, user_id:3)
+
+>>>>>>> delivery-mallau-bdd
 Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
 
 Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
@@ -141,205 +152,7 @@ Etape 3
 Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
 Etape 4
 
-Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 1, user_id:3)
-
-
-puts "Recipe created"
-
-3.times do |i|
-	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
-end
-
-Ingredient.create!(name: "Carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Ingredient.create!(name: "Patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
-
-Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
-Etape 2
-
-Dans un bol, mélangez le coulis de tomates et la ricotta. Salez et poivrez.
-Etape 3
-
-Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
-Etape 4
-
-Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 1, user_id:3)
-
-
-puts "Recipe created"
-
-3.times do |i|
-	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
-end
-
-Ingredient.create!(name: "Carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Ingredient.create!(name: "Patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
-
-Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
-Etape 2
-
-Dans un bol, mélangez le coulis de tomates et la ricotta. Salez et poivrez.
-Etape 3
-
-Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
-Etape 4
-
-Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 1, user_id:3)
-
-
-puts "Recipe created"
-
-3.times do |i|
-	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
-end
-
-Ingredient.create!(name: "Carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Ingredient.create!(name: "Patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
-
-Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
-Etape 2
-
-Dans un bol, mélangez le coulis de tomates et la ricotta. Salez et poivrez.
-Etape 3
-
-Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
-Etape 4
-
-Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 1, user_id:3)
-
-
-puts "Recipe created"
-
-3.times do |i|
-	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
-end
-
-Ingredient.create!(name: "Carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Ingredient.create!(name: "Patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
-
-Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
-Etape 2
-
-Dans un bol, mélangez le coulis de tomates et la ricotta. Salez et poivrez.
-Etape 3
-
-Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
-Etape 4
-
-Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 1, user_id:3)
-
-
-puts "Recipe created"
-
-3.times do |i|
-	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
-end
-
-Ingredient.create!(name: "Carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Ingredient.create!(name: "Patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
-
-Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
-Etape 2
-
-Dans un bol, mélangez le coulis de tomates et la ricotta. Salez et poivrez.
-Etape 3
-
-Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
-Etape 4
-
-Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 1, user_id:3)
-
-
-puts "Recipe created"
-
-3.times do |i|
-	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
-end
-
-Ingredient.create!(name: "Carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Ingredient.create!(name: "Patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
-
-Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
-Etape 2
-
-Dans un bol, mélangez le coulis de tomates et la ricotta. Salez et poivrez.
-Etape 3
-
-Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
-Etape 4
-
-Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 1, user_id:3)
-
-
-puts "Recipe created"
-
-3.times do |i|
-	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
-end
-
-Ingredient.create!(name: "Carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Ingredient.create!(name: "Patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
-
-Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
-Etape 2
-
-Dans un bol, mélangez le coulis de tomates et la ricotta. Salez et poivrez.
-Etape 3
-
-Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
-Etape 4
-
-Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 1, user_id:3)
-
-
-puts "Recipe created"
-
-3.times do |i|
-	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
-end
-
-Ingredient.create!(name: "Carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Ingredient.create!(name: "Patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
-
-Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
-Etape 2
-
-Dans un bol, mélangez le coulis de tomates et la ricotta. Salez et poivrez.
-Etape 3
-
-Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
-Etape 4
-
-Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 1, user_id:3)
-
-
-puts "Recipe created"
-
-3.times do |i|
-	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
-end
-
-Ingredient.create!(name: "Carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Ingredient.create!(name: "Patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
-
-Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
-Etape 2
-
-Dans un bol, mélangez le coulis de tomates et la ricotta. Salez et poivrez.
-Etape 3
-
-Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
-Etape 4
-
-Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 1, user_id:3)
+Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 2, user_id:3)
 
 
 puts "Recipe created"
