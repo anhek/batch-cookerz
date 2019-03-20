@@ -87,7 +87,6 @@ Faites colorer le beurre dans une poêle, puis ajoutez les scampis. Ajoutez l'é
 Etape 3
 
 Servez les scampis avec du pain à l'ail ou des pâtes.", preparation_time: 10, cooking_time: 7, price_indicator: 5, recipe_category_id: 2, user_id:3)
-
 Recipe.create!(name: "Gratin dauphinois" , description: "Etape 1
 
 Préchauffer le four à 120°C (thermostat 4).
@@ -114,7 +113,6 @@ Mettre au four pendant au moins une heure.
 
 Plus la température est basse et le temps de cuisson long, plus les pommes seront fondantes...", preparation_time: 30, cooking_time: 60, price_indicator: 1, recipe_category_id: 1, user_id:4)
 
-
 Recipe.create!(name: "Tagliatelles au gorgonzola" , description: "Etape 1
 
 Faire revenir dans une noix de beurre les courgettes émincées et l'oignon dans une poêle, saler, poivrer et faire cuire pendant 5 minutes.
@@ -122,6 +120,7 @@ Etape 2
 
 Ajouter le Gorgonzola coupé en morceaux puis mélanger sur feu doux.
 Etape 3
+
 
 Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 2, user_id:3)
 

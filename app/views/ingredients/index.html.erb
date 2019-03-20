@@ -1,8 +1,16 @@
-<h2>Les ingrédients</h2>
+<div class="bg-container" id="index-recipes">
 
-<%@ingredients.each do |ingredient|%>
-  <p>Nom : <%=ingredient.name%> <br />
-  Calories : <%=ingredient.calories%> <br />
-  Category : <%=ingredient.ingredient_category.name%></p>
+  <div class="block block-1000 bg-indigo1 p-4 p-md-5 rounded-top text-center">
+    <h2 class="text-white">Les ingredients</h2>
+    <h4 class='text-white'>Il y a <%= @ingredients.count %> recensés dans notre base de donnée !</h4>
+  </div>
+
+  <div class="block block-1000 bg-white rounded-bottom"> 
+    <div class="row">
+    
+    <%=render @ingredients%>
+
+    </div>
+  </div>
+</div>
   
-<%end%>
