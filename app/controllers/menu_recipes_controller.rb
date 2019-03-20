@@ -1,5 +1,6 @@
 class MenuRecipesController < ApplicationController
    before_action :authenticate_user!, only: [:create]
+   autocomplete :recipe, :name
 
   def create
     puts '$' * 60

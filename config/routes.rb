@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   
  
   resources :ingredients, only: [:index] 
-  resources :menu_recipes, only: [:index, :create]
+  resources :menu_recipes, only: [:index, :create] do 
+    get :autocomplete_recipe_name, :on => :collection
+  end
 
   resources :recipes, only: [:index, :show, :new, :create] do
     get :autocomplete_ingredient_name, :on => :collection
