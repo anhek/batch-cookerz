@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.find(params[:comment_id])
     if @comment.user != current_user 
-      flash[:error] = "Supprime pas les commentaires des autres fdp"
+      flash[:error] = "Tu ne peux pas supprimer les commentaires des autres !"
       redirect_to recipe_path(@recipe)
     end
   end
