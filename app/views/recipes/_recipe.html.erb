@@ -45,10 +45,15 @@
       </div>
       <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3" %>
       <%if user_signed_in?%>
-        <div class="d-inline-block">
+       <div class="d-inline-block">
+          <% menu_added= MenuRecipe.find { |menu_recipe| menu_recipe.recipe_id == recipe.id} %>
+          <%if menu_added %>
+          <h3> Ta recette a deja ete ajoutee </h3>
+          <% else %>
           <%= button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-primary px-3", method: "post" %>
-        </div>
+          <% end%>
       <% end%>
+      </div>
     </div>
 
   </div>
