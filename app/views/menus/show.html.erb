@@ -17,38 +17,38 @@
 
     <hr class="mb-4 mt-0">
 
-      <% @menu_recipe.each do |recipe| %>
+      <% @menu_recipe.each do |menu_recipe| %>
         <div class="row">
           <div class="col-sm-4 d-flex align-items-center">
-            <%= link_to recipe_path(recipe.recipe), class: "img-fluid rounded" do %>
+            <%= link_to recipe_path(menu_recipe.recipe), class: "img-fluid rounded" do %>
               <img class="img-fluid rounded" src="https://cdn-image.foodandwine.com/sites/default/files/1483039291/chickpeas-and-kale-in-spicy-pomodoro-sauce-XL-RECIPE0217.jpg" alt="Card image cap">
             <% end %>
           </div>
         
           <div class="col-sm-8">
             <div class="recipe-info py-3">  
-              <%= link_to recipe_path(recipe.recipe), class: "title h4 mr-2" do %>
-                <%= recipe.recipe.name %>
+              <%= link_to recipe_path(menu_recipe.recipe), class: "title h4 mr-2" do %>
+                <%= menu_recipe.recipe.name %>
               <% end %>
               <span class="h5"> <i class="fas fa-seedling text-vegan" data-toggle="tooltip" data-placement="top" title="Végétalien"></i> <i class="fas fa-drumstick-bite text-omnivore " data-toggle="tooltip" data-placement="top" title="Omnivore"></i> <i class="fas fa-cheese text-vegetarian" data-toggle="tooltip" data-placement="top" title="Végétarien"></i> </span>
               <div class="the-icons my-2 text-grey1 h6 font-weight-normal">
                 <span class="mr-4">
-                  <i class="far fa-clock mr-1"></i> <%=recipe.recipe.cooking_time%> mn
+                  <i class="far fa-clock mr-1"></i> <%=menu_recipe.recipe.cooking_time%> mn
                 </span>
                 <span class="mr-4">
-                  <i class="fas fa-tag mr-1"></i> <%recipe.recipe.price_indicator.times do %>€
+                  <i class="fas fa-tag mr-1"></i> <%menu_recipe.recipe.price_indicator.times do %>€
                 <%end%>
                 </span>
                 <span class="mr-4"> 
-                  <i class="far fa-heart mr-1"></i> <%= recipe.recipe.likes.count %>
+                  <i class="far fa-heart mr-1"></i> <%= menu_recipe.recipe.likes.count %>
                 </span>
                 <span class="mr-4">
-                  <i class="far fa-comment mr-1"></i> <%= recipe.recipe.comments.count %>
+                  <i class="far fa-comment mr-1"></i> <%= menu_recipe.recipe.comments.count %>
                 </span>
               </div>
-              <p class="description"><%= recipe.recipe.description %></p>
+              <p class="description"><%= menu_recipe.recipe.description %></p>
               <div class="d-flex justify-content-end">
-                <a href="#" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Supprimer du menu</a>
+              <%= link_to 'Supprimer de mon menu', menu_recipe_path(menu_recipe_id: menu_recipe.id), method: :delete %>
               </div>
             </div>
           </div>
