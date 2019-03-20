@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :menu_recipes, only: [:index, :create]
 
   resources :recipes, only: [:index, :show, :new, :create] do
+    get :autocomplete_ingredient_name, :on => :collection
     resources :comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]
     resources :pictures, only: [:create, :show]
