@@ -46,3 +46,20 @@ a.diet-choice {
   text-align: left;
   background-color: white;
 }
+.ui-menu {
+  padding: $spacer * .8;
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+  background: $white;
+  border-radius: 0 0 5px 5px;
+  .ui-menu-item {
+    list-style-type: none;
+    padding: 0;
+    .ui-menu-item-wrapper {
+      list-style-type: none;
+      padding: $spacer * .1 1;
+      border-radius: 0 0 5px 5px;
+    }
+  }
+}
