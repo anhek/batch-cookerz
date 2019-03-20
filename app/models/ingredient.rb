@@ -7,5 +7,8 @@ class Ingredient < ApplicationRecord
   validates :name, presence: true, length: { in: 3..50 }
   validates :calories, presence: true, :numericality => { :greater_than_or_equal_to => 1, :less_than_or_equal_to => 999 }
 
+  def funky_method
+    "#{self.name}".camelize
+  end
 
 end

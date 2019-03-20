@@ -30,8 +30,7 @@ class Recipe < ApplicationRecord
   end
   
   def translate_input_ingredients_into_database_ingredients_ids(params)
-    puts '$' * 60
-    selected_ingredients = params.split() # je récupère les ingrédients sélectionnés en splittant à chaque espace
+    selected_ingredients = params.split(', ') # je récupère les ingrédients sélectionnés en splittant à chaque espace
     puts "Les ingrédients sélectionnés sont #{selected_ingredients}"
     selected_ingredients_ids = [] # initialisation du tableau qui va contenir les ids d'ingrédients
     selected_ingredients.each do |ingredient_name| # pour chaque nom d'ingrédient entré dans ma barre de recherche

@@ -5,7 +5,7 @@
       <h3 class="h5 text-white font-weight-normal mb-3">Composez votre batch-cooking en indiquant des ingrédients</h3>
       <div id="search-bar">
         <%= form_tag({:controller => "recipes", :action => "index"}, :method => "get", class:'input-group input-group-lg d-flex justify-content-center') do %>
-          <%= text_field_tag :ingredient, "", class: 'form-control w-100 rounded' %>
+          <%= autocomplete_field_tag :ingredient, "", autocomplete_ingredient_name_recipes_path, 'data-delimiter' => ', ', :multiple => true, :size => 75, 'data-auto-focus' => true, class: 'form-control w-100 rounded' %>
           <div class="text-center mt-4 w-100 block block-500 p-0">
           <div class="row search-buttons">
             <div class="col-12 col-sm-6 pr-md-2 pb-3 pb-sm-0">
