@@ -4,7 +4,7 @@
     <header class="p-4 text-center">
       <h2><i class="fas fa-clipboard-list mr-1"></i> Mon menu batch-cooking</h2>
       <p class="intro mb-3 mb-md-4">Voici les recettes que tu as sélectionné pour réaliser ton menu batch-cooking. Tu peux aussi générer une liste pour faciliter tes courses.</p>
-      <% if @menu_recipe.empty? %>
+      <% if @menu_recipes.empty? %>
         <h4 class="mb-4">Tu n'as aucunes recettes dans ton menu.</h4>
         <%= link_to "Voir toutes les recettes", recipes_path(@recipes), class: 'btn btn-indigo1 btn-lg' %>
       <% else %>
@@ -12,12 +12,20 @@
           <i class="fas fa-shopping-cart mr-1"></i> Générer ma liste de courses
         <%end%>
       <% end %>
-      
+      <%= form_for @menu_recipe do |f| %>
+        <%= f.autocomplete_field :recipe_id, autocomplete_recipe_name_menu_recipes_path%>
+        <%= f.hidden_field :menu_id, :value => params[:id] %>
+        <%= f.submit "Ajouter à mon menu" %>
+      <%end%>
     </header>
 
     <hr class="mb-4 mt-0">
 
+<<<<<<< HEAD
       <% @menu_recipe.each do |menu_recipe| %>
+=======
+      <% @menu_recipes.each do |menu_recipe| %>
+>>>>>>> delivery
         <div class="row">
           <div class="col-sm-4 d-flex align-items-center">
             <%= link_to recipe_path(menu_recipe.recipe), class: "img-fluid rounded" do %>
