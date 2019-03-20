@@ -41,7 +41,10 @@
         <%= label_tag 'Ingrédients' %><br>
         <% Ingredient.all.each do |ingredient| %>
           <%= check_box_tag "ingredient_ids[#{ingredient.id}]", ingredient.id, false, :name => "ingredient_ids[]" %>
-          <%= ingredient.name %> <br /> 
+          <%= ingredient.name %>
+          <%= label_tag 'Quantité' %>
+          <%= number_field_tag :quantity %>
+          <br /> 
         <% end %>
       </div>
       <div class="form-group text-center">
