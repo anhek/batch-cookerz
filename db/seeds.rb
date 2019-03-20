@@ -121,8 +121,7 @@ Etape 2
 Ajouter le Gorgonzola coupé en morceaux puis mélanger sur feu doux.
 Etape 3
 
-
-Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 2, user_id:3)
+Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 1, user_id:3)
 
 Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
 
