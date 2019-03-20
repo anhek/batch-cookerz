@@ -1,0 +1,15 @@
+<div class="mb-5">
+
+  <h4><i class="far fa-bookmark mr-1"></i> Les ingredients </h4>
+  <div class="table-responsive">
+    <table class="table">
+    <% i = 1 %>
+    <%@ingredients.count%>
+    <tbody>
+    <%@ingredients.each do |ingredient|%>
+    <tr>
+    <th scope="row"><%= i %></th>
+    <td class="font-weight-bold" colspan="2"> Nom : <%=ingredient.name%>
+    Calories : <%=ingredient.calories%> <br />
+    Category : <%=ingredient.ingredient_category.name%></td>
+    <%end%>
