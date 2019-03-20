@@ -48,7 +48,7 @@
               </div>
               <p class="description"><%= recipe.recipe.description %></p>
               <div class="d-flex justify-content-end">
-                <a href="#" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Supprimer du menu</a>
+              <%= link_to 'Supprimer de mon menu', menu_recipe_path(menu_recipe_id: @menu_recipe.ids), method: :delete %>
               </div>
             </div>
           </div>

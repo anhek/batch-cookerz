@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
  
   resources :ingredients, only: [:index] 
-  resources :menu_recipes, only: [:index, :create]
+  resources :menu_recipes, only: [:index, :create, :destroy]
 
   resources :recipes, only: [:index, :show, :new, :create] do
     resources :comments, only: [:create, :destroy]
