@@ -48,7 +48,7 @@
        <div class="d-inline-block">
           <% menu_added= MenuRecipe.find { |menu_recipe| menu_recipe.recipe_id == recipe.id} %>
           <%if menu_added %>
-          <h3> Ta recette a deja ete ajoutee </h3>
+          <span class="h6 text-indigo2"><i class="far fa-star"></i> Déjà ajoutée à ton menu ! </span><br><p>
           <% else %>
           <%= button_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-primary px-3", method: "post" %>
           <% end%>

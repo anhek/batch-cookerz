@@ -52,7 +52,9 @@
             <%if user_signed_in?%>
                 <% menu_added= MenuRecipe.find { |menu_recipe| menu_recipe.recipe_id == @recipe.id} %>
                 <%if menu_added %>
-                <h3> Ta recette a deja ete ajoutee </h3>
+                <div class="container">
+                <span class="h6 text-indigo2"><i class="far fa-star"></i> Déjà ajoutée à ton menu ! </span><br><p>
+                </div>
                 <% else %>
                 <%= link_to menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-primary py-2 w-100 text-uppercase", method: "post" do %>
                   <small>Ajouter à mon</small> <br> <span class="h5 text-white">menu</span>]
