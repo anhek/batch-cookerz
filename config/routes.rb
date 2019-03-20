@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get 'team', to: 'single_pages#team'
   
  
+
   resources :ingredients, only: [:index] 
-  resources :menu_recipes, only: [:index, :create, :destroy]
+  resources :menu_recipes, only: [:index, :create, :destroy] do 
+    get :autocomplete_recipe_name, :on => :collection
+  end
 
   resources :recipes, only: [:index, :show, :new, :create] do
     get :autocomplete_ingredient_name, :on => :collection
