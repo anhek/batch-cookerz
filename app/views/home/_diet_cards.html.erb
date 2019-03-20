@@ -1,0 +1,40 @@
+<section class="bg-white">
+  <div class="block block-1000">
+    <header class="text-center mb-4"> 
+      <h3 class="text-secondary">Composez votre batch-cooking <br> <span class="h4 font-weight-normal">selon votre régime alimentaire</span></h3>
+    </header>
+    <div class="row">
+
+      <div class="col-sm-4 mb-3 md-md-0">
+        <div class="d-inline-block">
+          <%= link_to recipe_category_path(id: 3), method: :get do %>
+            <%= image_tag("the-creative-exchange-1309304-unsplash", class:"w-100 rounded-top" )%>
+          <% end %>
+          <h3 class=""><%= link_to "Végétalien", recipe_category_path(id: 3), method: :get, class:"h4 font-weight-normal text-white rounded-bottom text-center py-2 px-4 bg-vegan d-block" %></h3>
+        </div>
+      </div>
+
+      <div class="col-sm-4 mb-3 md-md-0">
+        <div class="d-inline-block">
+          <%= link_to recipe_category_path(id: 2), method: :get do %>
+            <%= image_tag("brooke-lark-229136-unsplash", class:"w-100 rounded-top" )%>
+          <% end %>
+          <h3 class=""><%= link_to "Végétarien", recipe_category_path(id: 2), method: :get, class:"h4 font-weight-normal text-white rounded-bottom text-center py-2 px-4 bg-vegetarian d-block" %></h3>
+        </div>
+      </div>
+
+      <div class="col-sm-4 mb-3 md-md-0">
+        <div class="d-inline-block">
+        <%= link_to recipe_category_path(id: 1), method: :get, class: 'lol' do %>
+          <%= image_tag("mariana-medvedeva-561531-unsplash", class:"w-100 rounded-top" )%>
+        <% end %>
+          <h3 class=""><%= link_to "Omnivore", recipe_category_path(id: 1), method: :get, class:"h4 font-weight-normal test text-white rounded-bottom text-center py-2 px-4 bg-omnivore d-block" %></h3>
+        </div>
+      </div>
+
+    </div>
+    <!-- <footer class="text-center p-3">
+      <%= link_to "Voir nos dernières recettes", recipes_path, class:"h5" %>
+    </footer> -->
+  </div>
+</section>

@@ -4,13 +4,14 @@ class MenusController < ApplicationController
 
   def show
     @menu = Menu.find(params[:id])
-    @menu_recipe = MenuRecipe.where(menu_id: params[:id])
+    @menu_recipes = MenuRecipe.where(menu_id: params[:id])
+    @menu_recipe = MenuRecipe.new
   end
 
   def destroy
     @menu = Menu.find(params[:id])
     @menu.destroy
-    redirect_to user_path
+    redirect_to user_path(current_user)
   
   end
 

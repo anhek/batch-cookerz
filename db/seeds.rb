@@ -43,6 +43,7 @@ Quand le riz est cuit, incorporez le dans la poêle et assaisonnez de sel et poi
 Etape 7
 
 Enfin, rajouter la sauce soja. Laisser cuire encore 5 min et voilà", preparation_time: 20, cooking_time: 15, price_indicator: 1, recipe_category_id: 3, user_id:1)
+
 Recipe.create!(name: "Ratatouille" , description: "Etape 1
 
 Coupez les tomates pelées en quartiers,
@@ -76,6 +77,7 @@ Vérifiez la cuisson des légumes pour qu'ils ne soient plus fermes. Ajoutez les
 Etape 11
 
 Salez et poivrez si besoin.", preparation_time: 25, cooking_time: 55, price_indicator: 2, recipe_category_id: 3, user_id:2)
+
 Recipe.create!(name: "Scampis à l'italienne" , description: "Etape 1
 
 Plongez les scampis 2 mn dans l'eau très chaude pour les décortiquer facilement. Epongez les à l'aide d'un essuie-tout. Une fois décortiqués, cuisez-les (7 mn environ).
@@ -84,7 +86,8 @@ Etape 2
 Faites colorer le beurre dans une poêle, puis ajoutez les scampis. Ajoutez l'éclat d'ail pressé et le poivre. Ajoutez la crème fraîche et le concentré de tomate. Mélangez le tout.
 Etape 3
 
-Servez les scampis avec du pain à l'ail ou des pâtes.", preparation_time: 10, cooking_time: 7, price_indicator: 5, recipe_category_id: 1, user_id:3)
+Servez les scampis avec du pain à l'ail ou des pâtes.", preparation_time: 10, cooking_time: 7, price_indicator: 5, recipe_category_id: 2, user_id:3)
+
 Recipe.create!(name: "Gratin dauphinois" , description: "Etape 1
 
 Préchauffer le four à 120°C (thermostat 4).
@@ -108,7 +111,32 @@ Terminer en nappant de crème, sel, poivre.
 Etape 7
 
 Mettre au four pendant au moins une heure. 
-Plus la température est basse et le temps de cuisson long, plus les pommes seront fondantes...", preparation_time: 30, cooking_time: 60, price_indicator: 1, recipe_category_id: 2, user_id:4)
+
+Plus la température est basse et le temps de cuisson long, plus les pommes seront fondantes...", preparation_time: 30, cooking_time: 60, price_indicator: 1, recipe_category_id: 1, user_id:4)
+
+Recipe.create!(name: "Tagliatelles au gorgonzola" , description: "Etape 1
+
+Faire revenir dans une noix de beurre les courgettes émincées et l'oignon dans une poêle, saler, poivrer et faire cuire pendant 5 minutes.
+Etape 2
+
+Ajouter le Gorgonzola coupé en morceaux puis mélanger sur feu doux.
+Etape 3
+
+Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 1, user_id:3)
+
+Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
+
+Faites revenir 2 minutes à feu moyen le haché de Veau Tendriade.
+Etape 2
+
+Dans un bol, mélangez le coulis de tomates et la ricotta. Salez et poivrez.
+Etape 3
+
+Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
+Etape 4
+
+Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 2, user_id:3)
+
 
 puts "Recipe created"
 
@@ -116,11 +144,34 @@ puts "Recipe created"
 	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
 end
 
-Ingredient.create!(name: "Carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
-Ingredient.create!(name: "Patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
-15.times do 
-  Ingredient.create!(name: Faker::Food.ingredient, calories: rand(50..250), ingredient_category_id: rand(1..5))
-end
+Ingredient.create!(name: "carotte", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "patate", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "scampis", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "crème", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "tomate", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "beurre", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "ail", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "persil", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "gorgonzola", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "tagliatelle", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "courgette", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "oignon", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "tofu", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "riz", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "échalote", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "sauce soja", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "aubergine", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "poivron", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "thym", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "laurier", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "viande hachée", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "pâte à lasagne", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "ricotta", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "origan", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "basilic", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "parmesan", calories: rand(50..250), ingredient_category_id: rand(1..5))
+Ingredient.create!(name: "gruyère", calories: rand(50..250), ingredient_category_id: rand(1..5))
+
 puts "Ingredients created"
 
 5.times do |i|
