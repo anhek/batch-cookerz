@@ -2,7 +2,7 @@
 
   <header class="recipe-title mb-3 mb-md-4">
     <h1 class="h2 mb-0"> <%= @recipe.name%> </h1>
-    <p>Recette proposée par <%= @user.first_name%></p>
+    <p>Recette proposée par <%= @recipe.user.first_name%></p>
   </header>
 
 
@@ -45,12 +45,12 @@
             </li>
             <li class="mb-4">
               <span class="h6 text-indigo2">Tranche de prix</span><br>
-                <span class="h5 text-white"><%@recipe.price_indicator.times do %>€
+                <span class="h5 text-indigo4"><i class="fas fa-tag mr-1"></i></span> <%@recipe.price_indicator.times do %>€
                 <%end%>
             </li>
             <%if user_signed_in?%>
               <li class="mb-4">
-                <%= link_to menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-indigo1 py-2 w-100 text-uppercase", method: "post" do %>
+                <%= link_to menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-primary py-2 w-100 text-uppercase", method: "post" do %>
                   <small>Ajouter à mon</small> <br> <span class="h5 text-white">menu</span>
                 <% end %>
               </li>

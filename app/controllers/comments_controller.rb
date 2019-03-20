@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     comment = Comment.new(user_id: current_user.id, recipe_id: @recipe.id, description: params[:comment][:description])
     if comment.save
+      flash[:success] = "Ton commentaire à bien été ajouté !"
       redirect_to recipe_path(@recipe)
     end 
   end 
@@ -14,6 +15,7 @@ class CommentsController < ApplicationController
     puts params.inspect
     @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.find(params[:comment_id])
+    flash[:success] = "Ton commentaire à été supprimé !"
     @comment.destroy
     redirect_to recipe_path(@recipe)
   end

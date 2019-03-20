@@ -23,13 +23,15 @@
         <%= f.label 'Description', class: 'h6 text-secondary font-weight-bold' %> <small class="text-grey1">(2000 caractères maximum)</small>
         <%= f.text_area :description, rows:6, class: 'form-control mb-4', required: true %>
       </div>
-      <div class="form-group">
-        <%= f.label 'Temps de préparation', class: 'h6 text-secondary font-weight-bold' %> <small class="text-grey1">(en minutes)</small>
-        <%= f.number_field :preparation_time, class: 'form-control mb-4', required: true  %>
-      </div>
-      <div class="form-group">
-        <%= f.label 'Temps de cuisson', class: 'h6 text-secondary font-weight-bold' %> <small class="text-grey1">(en minutes)</small>
-        <%= f.number_field :cooking_time, class: 'form-control mb-4', required: true  %>
+      <div class="form-row mb-4">
+        <div class="col-12 col-md-6">
+          <%= f.label 'Temps de préparation', class: 'h6 text-secondary font-weight-bold' %> <small class="text-grey1">(en minutes)</small>
+          <%= f.number_field :preparation_time, class: 'form-control mb-4', required: true  %>
+        </div>
+        <div class="col-12 col-md-6">
+          <%= f.label 'Temps de cuisson', class: 'h6 text-secondary font-weight-bold' %> <small class="text-grey1">(en minutes)</small>
+          <%= f.number_field :cooking_time, class: 'form-control mb-4', required: true  %>
+        </div>
       </div>
       <div class="form-group">
         <%= f.label 'Image', class: 'h6 text-secondary font-weight-bold' %>
