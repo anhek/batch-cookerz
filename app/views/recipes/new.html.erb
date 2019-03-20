@@ -4,47 +4,47 @@
       <h2>Proposer une nouvelle recette</h2>
       <p class="intro">Vous avez une idée de recette que vous souhaiteriez proposer à la communauté des Batch-Cookerz ? Vous êtes au bon endroit :)</p>
     </header>
-    <%= form_with model: @recipe, method: 'CREATE', class: "needs-validation" do |f| %>
+    <%= form_tag url_for(action: 'create'), method: "post", multipart: true, class: "needs-validation" do %>
       <div class="form-group mb-4">
-        <%= f.label 'Nom de la recette', class: 'h6 text-secondary font-weight-bold' %>
-        <%= f.text_field :name, class: 'form-control', required: true %>
+        <%= label_tag 'Nom de la recette' %>
+        <%= text_field_tag :name %>
       </div>
       <div class="form-row mb-4">
         <div class="col-12 col-md-6">
-          <%= f.label 'Catégorie', class: 'h6 text-secondary font-weight-bold' %> <small class="text-grey1">(Régime alimentaire)</small>
-          <%= f.collection_select(:recipe_category, RecipeCategory.order(:name), :id, :name, {}, {:class=>'form-control', :required => true}) %>
+          <%= label_tag 'Catégorie'%> <small class="text-grey1">(Régime alimentaire)</small>
+          <%= text_field_tag :recipe_category %>
         </div>
         <div class="col-12 col-md-6">
-          <%= f.label 'Prix', class: 'h6 text-secondary font-weight-bold' %> <small class="text-grey1">(Sélectionner une tranche de prix)</small>
-          <%= f.select(:price_indicator, [['€',1],['€€',2],['€€€',3],['€€€€',4],['€€€€€',5]], {}, {:class=>'form-control', :required => true}) %>
+          <%= label_tag 'Prix' %> <small class="text-grey1">(Sélectionner une tranche de prix)</small>
+          <%= number_field_tag :price_indicator %>
         </div>
       </div>
       <div class="form-group">
-        <%= f.label 'Description', class: 'h6 text-secondary font-weight-bold' %> <small class="text-grey1">(2000 caractères maximum)</small>
-        <%= f.text_area :description, rows:6, class: 'form-control mb-4', required: true %>
+        <%= label_tag 'Description' %> <small class="text-grey1">(2000 caractères maximum)</small>
+        <%= text_area_tag :description %>
       </div>
       <div class="form-row mb-4">
         <div class="col-12 col-md-6">
-          <%= f.label 'Temps de préparation', class: 'h6 text-secondary font-weight-bold' %> <small class="text-grey1">(en minutes)</small>
-          <%= f.number_field :preparation_time, class: 'form-control mb-4', required: true  %>
+          <%= label_tag 'Temps de préparation' %> <small class="text-grey1">(en minutes)</small>
+          <%= number_field_tag :preparation_time %>
         </div>
         <div class="col-12 col-md-6">
-          <%= f.label 'Temps de cuisson', class: 'h6 text-secondary font-weight-bold' %> <small class="text-grey1">(en minutes)</small>
-          <%= f.number_field :cooking_time, class: 'form-control mb-4', required: true  %>
+          <%= label_tag 'Temps de cuisson' %> <small class="text-grey1">(en minutes)</small>
+          <%= number_field_tag :cooking_time %>
         </div>
       </div>
       <div class="form-group">
-        <%= f.label 'Image', class: 'h6 text-secondary font-weight-bold' %>
-        <%= f.file_field :picture, class: 'form-control mb-4', required: true  %>
+        <%= label_tag 'Image' %>
+        <%= file_field_tag :picture %>
       </div>
       <div class="form-group">
-        <%= f.label 'Ingrédients', class: 'h6 text-secondary font-weight-bold' %><br>
+        <%= label_tag 'Ingrédients' %><br>
         <% for ingredient in Ingredient.all %>
-            <%= f.check_box :ingredient, {multiple: true}, ingredient.id %> <%= ingredient.name %><br/>
+            <%= check_box_tag :ingredient, {multiple: true}, ingredient.id %> <%= ingredient.name %><br/>
         <% end %>
       </div>
       <div class="form-group text-center">
-        <%= f.submit "Proposer la recette", class: 'btn btn-primary btn-lg' %>
+        <%= submit_tag "Proposer la recette" %>
       </div>
     <% end %>
 

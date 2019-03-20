@@ -50,7 +50,7 @@ class Recipe < ApplicationRecord
     puts '$' * 60
     print "Les ingrédients sélectionnés sont : #{selected_ingredients}"
     recipes = []
-    all_recipes = Recipe.all       
+    all_recipes = Recipe.all
     all_recipes.each do |recipe| # pour chaque recette 
       composition = Composition.where(recipe_id: recipe.id) # je crée un array qui contient tous les ingredients_ids de la recette
       ingredients_ids = [] # initialisation d'un tableau d'ingrédients id
@@ -65,6 +65,10 @@ class Recipe < ApplicationRecord
       end
     end
     return recipes
+  end  
+
+  def picture_300
+    return self.picture.variant(resize: '300x300')
   end  
   
 end
