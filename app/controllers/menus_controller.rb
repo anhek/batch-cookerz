@@ -13,7 +13,7 @@ class MenusController < ApplicationController
     @menu.number_of_people = update_params
     @menu.save
     
-    redirect_to user_menu_path(@menu)
+    redirect_to user_menu_path(current_user, @menu)
   end
 
   def destroy

@@ -50,7 +50,7 @@ class ShoppingListsController < ApplicationController
       unit_for_one_ingredient = value[0].unit
       compositions.each do |composition|
         if key == composition.ingredient.name
-          sum_for_one_ingredient += composition.quantity
+          sum_for_one_ingredient += composition.quantity * menu.number_of_people
         end
       end
       
