@@ -53,11 +53,7 @@
     <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3 mt-3 mb-2" %>
     <%if user_signed_in?%>
       <div class="d-inline-block">
-        <%if is_the_menu_already_added? %>
-          <span class="h6 text-indigo2"><i class="far fa-star"></i> Déjà ajoutée à ton menu ! </span>
-        <% else %>
-          <%= link_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-primary px-3", method: "post" %>
-        <% end%>
+        <%= link_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-primary px-3", method: "post" %>
       </div>
     <% end%>
   </div>

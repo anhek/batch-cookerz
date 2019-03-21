@@ -25,7 +25,7 @@ class User < ApplicationRecord
   end
 
   def default_image
-    self.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'raph-le-boss.png')), filename: 'raph-le-boss.png', content_type: 'image/png')
+    self.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'maite.jpg')), filename: 'maite.jpg', content_type: 'image/jpg')
   end 
 
   def thumbnail
