@@ -34,7 +34,7 @@ class User < ApplicationRecord
   end
 
   def attribute_menu_to_new_user
-    Menu.create!(user_id: User.last.id, number_of_recipes: 0)
+    Menu.create!(user_id: User.last.id)
   end
 
   def find_liked_recipes(likes)

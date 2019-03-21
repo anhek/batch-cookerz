@@ -24,9 +24,6 @@ class Recipe < ApplicationRecord
   def default_picture
     self.picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default_recipe.jpg')), filename: 'default_recipe.jpg', content_type: 'image/jpg')
   end 
-
-   
-
   
   def get_ingredients_number_from_new_recipe_form(params)
     ingredients  = []
