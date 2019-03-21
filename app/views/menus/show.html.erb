@@ -8,9 +8,16 @@
         <h4 class="mb-4">Tu n'as aucunes recettes dans ton menu.</h4>
         <%= link_to "Voir toutes les recettes", recipes_path(@recipes), class: 'btn btn-indigo1 btn-lg' %>
       <% else %>
-        <%= link_to user_menu_shopping_lists_path(menu_id: params[:id]), class: "btn btn-primary mb-3 mb-md-4", method: :post do %> 
-          <i class="fas fa-shopping-cart mr-1"></i> Générer ma liste de courses
-        <%end%>
+        <% if @shopping_list != nil %>
+          <%= link_to user_menu_shopping_list_path(current_user, @menu, @shopping_list), class: "btn btn-primary mb-3 mb-md-4" do %> 
+            <i class="fas fa-shopping-cart mr-1"></i> Voir ma liste de courses
+          <% end %>
+        <% else %>
+          <%= link_to user_menu_shopping_lists_path(menu_id: params[:id]), class: "btn btn-primary mb-3 mb-md-4", method: :post do %> 
+           <i class="fas fa-shopping-cart mr-1"></i> Générer ma liste de courses
+          <% end %>
+        <% end %>
+
       <% end %>
       <%= form_for @menu_recipe do |f| %>
         <%= f.autocomplete_field :recipe_id, autocomplete_recipe_name_menu_recipes_path%>

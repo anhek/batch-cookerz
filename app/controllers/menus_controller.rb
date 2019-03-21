@@ -6,6 +6,7 @@ class MenusController < ApplicationController
     @menu = Menu.find(params[:id])
     @menu_recipes = MenuRecipe.where(menu_id: params[:id])
     @menu_recipe = MenuRecipe.new
+    @shopping_list = ShoppingList.find_by(menu_id: @menu.id)
   end
 
   def update
