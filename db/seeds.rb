@@ -158,7 +158,7 @@ Ingredient.create!(name: "Courgette", calories: rand(50..250), ingredient_catego
 Ingredient.create!(name: "Oignon", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
 Ingredient.create!(name: "Tofu", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
 Ingredient.create!(name: "Riz", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "Échalote", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Echalote", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
 Ingredient.create!(name: "Sauce soja", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
 Ingredient.create!(name: "Aubergine", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
 Ingredient.create!(name: "Poivron", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
