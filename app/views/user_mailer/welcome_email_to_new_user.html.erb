@@ -1,16 +1,62 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <title> Email de bienvenue. </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="welcome_email_to_new_user.scss">
   </head>
   <body>
-    <h1>Salut à toi <%= @user.first_name %> <%= @user.last_name %> et bienvenue chez nous !</h1>
-    <p>
-      Tu t'es inscrit sur <a href="<%= @url %>"><%= @url %></a> en utilisant l'e-mail suivant : <%= @user.email %>.
-    </p>
-    <p>
-      Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
-    </p>
-    <p> À très vite sur <%= @url %> !
-  </body>
+
+  <div class="container">
+      <div class="outel-panel text-center-rounded">
+          <p class="lead">Bienvenue à toi Nouveau Batchcooker <%= @user.first_name %> <%= @user.last_name %>!  <i class="fas fa-utensils"></i> </p>
+              <br>
+              <p class="h6"> Tu t'es inscrit sur
+                <%= link_to "http://batchcookerz.fr", class:"h4" do %> 
+                <strong> Batchcookerz.fr</strong>
+                <%end%> 
+              en utilisant l'e-mail suivant : <strong><%= @user.email %></strong>.</p>
+                <br>
+              <p class="h6"> Maintenant, c'est à <strong>toi</strong> de jouer! <small class="text-muted"> Et de <strong>batchcooker</strong>!</small></p>
+              <br>
+              <p>
+                  <ul class="list-unstyled">
+                      <li>Recherche par <strong>ingredients</strong> les recettes qui serviront à <strong>composer ton menu de la semaine </strong>.</li>
+                      <br>
+                      <li>Si t'as pas d'idées, t'inquiète pas ! Va voir les recettes et les <em>ingrédients du moment,</em><small class="text-muted"> et laisse toi tenter...</small></li>
+                      <br>
+                      <li>Quand on partage, c'est toujours mieux... pense à <em>multiplier les quantités </em> <small class="text-muted">en fonction des personnes qui profiteront de tes bons petits plats.</small></li>
+                      <br>
+                      <li>Lorsque tes recettes sont ajoutées et que tes quantités sont bonnes, tu peux <strong>génerer ta liste de courses</strong>.</li>
+                      <li><small class="text-muted">Que tu recevras automatiquement sur ton smartphone, pratique hein?!</small></li>
+                      <br>
+                      <li>Et là, il ne te reste plus qu'à fixer ta mission course et <strong>réserver ton (seul) créneau cuisine </strong> de la semaine.</li>
+                      <br>
+                      <li><strong>HOP, HOP, HOP </strong> Ta mission n'est pas tout à terminée... </li> 
+                      <br>
+                      <li><i class="fas fa-arrow-circle-right"></i><i class="fas fa-arrow-circle-right"></i><i class="fas fa-arrow-circle-right"></i><strong> reviens vite sur notre site </strong> <small class="text-muted"> pour donner ton avis, des astuces </small> et, surtout, <strong>ajoute tes recettes </strong> pour que, nous aussi, on puisse se régaler !!!</li> 
+                  </ul>
+                      <br>
+                      <br>
+              À très vite sur <%= @url %> !
+              <br>
+              Nos sincères salutations !
+              Et bon appétit ! <i class="fas fa-laugh-beam"></i>
+              </p>
+              <p class="h6"><strong>Batch Cookers Team </strong></p>
+              <br>
+              <p class="h3">
+                <%= link_to "http://batchcookerz.fr", class:"h3" do %> 
+                <strong> Batchcookerz.fr</strong>
+                <%end%>
+              </p>
+              <h3 class="h3"><em> <i class="fas fa-cookie-bite"></i><i class="far fa-lightbulb"></i>Préparez vos repas une seule fois, et assemblez la semaine ! <i class="far fa-lightbulb"></i> <i class="fas fa-cookie-bite"></i></em></p>
+           </div>
+       </div>
+
+    </body>
 </html>
