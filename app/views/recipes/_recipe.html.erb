@@ -1,10 +1,10 @@
 <div class="col-sm-6 col-md-4 px-2 pb-3">
   
-  <%= link_to recipe_path(recipe), class: "img-fluid rounded" do %>
+  <%= link_to recipe_path(recipe) do %>
     <%if recipe.picture.attached? %>
-      <%= image_tag recipe.picture_300, class:"img-fluid rounded" %>
+      <%= image_tag recipe.picture_300, class:"w-100 img-fluid rounded" %>
     <%else%>
-      <img class="img-fluid rounded" src="https://cdn-image.foodandwine.com/sites/default/files/1483039291/chickpeas-and-kale-in-spicy-pomodoro-sauce-XL-RECIPE0217.jpg" alt="Card image cap">
+      <img class="w-100 img-fluid rounded" src="https://cdn-image.foodandwine.com/sites/default/files/1483039291/chickpeas-and-kale-in-spicy-pomodoro-sauce-XL-RECIPE0217.jpg" alt="Card image cap">
     <%end%>
   <% end %>
 
@@ -49,12 +49,12 @@
         <% end %>
       </span>
     </div>
-
-    <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3 mt-3 mb-2" %>
-    <%if user_signed_in?%>
-      <div class="d-inline-block">
-        <%= link_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-primary px-3", method: "post" %>
-      </div>
-    <% end%>
+    
+    <div class="recipe-links mt-3 m">
+      <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3 mb-sm-2" %>
+      <%if user_signed_in?%>
+          <%= link_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-primary px-3", method: "post" %>
+      <% end%>
+    </div>
   </div>
 </div>
