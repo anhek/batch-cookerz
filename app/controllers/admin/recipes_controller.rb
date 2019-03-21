@@ -1,5 +1,5 @@
 class Admin::RecipesController < ApplicationController
-  before_action :check_if_admin 
+  before_action :check_if_admin!
   
   def index
     @recipes = Recipe.all.sort
@@ -13,11 +13,12 @@ class Admin::RecipesController < ApplicationController
     redirect_to admin_recipes_path
   end
 
-  def check_if_admin
-    if user_signed_in?
-      current_user.is_admin == true
+  def check_if_admin!
+    if current_user.is_admin == false
+      flash[:error] = "Accès réservé aux meilleurs cuisiniers !"
+      redirect_to root_path
     end
- end
+  end
 
 
 end
