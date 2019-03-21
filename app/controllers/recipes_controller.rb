@@ -19,9 +19,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @comments = Comment.where(recipe_id: @recipe.id)
     @comment = Comment.new
-    if user_signed_in?
-      @user = User.find(current_user.id)
-    end
+    @compositions = Composition.where(recipe_id: @recipe.id)
+    puts '$' * 60
+    puts @compositions
   end 
 
   def new 

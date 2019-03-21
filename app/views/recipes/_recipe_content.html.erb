@@ -80,10 +80,10 @@
     <div class="row">
       <div class="col-12">
         <div class="ingredients p-4 p-md-5 bg-grey5 rounded mb-4">
-          <h3 class="h4">Ingrédients</h3>
+          <h3 class="h4">Ingrédients pour une personne</h3>
           <ul>
-          <% @recipe.ingredients.each do |ingredient| %>
-            <li><%= ingredient.name %></li>
+          <% @compositions.each do |composition| %>
+            <li> <%= composition.ingredient.name %> : <%= composition.quantity %> <%= composition.ingredient.unit %></li>
           <% end %>
           </ul>
         </div> 
