@@ -17,10 +17,9 @@ class ShoppingListsController < ApplicationController
   end
 
 
-
   def show
-    menu = Menu.find(params[:menu_id])
-    menu_recipes = MenuRecipe.where(menu_id: menu.id)
+    @menu = Menu.find(params[:menu_id])
+    menu_recipes = MenuRecipe.where(menu_id: @menu.id)
     
     recipes = []
     menu_recipes.each do |menu_recipe|
@@ -50,7 +49,7 @@ class ShoppingListsController < ApplicationController
       unit_for_one_ingredient = value[0].unit
       compositions.each do |composition|
         if key == composition.ingredient.name
-          sum_for_one_ingredient += composition.quantity * menu.number_of_people
+          sum_for_one_ingredient += composition.quantity * @menu.number_of_people
         end
       end
       

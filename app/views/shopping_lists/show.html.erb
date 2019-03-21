@@ -4,6 +4,12 @@
     <header class="p-4 text-center">
       <h2> <i class="fas fa-clipboard mr-2"> </i>Ma liste de course</h2>
       <p class="intro mb-3 mb-md-4">Voici la liste de course pour ton menu.</p>
+            <%= form_for @menu, :url => { :controller => "menus", :action => "update" }, :html => {:method => :put} do |f| %>
+        <%= f.number_field :number_of_people, value: @menu.number_of_people %>
+        <%= f.hidden_field :shopping_list_id, :value => params[:id]%>
+        <%= f.hidden_field :menu_id, :value => @menu.id%>
+        <%= f.submit "Modifier le nombre de personnes" %>
+      <% end %>
     </header>
 
     <table class="table">
