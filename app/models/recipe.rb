@@ -18,6 +18,8 @@ class Recipe < ApplicationRecord
     validates :price_indicator, presence: true
     validates :recipe_category_id, presence: true
 
+    before_save :default_values
+
   
   def get_ingredients_number_from_new_recipe_form(params)
     ingredients  = []
@@ -69,5 +71,9 @@ class Recipe < ApplicationRecord
   def picture_300
     return self.picture.variant(resize: '300x300')
   end  
+
+  def default_values
+    self.is_displayed ||= false
+  end
   
 end
