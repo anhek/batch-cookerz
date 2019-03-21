@@ -8,9 +8,13 @@
 
 ingredient_categories = ["Viande", "Poisson", "Légume", "Fruit", "Légumineuse"]
 
+
+
+
+User.create!(first_name: "Admin", last_name: "Perfect Batch Cooker", email: "admin@batchcooker.fr", password: "admin123", nickname: "Admin", is_admin: true)
 User.create!(first_name: "Maïté", last_name: "Ordonez", email: "maite@thp.org", password: "jaifaim", nickname: "Super Maïté")
 
-5.times do |i|
+4.times do |i|
   User.create!(first_name: Faker::Superhero.name, last_name: Faker::Artist.name, email: "email#{i+1}@gmail.com", password: "raphleboss69", nickname: Faker::Internet.username(5..8))
 end
 puts "Users created"
@@ -146,85 +150,85 @@ puts "Recipe created"
 	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
 end
 
-Ingredient.create!(name: "ail", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gousses")
-Ingredient.create!(name: "amande", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "aubergine", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Ail", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gousses")
+Ingredient.create!(name: "Amande", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Aubergine", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
 
-Ingredient.create!(name: "basilic", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "feuille(s)")
-Ingredient.create!(name: "béchamelle", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "beurre", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "bûche de chèvre", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Basilic", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "feuille(s)")
+Ingredient.create!(name: "Béchamelle", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Beurre", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Bûche de chèvre", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
 
-Ingredient.create!(name: "câpres", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "carotte", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "champignon", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "coriandre", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "pincée(s)")
-Ingredient.create!(name: "coulis de tomate", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "courgette", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "crème fraiche", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "crème liquide", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
-Ingredient.create!(name: "cube de bouillon", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "curry", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "pincée(s)")
+Ingredient.create!(name: "Câpres", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Carotte", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Champignon", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Coriandre", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "pincée(s)")
+Ingredient.create!(name: "Coulis de tomate", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Courgette", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Crème fraiche", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Crème liquide", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
+Ingredient.create!(name: "Cube de bouillon", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Curry", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "pincée(s)")
 
-Ingredient.create!(name: "eau", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
-Ingredient.create!(name: "échalote", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "escalope de poulet", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "endive", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Eau", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
+Ingredient.create!(name: "Echalote", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Escalope de poulet", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Endive", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
 
-Ingredient.create!(name: "farine", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "fromage frais", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Farine", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Fromage frais", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
 
-Ingredient.create!(name: "gorgonzola", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "gruyère", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Gorgonzola", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Gruyère", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
 
-Ingredient.create!(name: "herbes de Provence", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "pincée(s)")
-Ingredient.create!(name: "huile d'olive", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
+Ingredient.create!(name: "Herbes de Provence", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "pincée(s)")
+Ingredient.create!(name: "Huile d'olive", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
 
-Ingredient.create!(name: "jambon", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "julienne de légumes", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Jambon", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Julienne de légumes", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
 
-Ingredient.create!(name: "lait", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
-Ingredient.create!(name: "laurier", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "feuille(s)")
-Ingredient.create!(name: "levure chimique", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Lait", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
+Ingredient.create!(name: "Laurier", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "feuille(s)")
+Ingredient.create!(name: "Levure chimique", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
 
-Ingredient.create!(name: "margarine", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "menthe", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "feuille(s)")
-Ingredient.create!(name: "miel", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
-Ingredient.create!(name: "mozarella", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "muscade", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "pincée(s)")
+Ingredient.create!(name: "Margarine", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Menthe", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "feuille(s)")
+Ingredient.create!(name: "Miel", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
+Ingredient.create!(name: "Mozarella", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Muscade", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "pincée(s)")
 
-Ingredient.create!(name: "oeuf", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "oignon", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "olive verte", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "origan", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Oeuf", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Oignon", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Olive verte", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Origan", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
 
-Ingredient.create!(name: "parmesan", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "patate", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "pâte à lasagne", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "pâte à pizza", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "persil", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "piment vert", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "polenta", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "poivron", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "poulet", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cuisse(s)")
-Ingredient.create!(name: "pousse de soja", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Parmesan", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Patate", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Pâte à lasagne", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Pâte à pizza", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Persil", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Piment vert", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Polenta", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Poivron", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Poulet", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cuisse(s)")
+Ingredient.create!(name: "Pousse de soja", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
 
-Ingredient.create!(name: "ricotta", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "riz", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "roquefort", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Ricotta", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Riz", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Roquefort", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
 
-Ingredient.create!(name: "sauce soja", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
-Ingredient.create!(name: "sel", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "pincée(s)")
-Ingredient.create!(name: "scampis", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Sauce soja", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
+Ingredient.create!(name: "Sel", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "pincée(s)")
+Ingredient.create!(name: "Scampis", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
 
-Ingredient.create!(name: "tagliatelle", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "thym", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "feuille(s)")
-Ingredient.create!(name: "tofu", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
-Ingredient.create!(name: "tomate", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "tomate cerise", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
-Ingredient.create!(name: "tomate concentrée", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
+Ingredient.create!(name: "Tagliatelle", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Thym", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "feuille(s)")
+Ingredient.create!(name: "Tofu", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Tomate", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Tomate cerise", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
+Ingredient.create!(name: "Tomate concentrée", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "cl")
 
-Ingredient.create!(name: "viande hachée", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
+Ingredient.create!(name: "Viande hachée", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
 
 puts "Ingredients created"
 

@@ -29,6 +29,10 @@ Rails.application.routes.draw do
   end
 
   resources :recipe_categories, only: [:show] 
+
+  namespace :admin do 
+    resources :recipes 
+  end
   
 end
 

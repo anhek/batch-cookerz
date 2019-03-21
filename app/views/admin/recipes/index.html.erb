@@ -1,0 +1,35 @@
+<div class="bg-container" id="index-recipes">
+
+  <div class="block block-1000 bg-indigo1 p-4 p-md-5 rounded-top text-center">
+    <h2 class="text-white">Les recettes</h2>
+    <h4 class='text-white'>Il y a <%= @recipes.count %> recettes disponibles sur le site.
+    </h4>
+  </div>
+
+  <div class="block block-1000 bg-white rounded-bottom"> 
+    <div class="row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Recette</th>
+            <th scope="col">Statut</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+         <% @recipes.each do |recipe|%>
+          <tr>
+            <th scope="row"><%= recipe.id %></th>
+            <td><%= recipe.name %></td>
+            <td><%= link_to "#{recipe.is_displayed}", admin_recipe_path(recipe.id), method: :put %></td>
+            <td>X</td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+  

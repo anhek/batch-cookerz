@@ -1,4 +1,5 @@
 class Recipe < ApplicationRecord
+  before_save :default_values
     
   belongs_to :recipe_category
   belongs_to :user
@@ -24,6 +25,9 @@ class Recipe < ApplicationRecord
     self.picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default_recipe.jpg')), filename: 'default_recipe.jpg', content_type: 'image/jpg')
   end 
 
+   
+
+  
   def get_ingredients_number_from_new_recipe_form(params)
     ingredients  = []
     params.each do |ingredient|
@@ -74,5 +78,9 @@ class Recipe < ApplicationRecord
   def picture_300
     return self.picture.variant(resize: '300x300')
   end  
+
+  def default_values
+    self.is_displayed ||= false
+  end
   
 end

@@ -12,7 +12,12 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto text-right">
-        <%if user_signed_in?%>
+        <%if user_signed_in? %>
+          <% if current_user.is_admin == true %>
+            <li class="nav-item">
+              <%= link_to "Panneau d'administration", admin_recipes_path, class: 'nav-link new-recipe' %>
+            </li>
+          <% end %>
           <li class="nav-item">
             <%= link_to "Proposer une nouvelle recette", new_recipe_path, class: 'nav-link new-recipe' %>
           </li>
