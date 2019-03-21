@@ -1,14 +1,14 @@
 <div class="bg-container" id="index-recipes">
 
   <div class="block block-1000 bg-indigo1 p-4 p-md-5 rounded-top text-center">
-    <h2 class="text-white">Les ingredients</h2>
-    <h4 class='text-white'>Il y a <%= @ingredients.count %> recensés dans notre base de donnée !</h4>
+    <h2 class="text-white" ><i class="fas fa-carrot mr-1"></i>Les ingrédients <i class="fas fa-cookie mr-1"></i></h2>
+    <h4 class='text-white'>Il y a <%= @ingredients.count %> ingrédients recensés dans notre base de donnée !</h4>
   </div>
 
   <div class="block block-1000 bg-white rounded-bottom"> 
     <div class="row">
     
-    <%=render @ingredients%>
+    <%=render 'ingredient'%>
 
     </div>
   </div>

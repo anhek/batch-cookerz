@@ -1,15 +1,23 @@
-<div class="mb-5">
-
-  <h4><i class="far fa-bookmark mr-1"></i> Les ingredients </h4>
-  <div class="table-responsive">
-    <table class="table">
-    <% i = 1 %>
-    <%@ingredients.count%>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <% i = 1 %>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Calories</th>
+        <th scope="col">Unité</th>
+        <th scope="col">Catégorie</th>
+      </tr>
+    </thead>
     <tbody>
-    <%@ingredients.each do |ingredient|%>
-    <tr>
-    <th scope="row"><%= i %></th>
-    <td class="font-weight-bold" colspan="2"> Nom : <%=ingredient.name%>
-    Calories : <%=ingredient.calories%> <br />
-    Category : <%=ingredient.ingredient_category.name%></td>
-    <%end%>
+      <% @ingredients.sort_by{ |m| m.name.downcase }.each do |ingredient|%>
+        <tr>
+          <td scope="row"><strong><%=ingredient.name%></strong></td>
+          <td><%=ingredient.calories%> kcal</td>
+          <td><%=ingredient.unit%></td>
+          <td><%=ingredient.ingredient_category.name%></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>

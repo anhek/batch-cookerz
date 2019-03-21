@@ -6,45 +6,56 @@
     </header>
     <%= form_tag url_for(action: 'create'), method: "post", multipart: true, class: "needs-validation" do %>
       <div class="form-group mb-4">
-        <%= label_tag 'Nom de la recette' %>
-        <%= text_field_tag :name %>
+        <%= label_tag 'Nom de la recette', nil, class:"font-weight-bold text-secondary" %>
+        <%= text_field_tag :name, "", class: 'form-control' %>
       </div>
       <div class="form-row mb-4">
         <div class="col-12 col-md-6">
-          <%= label_tag 'Catégorie'%> <small class="text-grey1">(Régime alimentaire)</small>
-          <%= text_field_tag :recipe_category %>
+          <%= label_tag 'Catégorie', nil, class:"font-weight-bold text-secondary" %> <small class="text-grey1">(Régime alimentaire)</small>
+          <%= select_tag :recipe_category, options_from_collection_for_select(@recipe_categories, "id", "name"), prompt: "Sélectionner", class:"form-control" %>
         </div>
         <div class="col-12 col-md-6">
-          <%= label_tag 'Prix' %> <small class="text-grey1">(Sélectionner une tranche de prix)</small>
-          <%= number_field_tag :price_indicator %>
+          <%= label_tag 'Prix', nil, class:"font-weight-bold text-secondary" %> <small class="text-grey1">(Sélectionner une tranche de prix)</small>
+          <%= select_tag :price_indicator, options_for_select([['€',1],['€€',2],['€€€',3],['€€€€',4],['€€€€€',5]]), prompt: "Sélectionner", class:"form-control" %>
         </div>
       </div>
       <div class="form-group">
-        <%= label_tag 'Description' %> <small class="text-grey1">(2000 caractères maximum)</small>
-        <%= text_area_tag :description %>
+        <%= label_tag 'Description', nil, class:"font-weight-bold text-secondary" %> <small class="text-grey1">(2000 caractères maximum)</small>
+        <%= text_area_tag :description, "", rows: 6, class: "form-control" %>
       </div>
       <div class="form-row mb-4">
         <div class="col-12 col-md-6">
-          <%= label_tag 'Temps de préparation' %> <small class="text-grey1">(en minutes)</small>
-          <%= number_field_tag :preparation_time %>
+          <%= label_tag 'Temps de préparation', nil, class:"font-weight-bold text-secondary" %> <small class="text-grey1">(en minutes)</small>
+          <%= number_field_tag :preparation_time, "", class: "form-control" %>
         </div>
         <div class="col-12 col-md-6">
-          <%= label_tag 'Temps de cuisson' %> <small class="text-grey1">(en minutes)</small>
-          <%= number_field_tag :cooking_time %>
+          <%= label_tag 'Temps de cuisson', nil, class:"font-weight-bold text-secondary" %> <small class="text-grey1">(en minutes)</small>
+          <%= number_field_tag :cooking_time, "", class: "form-control" %>
         </div>
       </div>
-      <div class="form-group">
-        <%= label_tag 'Image' %>
+      <div class="form-group bg-grey5 rounded p-3 p-md-4 ">
+        <%= label_tag 'Image de la recette', nil, class: 'font-weight-bold text-secondary mb-0' %>
         <%= file_field_tag :picture %>
       </div>
-      <div class="form-group">
-        <%= label_tag 'Ingrédients' %><br>
-        <% for ingredient in Ingredient.all %>
-            <%= check_box_tag :ingredient, {multiple: true}, ingredient.id %> <%= ingredient.name %><br/>
+
+      <div class="form-row p-3 p-md-4 bg-grey5 rounded mb-3 mb-md-4">
+        <p class="font-weight-bold text-secondary mb-4"> Sélectionner les ingrédients qui composent votre recette<p>
+
+        <% Ingredient.all.sort_by{ |m| m.name.downcase }.each do |ingredient| %>
+          <div class="col-12 col-sm-4">
+            <%= check_box_tag "ingredient_ids[#{ingredient.id}]", ingredient.id, false, :name => "ingredient_ids[]", class:"mr-2"%>
+            <%= ingredient.name %>
+          </div>
+          <div class="col-12 col-sm-8 mb-3 mb-sm-0">
+            <small class="text-grey1 mr-2"><%= label_tag 'Quantité' %></small>
+            <%= number_field_tag "quantities[#{ingredient.id}]", class:"form-control" %>
+          </div>
+          <br>
         <% end %>
       </div>
+
       <div class="form-group text-center">
-        <%= submit_tag "Proposer la recette" %>
+        <%= submit_tag "Proposer la recette", class:"btn btn-primary btn-lg" %>
       </div>
     <% end %>
 
