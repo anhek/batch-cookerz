@@ -85,10 +85,10 @@
 
   <article class="recipe-content text-left mb-5">
 
-    <% if is_current_user_the_creator? %>
+    <% if is_current_user_the_creator(@recipe) %>
       <div class="p-3 p-md-4 bg-grey5 rounded border border-indigo5 mb-4">
       <h5 class="text-secondary">Modifier la photo de recette</h5>
-        <% if is_current_user_the_creator? %> 
+        <% if is_current_user_the_creator(@recipe) %> 
           <%= form_tag recipe_pictures_path(@recipe), multipart: true do %>
             <%= file_field_tag :picture %>
             <%= submit_tag "Mettre à jour", class: "btn btn-outline-primary ml-2" %>
@@ -121,7 +121,7 @@
 
   <%= link_to "Voir les autres recettes", recipes_path(@recipes), class: 'btn btn-outline-primary btn-lg' %>
 
-  <% if is_current_user_the_creator? %>
+  <% if is_current_user_the_creator(@recipe) %>
     <%= link_to "Editer la recette", edit_recipe_path(@recipe), class: 'btn btn-outline-danger btn-lg' %>
   <% end %>
 
