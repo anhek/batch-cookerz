@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get :autocomplete_recipe_name, :on => :collection
   end
 
-  resources :recipes, only: [:index, :show, :new, :create] do
+  resources :recipes, only: [:index, :show, :new, :create, :edit, :update] do
     get :autocomplete_ingredient_name, :on => :collection
     resources :comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]
