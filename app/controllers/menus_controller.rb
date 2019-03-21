@@ -11,14 +11,15 @@ class MenusController < ApplicationController
   def update
     puts '$' * 60
     puts params.inspect
-    @menu = Menu.find(params[:menu][:menu_id])
     if params[:menu] 
+      @menu = Menu.find(params[:menu][:menu_id])
       shopping_list = ShoppingList.find(params[:menu][:shopping_list_id])
       @menu.number_of_people = update_params_from_shopping_list
       @menu.save
     
       redirect_to user_menu_shopping_list_path(current_user, @menu, shopping_list)
     else
+      @menu = Menu.find(params[:id])
       @menu.number_of_people = update_params_from_menu
       @menu.save
 
