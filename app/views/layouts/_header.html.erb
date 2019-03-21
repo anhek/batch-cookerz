@@ -17,23 +17,24 @@
             <%= link_to "Proposer une nouvelle recette", new_recipe_path, class: 'nav-link new-recipe' %>
           </li>
           <li class="nav-item">
-            <%= link_to "Mon menu", user_menu_path(current_user, id: Menu.where(user_id: current_user.id).last.id), class: 'nav-link' %>
+            <%= link_to user_menu_path(current_user, id: Menu.where(user_id: current_user.id).last.id), class: 'nav-link' do %>
+            <i class="fas fa-clipboard-list mr-1"></i>
+            Mon menu
+            <% end %>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Mon compte
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
-              <% if user_signed_in? %>
-                <%= link_to user_path(current_user), class: "dropdown-item text-right" do %>
-                Mon profil <i class="fas fa-user-circle ml-2"></i>
-                <% end %>
-                <%= link_to destroy_user_session_path, class: "dropdown-item text-right", method: :delete do %>
-                Me déconnecter <i class="fas fa-sign-out-alt ml-2"></i>
-                <% end %>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to user_path(current_user), class: "nav-link" do %>
+                <i class="fas fa-user-circle ml-2"></i> Mon profil
               <% end %>
-            </div>
-          </li>
+            <li>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path, class: "nav-link", method: :delete do %>
+                <i class="fas fa-sign-out-alt ml-2"></i>
+                Me déconnecter
+              <% end %>
+            </li>
+          <% end %>
           <% else %>
             <li class="nav-item">
               <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link" %>
