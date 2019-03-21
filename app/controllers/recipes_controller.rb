@@ -14,6 +14,15 @@ class RecipesController < ApplicationController
 
     @menu_recipe = MenuRecipe.new
   end
+    
+  def show
+    @recipe = Recipe.find(params[:id])
+    @comments = Comment.where(recipe_id: @recipe.id)
+    @comment = Comment.new
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
+  end 
 
   def new 
     @recipe = Recipe.new
@@ -53,15 +62,23 @@ class RecipesController < ApplicationController
       puts @recipe.errors.full_messages
     end
   end
-  
-  def show
+
+    
+  def edit
     @recipe = Recipe.find(params[:id])
-    @comments = Comment.where(recipe_id: @recipe.id)
-    @comment = Comment.new
-    if user_signed_in?
-      @user = User.find(current_user.id)
+    @recipe_categories = []
+    RecipeCategory.all.each do |recipe|
+      @recipe_categories << [recipe.name, recipe.id]
     end
+    @price_indicators = [["€", 1], ["€ €", 2], ["€ € €", 3], ["€ € € €", 4], ["€ € € € €",5]]
   end 
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(update_params)
+    
+    redirect_to recipe_path(@recipe)
+  end
   
   private
 
@@ -71,6 +88,10 @@ class RecipesController < ApplicationController
 
   def included_in?(array)
     array.to_set.superset?(self.to_set)
+  end
+
+  def update_params
+    params[:recipe].permit(:name, :recipe_category, :price_indicator, :preparation_time, :cooking_time)
   end
 
 end

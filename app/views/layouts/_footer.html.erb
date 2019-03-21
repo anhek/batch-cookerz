@@ -27,10 +27,16 @@
         </div>
         <div class="social-links col-12 col-md-4 mb-4">
           <p class="h5">Rejoignez-nous <br> sur les réseaux sociaux</p>
-          <div class="social-icons d-flex justify-content-center justify-content-md-end">
-            <a href="https://fr-fr.facebook.com/l214.animaux" class="h3"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/EmmanuelMacron" class="h3"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/pumpkintheraccoon/" class="h3"><i class="fab fa-instagram"></i></a>
+           <div class="social-icons d-flex justify-content-center justify-content-md-end">
+            <%= link_to "https://fr-fr.facebook.com/l214.animaux", class:"h3" do %>
+            <i class="fab fa-facebook"></i>
+            <%end%>
+             <%= link_to "https://twitter.com/EmmanuelMacron", class:"h3" do %>
+            <i class="fab fa-twitter"></i>
+            <%end%>
+            <%= link_to "https://www.instagram.com/pumpkintheraccoon/", class:"h3" do %>
+            <i class="fab fa-instagram"></i>
+            <%end%>
           </div>
         </div>
       </div>
