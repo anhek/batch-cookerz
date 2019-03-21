@@ -23,6 +23,10 @@ class MenuRecipesController < ApplicationController
     end
   end
 
+  def show
+    @menu_recipe =  MenuRecipe.find(params[:menu_recipe_id])
+  end
+
   def destroy
     @menu_recipe =  MenuRecipe.find(params[:menu_recipe_id])
     @menu_recipe.destroy

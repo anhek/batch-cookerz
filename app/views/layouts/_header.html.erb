@@ -12,6 +12,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto text-right">
+        <%= link_to "Les recettes", recipes_path, class:"nav-link" %>
         <%if user_signed_in? %>
           <% if current_user.is_admin == true %>
             <li class="nav-item">

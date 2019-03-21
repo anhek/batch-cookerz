@@ -53,7 +53,9 @@
     <div class="recipe-links mt-3 m">
       <%=link_to "Voir la recette", recipe_path(recipe), class:"recipe-link btn btn-outline-primary px-3 mb-sm-2" %>
       <%if user_signed_in?%>
-          <%= link_to "Ajouter à mon menu", menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-primary px-3", method: "post" %>
+          <%= link_to menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: recipe.id), class:"recipe-link btn btn-primary px-3", method: "post" do %>
+          <i class="fas fa-plus mr-1"></i> Ajouter à mon menu
+          <% end %>
       <% end%>
     </div>
   </div>

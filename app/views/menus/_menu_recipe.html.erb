@@ -1,4 +1,8 @@
-<h3 class="mt-2 mt-md-5 text-left">Mes recettes sélectionnées</h3>
+<% if @menu_recipes.empty? %>
+  <h3 class="mt-2 mt-md-5 text-left">0 recettes sélectionnées</h3>
+<% else %>
+  <h3 class="mt-2 mt-md-5 text-left">Mes recettes sélectionnées</h3>
+<% end %>
 <hr class="mb-4 mt-0">
 
 <% @menu_recipes.each do |menu_recipe| %>
