@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 ingredient_categories = ["Viande", "Poisson", "Légume", "Fruit", "Légumineuse"]
-5.times do |i|
+
+User.create!(first_name: "Admin", last_name: "Perfect Batch Cooker", email: "admin@batchcooker.fr", password: "admin123", nickname: "Admin", is_admin: true)
+
+4.times do |i|
   User.create!(first_name: Faker::Superhero.name, last_name: Faker::Artist.name, email: "email#{i+1}@gmail.com", password: "raphleboss69", nickname: Faker::Internet.username(5..8))
 end
 puts "Users created"
