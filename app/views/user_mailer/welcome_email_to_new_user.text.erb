@@ -1,8 +1,30 @@
-Salut <%= @user.first_name %> <%= @user.last_name %> et bienvenue chez nous !
-==========================================================
- 
-Tu t'es inscrit sur <%= @url %> en utilisant l'e-mail suivant : <%= @user.email %>.
- 
-Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
- 
+Bienvenue à toi Nouveau Batchcooker <%= @user.first_name %> <%= @user.last_name %>!
+===========================================================
+
+Tu t'es inscrit sur
+                <%= link_to "http://batchcookerz.fr" do %> 
+                Batchcookerz.fr
+                <%end%> 
+en utilisant l'e-mail suivant : <%= @user.email %>
+Maintenant, c'est à toi de jouer! Et de batchcooker!
+                 
+- Recherche par ingredients les recettes qui serviront à composer ton menu de la semaine.
+- Si t'as pas d'idées, t'inquiète pas ! Va voir les recettes et ingrédients du moment et laisse toi tenter...
+- Quand on partage, c'est toujours mieux... pense à multiplier les quantitéen fonction des personnes qui profiteront de tes bons petits plat
+- Lorsque tes recettes sont ajoutées et que tes quantités sont bonnes, tu peux génerer ta liste de course
+- Que tu recevras automatiquement sur ton smartphone, pratique hein?!
+- Et là, il ne te reste plus qu'à fixer ta mission course et réserver ton (seul) créneau cuisine de la semaine.
+                     
+HOP, HOP, HOP ! Ta mission n'est pas tout à terminée... 
+===> reviens vite sur notre site pour donner ton avis, des astuces et, surtout, ajoute tes recettes pour que, nous aussi, on puisse se régaler !!!
+                 
 À très vite sur <%= @url %> !
+              
+Nos sincères salutations !
+Et bon appétit ! 
+
+Batch Cookers Team 
+  <%= link_to "http://batchcookerz.fr" do %> 
+   Batchcookerz.
+   <%end%>
+Préparez vos repas une seule fois, et assemblez la semaine ! 

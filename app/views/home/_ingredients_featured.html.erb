@@ -1,14 +1,14 @@
-<section class="bg-indigo3">
-  <div class="block container">
-    <header class="text-center mb-5">
-      <h3>Decouvrez les ingredients du moment...</h3>
-      <h3 class="h4 font-weight-normal">
-        <%@ingredients_rand.each do |ingredient|%>
-     <div class=ingredient-cloud> <%=ingredient.name%>
+<section class="bg-indigo4">
+  <div class="block block-1000">
+    <header class="text-center mb-4">
+      <h3><i class="far fa-lightbulb"></i> Les 5 ingrédients du moment !</h3>
+       <%@ingredients_rand.each do |ingredient|%>
+     <h6><div class=ingredient-cloud> <sub><%=ingredient.name%></sub>
      </div>
-      <%end%> </h2>
+      <%end%> </h6>
     </header>
-    <footer class="text-center p-5">
+    <footer class="text-center">
+      <%= link_to "Voir tous les ingrédients disponibles", ingredients_path, class:"btn btn-outline-primary btn-lg" %>
     </footer>
   </div>
 </section>
