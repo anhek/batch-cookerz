@@ -11,7 +11,7 @@
       <%if @recipe.picture.attached? %>
         <%= image_tag @recipe.picture, class:"w-100 rounded" %>
       <%else%>
-        <%= image_tag("the-creative-exchange-1309304-unsplash", class:"w-100") %>
+        <%= image_tag @recipe.default_recipe, class:"w-100 rounded" %>
       <%end%>
     </div>
 

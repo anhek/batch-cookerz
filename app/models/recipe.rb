@@ -1,24 +1,29 @@
 class Recipe < ApplicationRecord
     
-    belongs_to :recipe_category
-    belongs_to :user
-    has_many :users, through: :likes
-    has_many :comments
-    has_many :users, through: :comments
-    has_many :menus, through: :menu_recipes
-    has_many :compositions
-    has_many :ingredients, through: :compositions
-    has_many :likes, dependent: :destroy
-    has_one_attached :picture
+  belongs_to :recipe_category
+  belongs_to :user
+  has_many :users, through: :likes
+  has_many :comments
+  has_many :users, through: :comments
+  has_many :menus, through: :menu_recipes
+  has_many :compositions
+  has_many :ingredients, through: :compositions
+  has_many :likes, dependent: :destroy
+  has_one_attached :picture
 
-    validates :name, presence: true
-    validates :description, presence: true
-    validates :preparation_time, presence: true
-    validates :cooking_time, presence: true
-    validates :price_indicator, presence: true
-    validates :recipe_category_id, presence: true
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :preparation_time, presence: true
+  validates :cooking_time, presence: true
+  validates :price_indicator, presence: true
+  validates :recipe_category_id, presence: true
 
-  
+  before_create :default_picture
+
+  def default_picture
+    self.picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default_recipe.jpg')), filename: 'default_recipe.jpg', content_type: 'image/jpg')
+  end 
+
   def get_ingredients_number_from_new_recipe_form(params)
     ingredients  = []
     params.each do |ingredient|
