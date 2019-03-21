@@ -4,10 +4,11 @@ class Recipe < ApplicationRecord
   belongs_to :recipe_category
   belongs_to :user
   has_many :users, through: :likes
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :users, through: :comments
+  has_many :menu_recipes, dependent: :destroy
   has_many :menus, through: :menu_recipes
-  has_many :compositions
+  has_many :compositions, dependent: :destroy
   has_many :ingredients, through: :compositions
   has_many :likes, dependent: :destroy
   has_one_attached :picture

@@ -13,9 +13,19 @@ class Admin::RecipesController < ApplicationController
     redirect_to admin_recipes_path
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+
+    redirect_to admin_recipes_path
+  end
+  
+  private 
+
   def check_if_admin!
     if current_user.is_admin == false
       flash[:error] = "Accès réservé aux meilleurs cuisiniers !"
+      
       redirect_to root_path
     end
   end

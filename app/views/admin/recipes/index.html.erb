@@ -22,8 +22,8 @@
           <tr>
             <th scope="row"><%= recipe.id %></th>
             <td><%= recipe.name %></td>
-            <td><%= link_to "#{recipe.is_displayed}", admin_recipe_path(recipe.id), method: :put %></td>
-            <td>X</td>
+            <td><%= link_to "#{recipe.is_displayed}", admin_recipe_path(recipe), method: :put %></td>
+            <td><%= link_to "Supprimer", admin_recipe_path(recipe), method: :delete %></td>
           </tr>
         <% end %>
         </tbody>

@@ -1,0 +1,37 @@
+<div class="bg-container" id="user-profile">
+  <div class="block-1000 rounded mx-auto">
+
+    <div class="row">
+      <div class="col-12 col-md-4">
+  <div class="user-info bg-white rounded">
+    <%= render "users/avatar"%>
+    <h4 class="mb-2"><%= @user.first_name %> <%= @user.last_name %></h4>
+    <h5 class="h6 text-grey1 mb-0"> <i class="fas fa-at text-grey2"></i> <%= @user.nickname == nil ? "Pseudo" : @user.nickname %></h6>
+    <p> <i class="fas fa-envelope text-grey2 mr-2"></i> <%= @user.email%></p>
+  </div>
+</div>
+      <div class="col-12 col-md-8">
+  <div class="user-content bg-white p-4 p-lg-5 rounded">
+
+    <h3 class="h2 font-weight-normal"><i class="far fa-user mr-1 mb-3"></i> Éditer ce profil</h3>
+
+    <%= form_with model: @user, :url => { :controller => "admin/users", :action => "update" }, method: 'PATCH', class: 'mb-3' do |f| %>
+      <%= f.label 'Prénom' %>
+      <%= f.text_field :first_name, class: 'form-control mb-3', placeholder: @user.first_name %>
+      <%= f.label 'Nom' %>
+      <%= f.text_field :last_name, class: 'form-control mb-3', placeholder: @user.last_name %>
+      <%= f.label 'Pseudo' %>
+      <%= f.text_field :nickname, class: 'form-control mb-4', placeholder: @user.nickname %>
+      <%= f.submit 'Mettre à jour', class:"btn btn-primary" %>
+    <% end %>
+
+    <hr class="bg-grey5">
+    
+    <div class="text-center">
+      <%= link_to "Retourner à l'index des profils", admin_users_path, class: 'btn btn-outline-secondary mt-5' %>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>

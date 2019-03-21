@@ -76,6 +76,11 @@ class RecipesController < ApplicationController
     
     redirect_to recipe_path(@recipe)
   end
+
+  def destroy
+    @recipe = Recipe.where(user_id: params[:id])
+    @recipe.user_id = 2
+  end
   
   private
 
