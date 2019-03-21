@@ -86,7 +86,7 @@ Etape 2
 Faites colorer le beurre dans une poêle, puis ajoutez les scampis. Ajoutez l'éclat d'ail pressé et le poivre. Ajoutez la crème fraîche et le concentré de tomate. Mélangez le tout.
 Etape 3
 
-Servez les scampis avec du pain à l'ail ou des pâtes.", preparation_time: 10, cooking_time: 7, price_indicator: 5, recipe_category_id: 2, user_id:3)
+Servez les scampis avec du pain à l'ail ou des pâtes.", preparation_time: 10, cooking_time: 7, price_indicator: 5, recipe_category_id: 1, user_id:3)
 Recipe.create!(name: "Gratin dauphinois" , description: "Etape 1
 
 Préchauffer le four à 120°C (thermostat 4).
@@ -111,7 +111,7 @@ Etape 7
 
 Mettre au four pendant au moins une heure. 
 
-Plus la température est basse et le temps de cuisson long, plus les pommes seront fondantes...", preparation_time: 30, cooking_time: 60, price_indicator: 1, recipe_category_id: 1, user_id:4)
+Plus la température est basse et le temps de cuisson long, plus les pommes seront fondantes...", preparation_time: 30, cooking_time: 60, price_indicator: 1, recipe_category_id: 2, user_id:4)
 
 Recipe.create!(name: "Tagliatelles au gorgonzola" , description: "Etape 1
 
@@ -121,7 +121,7 @@ Etape 2
 Ajouter le Gorgonzola coupé en morceaux puis mélanger sur feu doux.
 Etape 3
 
-Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 1, user_id:3)
+Faire cuire les pâtes et les recouvrir de la préparation obtenue.", preparation_time: 10, cooking_time: 7, price_indicator: 1, recipe_category_id: 2, user_id:3)
 
 Recipe.create!(name: "Lasagnes à l'italienne" , description: "Etape 1
 
@@ -134,7 +134,7 @@ Etape 3
 Versez un filet d’huile d’olive dans le fond d’un plat à gratin. Déposez une couche de pâte, puis ajouter successivement une couche de haché de veau, une couche de coulis, et une couche d’origan et basilic ciselé. Recommencez l’opération en terminant par le coulis.
 Etape 4
 
-Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 2, user_id:3)
+Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 240°C (Thermostat 8) pendant environ 20 min.", preparation_time: 15, cooking_time: 25, price_indicator: 1, recipe_category_id: 1, user_id:3)
 
 
 puts "Recipe created"
