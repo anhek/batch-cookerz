@@ -8,6 +8,14 @@ class MenusController < ApplicationController
     @menu_recipe = MenuRecipe.new
   end
 
+  def update
+    @menu = Menu.find(params[:id])
+    @menu.number_of_people = update_params
+    @menu.save
+    
+    redirect_to user_menu_path(@menu)
+  end
+
   def destroy
     @menu = Menu.find(params[:id])
     @menu.destroy
@@ -24,4 +32,7 @@ class MenusController < ApplicationController
     end
   end 
 
+  def update_params 
+    params[params.keys[3]][:number_of_people]
+  end
 end
