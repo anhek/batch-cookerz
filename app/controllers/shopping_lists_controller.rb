@@ -1,5 +1,6 @@
 class ShoppingListsController < ApplicationController
   before_action :already_a_shopping_list_associated_to_the_menu, only: [:create]
+  before_action :is_my_shopping_list!, only: [:show]
 
   def create
     @shopping_list = ShoppingList.new
@@ -11,11 +12,7 @@ class ShoppingListsController < ApplicationController
       flash[:success] = "La liste de courses a bien été créée !"
       Menu.create!(user_id: current_user.id)
       redirect_to user_menu_shopping_list_path(current_user, menu, @shopping_list)
-      
-    else 
-      puts "Oups, petit problème !"
     end
-  
   end
 
 
@@ -59,20 +56,23 @@ class ShoppingListsController < ApplicationController
   
   private 
   
-  def already_a_shopping_list_associated_to_the_menu
-    puts 
-    puts 
-    puts '$' * 60
-    puts params.inspect
-    puts params[:menu_id]
-    puts
-    puts ShoppingList.find_by(menu_id: params[:menu_id])
-    
+  def already_a_shopping_list_associated_to_the_menu    
     if ShoppingList.find_by(menu_id: params[:menu_id]) != nil
       flash[:error] = " Une liste de courses existe déjà pour ce menu ! "
 
       redirect_to user_path(current_user)
     end
   end
+
+  def is_my_shopping_list!
+    puts '$' * 60
+    puts params[:user_id]
+    if User.find(params[:user_id]).id != current_user.id
+      flash[:error]= "C'est pas ta liste de courses ça !"
+      
+      redirect_to root_path
+    end
+  end 
+
 
 end
