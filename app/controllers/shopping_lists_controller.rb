@@ -42,15 +42,15 @@ class ShoppingListsController < ApplicationController
     @grouped_ingredients = @ingredients.group_by(&:name)
     puts "Le nombre d'ingrédients après"
     puts @grouped_ingredients.count
+    puts @grouped_ingredients
 
     @id_sum_hash = Hash.new
     @grouped_ingredients.each do |key, value|
       sum_for_one_ingredient = 0
-      unit_for_one_ingredient = ""
+      unit_for_one_ingredient = value[0].unit
       compositions.each do |composition|
         if key == composition.ingredient.name
           sum_for_one_ingredient += composition.quantity
-          unit_for_one_ingredient = composition.unit
         end
       end
       

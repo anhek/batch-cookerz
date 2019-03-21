@@ -12,11 +12,11 @@
       <div class="form-row mb-4">
         <div class="col-12 col-md-6">
           <%= label_tag 'Catégorie'%> <small class="text-grey1">(Régime alimentaire)</small>
-          <%= text_field_tag :recipe_category %>
+          <%= select_tag :recipe_category, options_from_collection_for_select(@recipe_categories, "id", "name"), prompt: "Sélectionner" %>
         </div>
         <div class="col-12 col-md-6">
           <%= label_tag 'Prix' %> <small class="text-grey1">(Sélectionner une tranche de prix)</small>
-          <%= number_field_tag :price_indicator %>
+          <%= select_tag :price_indicator, options_for_select([['€',1],['€€',2],['€€€',3],['€€€€',4],['€€€€€',5]]), prompt: "Sélectionner" %>
         </div>
       </div>
       <div class="form-group">
@@ -39,8 +39,12 @@
       </div>
       <div class="form-group">
         <%= label_tag 'Ingrédients' %><br>
-        <% for ingredient in Ingredient.all %>
-            <%= check_box_tag :ingredient, {multiple: true}, ingredient.id %> <%= ingredient.name %><br/>
+        <% Ingredient.all.each do |ingredient| %>
+          <%= check_box_tag "ingredient_ids[#{ingredient.id}]", ingredient.id, false, :name => "ingredient_ids[]" %>
+          <%= ingredient.name %>
+          <%= label_tag 'Quantité' %>
+          <%= number_field_tag "quantities[#{ingredient.id}]" %>
+          <br /> 
         <% end %>
       </div>
       <div class="form-group text-center">
