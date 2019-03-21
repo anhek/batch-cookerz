@@ -1,4 +1,4 @@
-<div class="block block-900 bg-white rounded text-center mb-4 mb-lg-5">
+<div class="block block-900 bg-white text-center rounded mb-4 mb-lg-5">
 
   <header class="recipe-title mb-3 mb-md-4">
     <h1 class="h2 mb-0"> <%= @recipe.name%> </h1>
@@ -51,8 +51,9 @@
             </li>
             <li class="mb-4">
               <%if user_signed_in? %>
+
                 <%= link_to menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-primary py-2 w-100 text-uppercase", method: "post" do %>
-                  <small>Ajouter à mon</small> <br> <span class="h5 text-white">menu</span>
+                <small>Ajouter à mon</small> <br> <span class="h5 text-white">menu</span>
                 <% end %>
               <% end %>
             </li>
@@ -70,7 +71,7 @@
         <% if is_current_user_the_creator? %> 
           <%= form_tag recipe_pictures_path(@recipe), multipart: true do %>
             <%= file_field_tag :picture %>
-            <%= submit_tag "mettre à jour" %>
+            <%= submit_tag "Mettre à jour", class: "btn btn-outline-primary ml-2" %>
           <% end %>
         <% end %>
       </div>
@@ -99,6 +100,9 @@
   </article>
 
   <%= link_to "Voir les autres recettes", recipes_path(@recipes), class: 'btn btn-outline-primary btn-lg' %>
-  <%= link_to "Editer la recette", edit_recipe_path(@recipe), class: 'btn btn-outline-primary btn-lg' %>
+
+  <% if is_current_user_the_creator? %>
+    <%= link_to "Editer la recette", edit_recipe_path(@recipe), class: 'btn btn-outline-danger btn-lg' %>
+  <% end %>
 
 </div>

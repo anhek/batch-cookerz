@@ -21,6 +21,8 @@ class Recipe < ApplicationRecord
 
   before_create :default_picture
 
+  default_scope { order(created_at: :desc) }
+
   def default_picture
     self.picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default_recipe.jpg')), filename: 'default_recipe.jpg', content_type: 'image/jpg')
   end 

@@ -15,11 +15,11 @@
         <%if user_signed_in? %>
           <% if current_user.is_admin == true %>
             <li class="nav-item">
-              <%= link_to "Panneau d'administration", admin_recipes_path, class: 'nav-link new-recipe' %>
+              <%= link_to "Panneau d'administration", admin_recipes_path, class: 'nav-link' %>
             </li>
           <% end %>
           <li class="nav-item">
-            <%= link_to new_recipe_path, class: 'nav-link new-recipe' do %>
+            <%= link_to new_recipe_path, class: 'nav-link' do %>
             <i class="fas fa-plus-circle"></i>
             Proposer une nouvelle recette
             <% end %>
