@@ -38,7 +38,7 @@
         <%= file_field_tag :picture %>
       </div>
 
-      <div class="form-row p-3 p-md-4 bg-grey5 rounded">
+      <div class="form-row p-3 p-md-4 bg-grey5 rounded mb-3 mb-md-4">
         <p class="font-weight-bold text-secondary mb-4"> Sélectionner les ingrédients qui composent votre recette<p>
 
         <% Ingredient.all.sort_by{ |m| m.name.downcase }.each do |ingredient| %>
@@ -52,7 +52,6 @@
           </div>
           <br>
         <% end %>
-
       </div>
 
       <div class="form-group text-center">
