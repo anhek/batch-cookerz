@@ -9,11 +9,21 @@ class MenusController < ApplicationController
   end
 
   def update
-    @menu = Menu.find(params[:id])
-    @menu.number_of_people = update_params
-    @menu.save
+    puts '$' * 60
+    puts params.inspect
+    @menu = Menu.find(params[:menu][:menu_id])
+    if params[:menu] 
+      shopping_list = ShoppingList.find(params[:menu][:shopping_list_id])
+      @menu.number_of_people = update_params_from_shopping_list
+      @menu.save
     
-    redirect_to user_menu_path(current_user, @menu)
+      redirect_to user_menu_shopping_list_path(current_user, @menu, shopping_list)
+    else
+      @menu.number_of_people = update_params_from_menu
+      @menu.save
+
+      redirect_to user_menu_path(current_user, @menu)
+    end
   end
 
   def destroy
@@ -32,7 +42,11 @@ class MenusController < ApplicationController
     end
   end 
 
-  def update_params 
+  def update_params_from_menu
     params[params.keys[3]][:number_of_people]
+  end
+
+  def update_params_from_shopping_list
+    params[:menu][:number_of_people]
   end
 end
