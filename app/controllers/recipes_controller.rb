@@ -3,10 +3,10 @@ class RecipesController < ApplicationController
   autocomplete :ingredient, :name, :display_value => :funky_method
 
   def index
-    recipe = Recipe.new
+    @recipe = Recipe.new
     unless params[:ingredient].to_s.empty? 
       puts params.inspect
-      selected_ingredients = recipe.translate_input_ingredients_into_database_ingredients_ids(params[:ingredient])
+      selected_ingredients = @recipe.translate_input_ingredients_into_database_ingredients_ids(params[:ingredient])
       @recipes = recipe.find_recipes_associated_with_ingredients(selected_ingredients)
     else
       @recipes = Recipe.all
