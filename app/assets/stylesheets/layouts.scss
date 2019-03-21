@@ -96,10 +96,16 @@
 
 header .navbar-nav {
 
-  .nav-item:first-child {
-    margin-top: $spacer * 1;
-    @include media-breakpoint-up(lg) {
-      margin-top: 0;
+
+  .nav-item {
+    &:first-child {
+      margin-top: $spacer * 1;
+      @include media-breakpoint-up(lg) {
+        margin-top: 0;
+      }
+    }
+    .nav-link {
+      padding: $spacer * .5 $spacer * 1; 
     }
   } 
 } 

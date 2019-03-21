@@ -14,7 +14,10 @@
       <ul class="navbar-nav ml-auto text-right">
         <%if user_signed_in?%>
           <li class="nav-item">
-            <%= link_to "Proposer une nouvelle recette", new_recipe_path, class: 'nav-link new-recipe' %>
+            <%= link_to new_recipe_path, class: 'nav-link new-recipe' do %>
+            <i class="fas fa-plus-circle"></i>
+            Proposer une nouvelle recette
+            <% end %>
           </li>
           <li class="nav-item">
             <%= link_to user_menu_path(current_user, id: Menu.where(user_id: current_user.id).last.id), class: 'nav-link' do %>
@@ -25,22 +28,28 @@
           <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to user_path(current_user), class: "nav-link" do %>
-                <i class="fas fa-user-circle ml-2"></i> Mon profil
+                <i class="fas fa-user-circle"></i> Mon profil
               <% end %>
             <li>
             <li class="nav-item">
               <%= link_to destroy_user_session_path, class: "nav-link", method: :delete do %>
-                <i class="fas fa-sign-out-alt ml-2"></i>
+                <i class="fas fa-sign-out-alt"></i>
                 Me déconnecter
               <% end %>
             </li>
           <% end %>
           <% else %>
             <li class="nav-item">
-              <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link" %>
+              <%= link_to new_user_registration_path, class: "nav-link" do %>
+              <i class="fas fa-user-plus mr-1"></i>
+              Créer un compte
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
+              <%= link_to new_user_session_path, class: "nav-link" do %>
+              <i class="fas fa-sign-in-alt mr-1"></i>
+              Se connecter
+              <% end %>
             </li>
           <%end%>
       </ul>
