@@ -168,3 +168,46 @@ header .navbar-nav {
     }
   }
 }
+
+// INGREDIENTS TAB//
+
+table {
+  border-collapse: collapse;
+}
+table, th, td {
+  color: black;
+}
+
+table, p {
+  color: #F9703E;
+}
+
+th, td, p {
+  padding: 1px;
+  text-align: center;
+}
+
+tr:hover {background-color: #E0E8F9;}
+
+th {
+  background-color: #19216C;
+  color: white;
+}
+
+.far {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 140px;
+  margin-left: 140px;
+}
+
+.container {
+    width: 500px;
+    height: 300px;
+}
+
+/* resize images */
+.container img {
+    width: 100%;
+    height: auto;
+}

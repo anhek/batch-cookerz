@@ -1,15 +1,26 @@
 <div class="mb-5">
 
-  <h4><i class="far fa-bookmark mr-1"></i> Les ingredients </h4>
+  <h4><i class="fas fa-clipboard-list mr-1"></i></i> Voici la liste ! </h4>
   <div class="table-responsive">
     <table class="table">
+    <thead>
     <% i = 1 %>
-    <%@ingredients.count%>
-    <tbody>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Nombre de calories</th>
+      <th scope="col">Catégorie</th>
+    </tr>
+    </thead>
+     <tbody>
     <%@ingredients.each do |ingredient|%>
     <tr>
-    <th scope="row"><%= i %></th>
-    <td class="font-weight-bold" colspan="2"> Nom : <%=ingredient.name%>
-    Calories : <%=ingredient.calories%> <br />
-    Category : <%=ingredient.ingredient_category.name%></td>
+     <td scope="row"><p><strong><%=ingredient.name%></strong><p></td>
+    <td> <%=ingredient.calories%></td>
+    <td><p> <%=ingredient.ingredient_category.name%><p></td>
+    </th>
     <%end%>
+    </tr>
+    </tbody>
+    </table>
+    <div class="container-img-ing">
+    <%= image_tag("scott-warman-525481-unsplash", class:"w-50") %>
