@@ -10,9 +10,9 @@
       <% end %> 
       <span class="h5">
         <% if recipe.recipe_category.id == 1 %>
-          <i class="fas fa-cheese text-vegetarian" data-toggle="tooltip" data-placement="top" title="Végétarien"></i>
-        <% elsif recipe.recipe_category.id == 2 %>
           <i class="fas fa-drumstick-bite text-omnivore " data-toggle="tooltip" data-placement="top" title="Omnivore"></i>
+        <% elsif recipe.recipe_category.id == 2 %>
+          <i class="fas fa-cheese text-vegetarian" data-toggle="tooltip" data-placement="top" title="Végétarien"></i>
         <% elsif recipe.recipe_category.id == 3 %>
           <i class="fas fa-seedling text-vegan" data-toggle="tooltip" data-placement="top" title="Végétalien"></i>
         <% end %>
