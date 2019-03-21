@@ -8,13 +8,14 @@ class User < ApplicationRecord
   has_many :recipes, through: :likes
   has_many :menus
   has_many :recipes
+  has_many :likes, dependent: :destroy
   has_one_attached :avatar
 
   before_create :default_image
-
   after_create :send_welcome_email_to_new_user, :send_new_user_email_to_admin, :attribute_menu_to_new_user
+  before_save :default_values
 
-  has_many :likes, dependent: :destroy
+
 
   def send_welcome_email_to_new_user
     UserMailer.welcome_email_to_new_user(self).deliver_now
@@ -33,7 +34,7 @@ class User < ApplicationRecord
   end
 
   def attribute_menu_to_new_user
-    Menu.create!(user_id: User.last.id, number_of_recipes: 0)
+    Menu.create!(user_id: User.last.id)
   end
 
   def find_liked_recipes(likes)
@@ -46,6 +47,10 @@ class User < ApplicationRecord
       recipes << Recipe.find(id)
     end 
     return recipes
+  end
+
+  def default_values
+    self.is_admin ||= false
   end
 
 end

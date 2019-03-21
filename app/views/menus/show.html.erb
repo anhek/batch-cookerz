@@ -17,6 +17,11 @@
         <%= f.hidden_field :menu_id, :value => params[:id] %>
         <%= f.submit "Ajouter à mon menu" %>
       <%end%>
+
+      <%= form_for user_menu_path(@menu), method: :put do |f| %>
+        <%= f.number_field :number_of_people, value: @menu.number_of_people %>
+        <%= f.submit "Modifier le nombre de personnes" %>
+      <% end %>
     </header>
 
     <hr class="mb-4 mt-0">
@@ -52,7 +57,7 @@
               </div>
               <p class="description"><%= menu_recipe.recipe.description %></p>
               <div class="d-flex justify-content-end">
-              <%= link_to 'Supprimer de mon menu', menu_recipe_path(menu_recipe_id: menu_recipe.id), method: :delete %>
+              <%= link_to 'Supprimer de mon menu', menu_recipe_path(menu_recipe_id: menu_recipe.id), remote: true, method: :delete %>
               </div>
             </div>
           </div>

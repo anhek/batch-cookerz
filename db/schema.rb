@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_20_213411) do
+ActiveRecord::Schema.define(version: 2019_03_21_125405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2019_03_20_213411) do
   end
 
   create_table "menus", force: :cascade do |t|
-    t.integer "number_of_recipes"
+    t.integer "number_of_people"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 2019_03_20_213411) do
     t.datetime "updated_at", null: false
     t.bigint "recipe_category_id"
     t.bigint "user_id"
+    t.boolean "is_displayed"
     t.index ["recipe_category_id"], name: "index_recipes_on_recipe_category_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
@@ -137,6 +138,7 @@ ActiveRecord::Schema.define(version: 2019_03_20_213411) do
     t.string "first_name"
     t.string "last_name"
     t.string "nickname"
+    t.boolean "is_admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
