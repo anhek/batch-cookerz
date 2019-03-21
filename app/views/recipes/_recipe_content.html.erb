@@ -14,6 +14,7 @@
         <%= image_tag("the-creative-exchange-1309304-unsplash", class:"w-100") %>
       <%end%>
     </div>
+
     <div class="col-12 col-md-4 pl-md-0">
       <div class="bg-dark p-4 h-100 rounded">
         <div class="the-icons text-white text-left h4 font-weight-normal">
@@ -49,19 +50,16 @@
                 <%end%>
             </li>
             <li class="mb-4">
-            <%if user_signed_in?%>
-                <% menu_added= MenuRecipe.find { |menu_recipe| menu_recipe.recipe_id == @recipe.id} %>
-                <%if menu_added %>
-                <div class="container">
-                <span class="h6 text-indigo2"><i class="far fa-star"></i> Déjà ajoutée à ton menu ! </span><br><p>
-                </div>
+              <%if user_signed_in? %>
+                <%if is_the_menu_already_added? %>
+                  <div class="h6 text-indigo2 p-3 border border-indigo3 rounded"><i class="far fa-star"></i> Recette déjà ajoutée à ton menu ! </div>
                 <% else %>
-                <%= link_to menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-primary py-2 w-100 text-uppercase", method: "post" do %>
-                  <small>Ajouter à mon</small> <br> <span class="h5 text-white">menu</span>]
+                  <%= link_to menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-primary py-2 w-100 text-uppercase", method: "post" do %>
+                    <small>Ajouter à mon</small> <br> <span class="h5 text-white">menu</span>
+                  <% end %>
                 <% end %>
               <% end %>
-              <% end %>
-              </li>
+            </li>
           </ul>
         </div>
       </div>
@@ -69,11 +67,15 @@
   </div>
 
   <article class="recipe-content text-left mb-5">
-  
-    <%= form_tag recipe_pictures_path(@recipe), multipart: true do %>
-      <%= file_field_tag :picture %>
-      <%= submit_tag "mettre à jour" %>
-    <% end %>
+    <div class="p-3 p-md-4 bg-grey5 rounded border border-indigo5 mb-4">
+    <h5 class="text-secondary">Modifier la photo de recette</h5>
+      <% if is_current_user_the_creator? %> 
+        <%= form_tag recipe_pictures_path(@recipe), multipart: true do %>
+          <%= file_field_tag :picture %>
+          <%= submit_tag "mettre à jour" %>
+        <% end %>
+      <% end %>
+    </div>
       
     <div class="row">
       <div class="col-12">
@@ -94,6 +96,7 @@
         </div>
       </div>
     </div>
+    
   </article>
 
   <%= link_to "Voir les autres recettes", recipes_path(@recipes), class: 'btn btn-outline-primary btn-lg' %>
