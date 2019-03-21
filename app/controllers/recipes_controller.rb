@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new]
+  before_action :is_my_recipe!, only: [:edit, :update]
   autocomplete :ingredient, :name, :display_value => :funky_method
 
   def index
@@ -20,8 +21,6 @@ class RecipesController < ApplicationController
     @comments = Comment.where(recipe_id: @recipe.id)
     @comment = Comment.new
     @compositions = Composition.where(recipe_id: @recipe.id)
-    puts '$' * 60
-    puts @compositions
   end 
 
   def new 
@@ -31,8 +30,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-    puts '$' * 60
-    puts params.inspect
     @recipe = Recipe.new(
       name: params[:name], 
       description: params[:description], 
@@ -53,13 +50,11 @@ class RecipesController < ApplicationController
           end
         end
       end
-      # saving_picture
       flash[:success] = "Ta recette a bien été sauvegardée !"
       redirect_to recipe_path(@recipe.id)
     else 
       render new_recipe_path
       flash[:error] = "Désolé, ta recette n'a pas été sauvegardée !"
-      puts @recipe.errors.full_messages
     end
   end
 
@@ -92,6 +87,14 @@ class RecipesController < ApplicationController
 
   def update_params
     params[:recipe].permit(:name, :recipe_category, :price_indicator, :preparation_time, :cooking_time)
+  end
+
+  def is_my_recipe!
+    if Recipe.find(params[:id]).user_id != current_user.id
+      flash[:error]= "On ne modifie pas ce qui ne nous appartient pas !"
+
+      redirect_to root_path
+    end
   end
 
 end
