@@ -1,4 +1,6 @@
 class ShoppingListsController < ApplicationController
+  before_action :already_a_shopping_list_associated_to_the_menu, only: [:create]
+
   def create
     @shopping_list = ShoppingList.new
     menu = Menu.find(params[:menu_id])
@@ -39,9 +41,6 @@ class ShoppingListsController < ApplicationController
     end
     
     @grouped_ingredients = @ingredients.group_by(&:name)
-    puts "Le nombre d'ingrédients après"
-    puts @grouped_ingredients.count
-    puts @grouped_ingredients
 
     @id_sum_hash = Hash.new
     @grouped_ingredients.each do |key, value|
@@ -56,6 +55,24 @@ class ShoppingListsController < ApplicationController
       @id_sum_hash[key] = { "sum" => sum_for_one_ingredient }
       @id_sum_hash[key].merge!({'unit' => unit_for_one_ingredient})
     end
-    print @id_sum_hash
   end
+  
+  private 
+  
+  def already_a_shopping_list_associated_to_the_menu
+    puts 
+    puts 
+    puts '$' * 60
+    puts params.inspect
+    puts params[:menu_id]
+    puts
+    puts ShoppingList.find_by(menu_id: params[:menu_id])
+    
+    if ShoppingList.find_by(menu_id: params[:menu_id]) != nil
+      flash[:error] = " Une liste de courses existe déjà pour ce menu ! "
+
+      redirect_to user_path(current_user)
+    end
+  end
+
 end
