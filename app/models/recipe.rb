@@ -40,7 +40,6 @@ class Recipe < ApplicationRecord
   
   def translate_input_ingredients_into_database_ingredients_ids(params)
     selected_ingredients = params.split(', ') # je récupère les ingrédients sélectionnés en splittant à chaque espace
-    puts "Les ingrédients sélectionnés sont #{selected_ingredients}"
     selected_ingredients_ids = [] # initialisation du tableau qui va contenir les ids d'ingrédients
     selected_ingredients.each do |ingredient_name| # pour chaque nom d'ingrédient entré dans ma barre de recherche
       Ingredient.all.each do |ingredient| # et pour chaque ingrédient présent dans ma BDD
@@ -48,8 +47,8 @@ class Recipe < ApplicationRecord
           selected_ingredients_ids << ingredient.id # s'il existe, j'enregistre l'id
         end
       end
-      return selected_ingredients_ids
     end
+      return selected_ingredients_ids
   end
 
   def find_recipes_associated_with_ingredients(ingredients)
