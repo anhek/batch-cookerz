@@ -28,12 +28,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 The tests only test some models.
 
-
-## Deployment
-
-http://batch-cookerz-delivery.herokuapp.com/
-
-
 ## Built With
 
 * Rails 5.2.2
@@ -42,7 +36,6 @@ http://batch-cookerz-delivery.herokuapp.com/
 
 ## Authors
 
-* **Billie Thompson** 
 * **Antonin Nhek  - @Antonin**
 * **Mallaury Bajas  - @Mallau**
 * **Raphaël De Gregorio  - @Raph**
