@@ -25,8 +25,11 @@ class Admin::UsersController < ApplicationController
       recipe.save
     end
     @user.destroy
-    flash[:success] = "L'utilisateur a bien été supprimé "
-    redirect_to admin_users_path
+
+    respond_to do |format|
+      format.html { redirect_to admin_users_path, success: "L'utilisateur a bien été supprimé " }
+      format.js
+    end
   end
 
   private

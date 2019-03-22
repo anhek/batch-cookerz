@@ -27,7 +27,7 @@ $(document).ready(function () {
     $('.alert').fadeOut();
   }, 2000);
 
-  $('[data-toggle="tooltip"]').tooltip()
+
 
 
   // Function to add color validations for forms
