@@ -94,7 +94,7 @@ class RecipesController < ApplicationController
   end
 
   def update_params
-    params[:recipe].permit(:name, :recipe_category, :price_indicator, :preparation_time, :cooking_time)
+    params[:recipe].permit(:name, :recipe_category, :price_indicator, :preparation_time, :cooking_time, :description)
   end
 
   def is_my_recipe!
