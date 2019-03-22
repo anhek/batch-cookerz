@@ -1,8 +1,6 @@
 <div class="block block-900 bg-white text-center rounded mb-4 mb-lg-5">
 
   <header class="recipe-title mb-3 mb-md-4">
-    <h1 class="h2 mb-0"> <%= @recipe.name%> </h1>
-    <p>Recette proposée par <%= @recipe.user.first_name %></p>
     <h1 class="h2 mb-0">
       <%= @recipe.name%>
       <% if @recipe.recipe_category.id == 1 %>
@@ -50,7 +48,7 @@
             <li class="mb-2">
               <span class="h6 text-indigo2">Catégorie</span><br>
                 <% if @recipe.recipe_category.id == 1 %>
-                  <span class="h6 text-omnivore bg-indigo-dark3 p-2 rounded">Omnivore</span>
+                  <span class="h5 text-omnivore">Omnivore</span>
                 <% elsif @recipe.recipe_category.id == 2 %>
                   <span class="h5 text-vegetarian">Végétarien</span>
                 <% elsif @recipe.recipe_category.id == 3 %>
@@ -75,7 +73,7 @@
               <%if user_signed_in? %>
 
                 <%= link_to menu_recipes_path(menu_id: Menu.where(user_id: current_user.id).last.id, recipe_id: @recipe.id), class:"recipe-link btn btn-primary py-2 w-100 text-uppercase", method: "post" do %>
-                <small>Ajouter à mon</small> <br> <span class="h5 text-white">menu</span>
+                Ajouter à mon<br> <span class="h5 text-white">menu</span>
                 <% end %>
               <% end %>
             </li>

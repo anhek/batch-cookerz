@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// RECIPE INDEX PAGE
+
+#index-recipes {
+  .col-sm-12 {
+    hr:last-child {
+      display: none;
+    }
+  }
+    hr:last-child {
+      display: none;
+    }
+}
+
+
+// RECIPE SHOW PAGE
+
 .recipe-info {
 
   text-align: center;

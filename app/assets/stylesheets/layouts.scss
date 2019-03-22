@@ -78,20 +78,6 @@
   }  
 }
 
-// RECIPE INDEX PAGE
-
-#index-recipes {
-  .col-sm-12 {
-    hr:last-child {
-      display: none;
-    }
-  }
-    hr:last-child {
-      display: none;
-    }
-}
-
-
 // HEADER
 
 header .navbar-nav {
@@ -105,7 +91,11 @@ header .navbar-nav {
       }
     }
     .nav-link {
-      padding: $spacer * .5 $spacer * 1; 
+      padding: $spacer * .5 $spacer * 1;
+      color: $indigo-dark4;
+      &:hover {
+        color: $indigo-dark1;
+      }
     }
   } 
 } 
