@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  before_create :default_image
+  after_create :send_welcome_email_to_new_user, :send_new_user_email_to_admin, :attribute_menu_to_new_user
+  before_save :default_values
+
   has_many :recipes, through: :comments
   has_many :recipes, through: :likes
   has_many :menus, dependent: :destroy
@@ -11,10 +15,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_one_attached :avatar
 
-  before_create :default_image
-  after_create :send_welcome_email_to_new_user, :send_new_user_email_to_admin, :attribute_menu_to_new_user
-  before_save :default_values
-
+  validates :email, presence: true
+  validates :password, presence: true
 
 
   def send_welcome_email_to_new_user
@@ -50,6 +52,7 @@ class User < ApplicationRecord
   end
 
   def default_values
+    self.nickname ||= "Utilisateur anonyme"
     self.is_admin ||= false
   end
 
