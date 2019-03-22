@@ -168,7 +168,7 @@ Ajoutez du parmesan et de l’emmental râpé pour gratiner. Passer au four à 2
 
 puts "Recipe created"
 
-Recipe.create!(name: "lasagnes au tofu" , description: "Etape 1
+Recipe.create!(name: "Lasagnes au tofu" , description: "Etape 1
 
 Faites revenir dans une poêle huilée les oignons et les champignons coupés en lamelles. Ajoutez les tomates pelées et copées en morceaux, le tofu émietté et l'ail haché.
 
