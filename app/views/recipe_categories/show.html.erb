@@ -1,7 +1,7 @@
 <div class="bg-container" id="index-recipes">
 
-  <div class="block block-800 bg-white p-4 p-md-5 rounded-top text-center border-bottom">
-    <h1 class="text-secondary">
+  <div class="block block-1000 bg-white p-4 p-md-5 rounded-top text-center border-bottom">
+    <h2 class="text-secondary">
       Recettes
         <% if @recipe_category.id == 1 %>
           Omnivores
@@ -10,11 +10,11 @@
         <% elsif @recipe_category.id == 3 %>
           Végétaliennes
         <% end %>
-    </h1>
+    </h2>
     <h4 class='text-grey1 font-weight-normal'>Il y a <%= @recipes.count %> recettes disponibles</h4>
   </div>
 
-  <div class="block block-800 bg-white rounded-bottom py-lg-5"> 
+  <div class="block block-1000 bg-white rounded-bottom py-lg-5"> 
     <div class="row">
       <%= render @recipes %>
     </div>
