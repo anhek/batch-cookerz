@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
   before_action :check_if_admin!
 
   def index
-    @users = User.all.sort
+    @users = User.where(is_admin: false).sort
   end
 
   def edit 

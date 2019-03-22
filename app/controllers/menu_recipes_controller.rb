@@ -5,7 +5,6 @@ class MenuRecipesController < ApplicationController
   def create
     if params[:menu_recipe] # depuis le menu
       menu = Menu.find(params[:menu_recipe][:menu_id])
-      #je vérifie si la recette existe en base
       Recipe.all.each do |recipe|
         if recipe.name == params[:menu_recipe][:recipe_id]
           puts "Oui, c'est good, ça existe !"
