@@ -9,7 +9,7 @@
   }
 
   @include media-breakpoint-up(xl) {
-    padding: $spacer * 5 $spacer * 3;
+    padding: $spacer * 7 $spacer * 3;
   }
 }
 
@@ -41,8 +41,12 @@
   max-width: 1000px;
 }
 
+.block-1200 {
+  max-width: 1200px;
+}
+
 .bg-container {
-  padding: 20px;
+  padding: 0px;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
