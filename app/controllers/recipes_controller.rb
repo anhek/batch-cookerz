@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
     recipe = Recipe.new
     
     unless params[:ingredient].to_s.empty? 
+
       selected_ingredients = recipe.translate_input_ingredients_into_database_ingredients_ids(params[:ingredient])
       @recipes = recipe.find_recipes_associated_with_ingredients(selected_ingredients)
     else
