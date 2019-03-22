@@ -14,7 +14,7 @@ class Menu < ApplicationRecord
   
  
   def default_values
-    self.number_of_people = 1
+    self.number_of_people ||= 1
   end
 
 end

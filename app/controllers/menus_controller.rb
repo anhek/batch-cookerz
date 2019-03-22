@@ -10,8 +10,6 @@ class MenusController < ApplicationController
   end
 
   def update
-    puts '$' * 60
-    puts params.inspect
     if params[:menu] 
       @menu = Menu.find(params[:menu][:menu_id])
       shopping_list = ShoppingList.find(params[:menu][:shopping_list_id])

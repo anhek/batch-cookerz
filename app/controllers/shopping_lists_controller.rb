@@ -10,7 +10,7 @@ class ShoppingListsController < ApplicationController
     @shopping_list = ShoppingList.new(menu_id: menu.id, ingredients_qty: grouped_ingredients.count)
     if @shopping_list.save
       flash[:success] = "La liste de courses a bien été créée !"
-      Menu.create!(user_id: current_user.id)
+      Menu.create!(user_id: current_user.id, number_of_people: 1)
       redirect_to user_menu_shopping_list_path(current_user, menu, @shopping_list)
     end
   end
