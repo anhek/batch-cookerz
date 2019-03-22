@@ -5,7 +5,7 @@ ingredient_categories = ["Viande", "Poisson", "Légume", "Fruit", "Légumineuse"
 
 
 
-User.create!(first_name: "Admin", last_name: "Perfect Batch Cooker", email: "admin@batchcooker.fr", password: "admin123", nickname: "Admin", is_admin: true)
+User.create!(first_name: "Admin", last_name: "Perfect Batch Cooker", email: "admin@batchcookerz.fr", password: "admin123", nickname: "Admin", is_admin: true)
 User.create!(first_name: "Maïté", last_name: "Ordonez", email: "maite@thp.org", password: "jaifaim", nickname: "Super Maïté")
 
 4.times do |i|
