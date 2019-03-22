@@ -48,27 +48,22 @@ class Recipe < ApplicationRecord
           selected_ingredients_ids << ingredient.id # s'il existe, j'enregistre l'id
         end
       end
-      print "Les id des ingrédients sélectionnés sont : #{selected_ingredients_ids}."
       return selected_ingredients_ids
     end
   end
 
   def find_recipes_associated_with_ingredients(ingredients)
     selected_ingredients = ingredients
-    puts '$' * 60
-    print "Les ingrédients sélectionnés sont : #{selected_ingredients}"
     recipes = []
-    all_recipes = Recipe.all
+    all_recipes = Recipe.where(is_displayed: true)
     all_recipes.each do |recipe| # pour chaque recette 
       composition = Composition.where(recipe_id: recipe.id) # je crée un array qui contient tous les ingredients_ids de la recette
       ingredients_ids = [] # initialisation d'un tableau d'ingrédients id
       composition.each do |element| # pour chaque position, 
         ingredients_ids << element.ingredient_id # je récupère les ingrédients  id de la recette
       end
-      print ingredients_ids
+
       if (selected_ingredients & ingredients_ids).any?
-        puts "$" * 60
-        puts "Je trouve bien les ingrédients"
         recipes << Recipe.find(recipe.id)
       end
     end
