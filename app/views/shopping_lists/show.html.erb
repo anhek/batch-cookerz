@@ -4,6 +4,7 @@
     <header class="p-4 text-center mb-3">
       <h2> <i class="fas fa-clipboard mr-2"> </i>Ma liste de course</h2>
       <p class="intro">Voici la liste de course pour <%= @menu.number_of_people %> personne(s).</p>
+      <p class="intro">Cette liste contient <%= @shopping_list.ingredients_qty %> ingrédient(s).</p>
     </header>
     <div class="form-group mb-5">
       <%= form_for @menu, :url => { :controller => "menus", :action => "update" }, :html => {:method => :put} do |f| %>

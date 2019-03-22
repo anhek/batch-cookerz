@@ -1,6 +1,8 @@
 class ShoppingList < ApplicationRecord
   belongs_to :menu
 
+  validates :menu, presence: true
+  validates :ingredients_qty, presence: true
 
 
   def find_number_of_different_ingredients_in_a_menu(menu)

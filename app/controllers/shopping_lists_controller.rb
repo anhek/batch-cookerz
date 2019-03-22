@@ -17,6 +17,7 @@ class ShoppingListsController < ApplicationController
 
 
   def show
+    @shopping_list = ShoppingList.find(params[:id])
     @menu = Menu.find(params[:menu_id])
     menu_recipes = MenuRecipe.where(menu_id: @menu.id)
     
