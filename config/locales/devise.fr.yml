@@ -72,3 +72,7 @@ fr:
               blank: "vide"
             password_confirmation:
               confirmation: "manquant"
+        comment:
+          attributes:
+              name:
+                blank: "vide"

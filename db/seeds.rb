@@ -152,7 +152,7 @@ puts "Recipe created"
 	MenuRecipe.create!(menu_id: 1, recipe_id:i+1)
 end
 
-Ingredient.create!(name: "Ail", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gousses")
+Ingredient.create!(name: "Ail", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gousse(s)")
 Ingredient.create!(name: "Amande", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "gr")
 Ingredient.create!(name: "Aubergine", calories: rand(50..250), ingredient_category_id: rand(1..5), unit: "unité(s)")
 

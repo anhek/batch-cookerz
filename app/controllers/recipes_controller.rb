@@ -26,6 +26,7 @@ class RecipesController < ApplicationController
   def new 
     @recipe = Recipe.new
     @recipe_categories = RecipeCategory.all
+    @ingredients = Ingredient.all
     @price_indicators = ["€", "€ €", "€ € €", "€ € € €", "€ € € € €"]
   end
 
@@ -41,15 +42,15 @@ class RecipesController < ApplicationController
       ingredients_ids = params[:ingredient_ids]
 
     if @recipe.save
-      @recipe.picture.attach(params[:picture])
-      ingredients_ids.each do |ingredient_id|
-        params[:quantities].each do |key, value|
-          if ingredient_id == key 
-            composition = Composition.new(recipe_id: @recipe.id, ingredient_id: ingredient_id.to_i, quantity: value.to_i)
-            composition.save 
+        @recipe.picture.attach(params[:picture])
+        ingredients_ids.each do |ingredient_id|
+          params[:quantities].each do |key, value|
+            if ingredient_id == key 
+              composition = Composition.new(recipe_id: @recipe.id, ingredient_id: ingredient_id.to_i, quantity: value.to_i)
+              composition.save 
+            end
           end
         end
-      end
       flash[:success] = "Ta recette a bien été sauvegardée !"
 
       redirect_to recipe_path(@recipe.id)

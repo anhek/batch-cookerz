@@ -15,10 +15,6 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_one_attached :avatar
 
-  validates :email, presence: true
-  validates :password, presence: true
-
-
   def send_welcome_email_to_new_user
     UserMailer.welcome_email_to_new_user(self).deliver_now
   end
@@ -36,7 +32,7 @@ class User < ApplicationRecord
   end
 
   def attribute_menu_to_new_user
-    Menu.create!(user_id: User.last.id)
+    Menu.create!(user_id: User.last.id, number_of_people: 1)
   end
 
   def find_liked_recipes(likes)
