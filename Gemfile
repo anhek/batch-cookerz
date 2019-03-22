@@ -52,6 +52,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'table_print'
   gem 'letter_opener'
+  gem 'rails_real_favicon'
 end
 
 group :test do
