@@ -57,7 +57,7 @@ class RecipesController < ApplicationController
     else 
       flash[:error] = "Désolé, ta recette n'a pas été sauvegardée !"
 
-      render new_recipe_path
+      redirect_to new_recipe_path
     end
   end
 
