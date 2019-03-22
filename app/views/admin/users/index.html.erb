@@ -1,5 +1,5 @@
 <div class="bg-container" id="index-recipes">
-
+  <%= link_to "Recettes", admin_recipes_path, class: 'd-block w-100 btn btn-indigo1 btn-lg' %> <%= link_to "Utilisateurs", admin_users_path, class: 'd-block w-100 btn btn-indigo1 btn-lg' %>
   <div class="block block-1000 bg-indigo1 p-4 p-md-5 rounded-top text-center">
     <h2 class="text-white">Les utilisateurs</h2>
     <h4 class='text-white'>Il y a <%= @users.count %> utilisateurs enregistrés sur le site.
