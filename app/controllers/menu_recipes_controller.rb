@@ -6,12 +6,9 @@ class MenuRecipesController < ApplicationController
     if params[:menu_recipe] # depuis le menu
       menu = Menu.find(params[:menu_recipe][:menu_id])
       Recipe.all.each do |recipe|
-        if recipe.name == params[:menu_recipe][:recipe_id]
-          puts "Oui, c'est good, ça existe !"
-        else
+        if recipe.name =! params[:menu_recipe][:recipe_id]
           flash[:error] = "Désolé, la recette n'existe pas !"
           redirect_to user_menu_path(current_user, menu)
-          return 
         end
       end
       recipe = Recipe.find_by(name: params[:menu_recipe][:recipe_id])
