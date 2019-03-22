@@ -6,5 +6,6 @@ FactoryBot.define do
     cooking_time { Faker::Number.between(15, 60) }
     price_indicator { Faker::Number.between(1, 5) }
     recipe_category_id { rand(1..3) }
+    user_id { 1 }
   end
 end

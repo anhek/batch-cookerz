@@ -4,7 +4,7 @@ class Ingredient < ApplicationRecord
   has_many :compositions
   has_many :recipes, through: :compositions
 
-  validates :name, presence: true, length: { in: 2..50 }
+  validates :name, presence: true, length: { in: 3..50 }
   validates :calories, presence: true, :numericality => { :greater_than_or_equal_to => 1, :less_than_or_equal_to => 999 }
 
   def funky_method

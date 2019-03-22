@@ -28,44 +28,6 @@ RSpec.describe Ingredient, type: :model do
       it { expect(@ingredient).to validate_presence_of(:calories) }
     end
 
-    # describe "#email" do
-    #   it { expect(@user).to validate_presence_of(:email) }
-    #   it { expect(@user).not_to allow_value("blah").for(:email) }
-    #   it { expect(@user).to allow_value("a@b.com").for(:email) }
-    #   it { expect(@user).not_to be_nil }
-    # end
-
-    # describe "#password" do
-    #   it { should validate_presence_of(:password) }
-    #   it { expect(@user).not_to allow_value("123456").for(:email) }
-    #   it { should validate_length_of(:password).is_at_least(6) }
-    # end
-
   end
-
-  # context "associations" do
-
-  #   describe "books" do
-  #     it { expect(@user).to have_many(:books) }
-  #   end
-
-  # end
-
-  # context "public instance methods" do
-
-  #   describe "#full_name" do
-
-  #     it "should return a string" do
-  #       expect(@user.full_name).to be_a(String)
-  #     end
-
-  #     it "should return the full name" do
-  #       expect(@user.full_name).to eq("John Doe")
-  #       user_2 = create(:user, first_name: "Jean-Michel", last_name: "Durant")
-  #       expect(user_2.full_name).to eq("Jean-Michel Durant")
-  #     end
-  #   end
-
-  # end
 
 end
