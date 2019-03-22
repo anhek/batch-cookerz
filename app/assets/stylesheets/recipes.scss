@@ -26,3 +26,12 @@
     text-align: left;
   }
 } 
+
+.container-pic {
+  max-height: 300px;
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    max-height: 600px;
+  }
+}

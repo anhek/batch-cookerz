@@ -13,11 +13,13 @@
 
   <div class="row mb-4">
     <div class="col-12 col-md-8 pr-md-0">
-      <%if @recipe.picture.attached? %>
-        <%= image_tag @recipe.picture, class:"w-100 rounded" %>
-      <%else%>
-        <%= image_tag @recipe.default_recipe, class:"w-100 rounded" %>
-      <%end%>
+      <div class="container-pic">
+        <%if @recipe.picture.attached? %>
+          <%= image_tag @recipe.picture, class:"w-100 rounded" %>
+        <%else%>
+          <%= image_tag @recipe.default_recipe, class:"w-100 rounded" %>
+        <%end%>
+      </div>
     </div>
 
     <div class="col-12 col-md-4 pl-md-0">
