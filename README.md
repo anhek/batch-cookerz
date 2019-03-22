@@ -31,8 +31,7 @@ The tests only test some models.
 
 ## Deployment
 
-http://batch-cookerz-delivery.herokuapp.com/
-
+http://www.batchcookerz.fr/
 
 ## Built With
 
