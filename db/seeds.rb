@@ -630,7 +630,11 @@ puts "Composition poulet carottess created"
 end
 puts "Composition riz aux carottes created"
 
-Comment.create(recipe_id: 2, description: "Super ! J'adore cette recette :)", user_id: 1)
+Comment.create(recipe_id: 1, description: "Super ! J'adore cette recette :)", user_id: 1)
+
+3.times do |i|
+  Comment.create(recipe_id: 1, description: "Super ! J'adore cette recette :)", user_id: i+1)
+end
 puts "Comment created"
 
 Like.create(recipe_id: 1, user_id: 1)
