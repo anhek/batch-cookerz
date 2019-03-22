@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
   before_action :check_if_admin!
 
   def index
-    @users = User.all.sort
+    @users = User.where(is_admin: false).sort
   end
 
   def edit 
@@ -25,7 +25,7 @@ class Admin::UsersController < ApplicationController
       recipe.save
     end
     @user.destroy
-
+    flash[:success] = "L'utilisateur a bien été supprimé "
     redirect_to admin_users_path
   end
 
