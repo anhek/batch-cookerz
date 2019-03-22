@@ -32,6 +32,11 @@
   overflow: hidden;
 
   @include media-breakpoint-up(sm) {
-    max-height: 600px;
+    max-height: 540px;
   }
+}
+
+.container-pic-index {
+  max-height: 300px;
+  overflow: hidden;
 }

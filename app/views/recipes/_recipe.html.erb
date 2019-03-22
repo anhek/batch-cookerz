@@ -2,10 +2,13 @@
   
   <%= link_to recipe_path(recipe) do %>
     <%if recipe.picture.attached? %>
-      <%= image_tag recipe.picture_300, class:"w-100 img-fluid rounded" %>
+      <div class="container-pic-index">
+        <%= image_tag recipe.picture_300, class:"w-100 img-fluid rounded" %>
+      </div>
     <%else%>
-      <img class="w-100 img-fluid rounded" src="https://cdn-image.foodandwine.com/sites/default/files/1483039291/chickpeas-and-kale-in-spicy-pomodoro-sauce-XL-RECIPE0217.jpg" alt="Card image cap">
-      <%= image_tag "the-creative-exchange-1309304-unsplash", class:"w-100 img-fluid rounded" %>
+      <div class="container-pic-index">
+        <%= image_tag "the-creative-exchange-1309304-unsplash", class:"w-100 img-fluid rounded" %>
+      </div>
     <%end%>
   <% end %>
 
