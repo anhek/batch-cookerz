@@ -91,7 +91,11 @@ header .navbar-nav {
       }
     }
     .nav-link {
-      padding: $spacer * .5 $spacer * 1; 
+      padding: $spacer * .5 $spacer * 1;
+      color: $indigo-dark4;
+      &:hover {
+        color: $indigo-dark1;
+      }
     }
   } 
 } 
