@@ -3,7 +3,18 @@ class MenuRecipesController < ApplicationController
    autocomplete :recipe, :name
 
   def create
-    if params[:menu_recipe]
+    if params[:menu_recipe] # depuis le menu
+      menu = Menu.find(params[:menu_recipe][:menu_id])
+      #je vérifie si la recette existe en base
+      Recipe.all.each do |recipe|
+        if recipe.name == params[:menu_recipe][:recipe_id]
+          puts "Oui, c'est good, ça existe !"
+        else
+          flash[:error] = "Désolé, la recette n'existe pas !"
+          redirect_to user_menu_path(current_user, menu)
+          return 
+        end
+      end
       recipe = Recipe.find_by(name: params[:menu_recipe][:recipe_id])
       menu = Menu.find(params[:menu_recipe][:menu_id].to_i)
       menu_recipe = MenuRecipe.new(recipe_id: recipe.id, menu_id: menu.id)
@@ -27,4 +38,5 @@ class MenuRecipesController < ApplicationController
     @menu_recipe.destroy
     redirect_to user_menu_path(current_user)
   end
+
 end
