@@ -30,4 +30,5 @@ class ShoppingList < ApplicationRecord
     grouped_ingredients = ingredients.group_by(&:id)
     return grouped_ingredients
   end
+
 end

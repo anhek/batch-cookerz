@@ -18,13 +18,8 @@ class MenuRecipesController < ApplicationController
       redirect_to user_menu_path(current_user, menu)
     else
       flash[:error] = "Désolé, la recette n'a pas été ajoutée !"
-      puts menu_recipe.errors.full_messages
       redirect_to user_menu_path(current_user, menu)
     end
-  end
-
-  def show
-    @menu_recipe =  MenuRecipe.find(params[:menu_recipe_id])
   end
 
   def destroy

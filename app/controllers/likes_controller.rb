@@ -1,9 +1,7 @@
 class LikesController < ApplicationController
 
     before_action :find_recipe
-
     before_action :find_like, only: [:destroy]
-
     before_action :authenticate_user!
 
   def create
@@ -16,14 +14,13 @@ class LikesController < ApplicationController
   end
 
   def destroy
-
     if !(already_liked?)
-      flash[:notice] = "Cannot unlike"
+      flash[:notice] = "On ne peut pas unliker plusieurs fois !"
     else
       @like.destroy
     end
     redirect_to request.referrer
-end
+  end
 
 
   private

@@ -3,7 +3,7 @@ class PicturesController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    if params[:picture] != nil
+    if image_saved?
       @recipe.picture.purge
       @recipe.picture.attach(params[:picture])
       redirect_to recipe_path(@recipe)
@@ -13,5 +13,9 @@ class PicturesController < ApplicationController
     end
   end
 
+  private
 
+  def image_saved?
+    params[:picture] != nil
+  end
 end

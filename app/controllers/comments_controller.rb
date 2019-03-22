@@ -4,19 +4,20 @@ class CommentsController < ApplicationController
   
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    comment = Comment.new(user_id: current_user.id, recipe_id: @recipe.id, description: params[:comment][:description])
-    if comment.save
-      flash[:success] = "Ton commentaire à bien été ajouté !"
+    @comment = Comment.new(user_id: current_user.id, recipe_id: @recipe.id, description: params[:comment][:description])
+
+    if @comment.save
+      flash[:success] = "Ton commentaire a bien été ajouté !"
       redirect_to recipe_path(@recipe)
     end 
   end 
 
   def destroy
-    puts params.inspect
     @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.find(params[:comment_id])
-    flash[:success] = "Ton commentaire à été supprimé !"
+
     @comment.destroy
+    flash[:success] = "Ton commentaire a été supprimé !"
     redirect_to recipe_path(@recipe)
   end
 
