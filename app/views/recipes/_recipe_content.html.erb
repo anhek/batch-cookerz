@@ -3,6 +3,9 @@
   <header class="recipe-title mb-3 mb-md-4">
     <h1 class="h2 mb-0">
       <%= @recipe.name%>
+
+     
+      
     </h1>
     <p>Recette proposée par <span class="font-weight-bold"><%= @recipe.user.first_name %></span></p>
   </header>
@@ -37,24 +40,16 @@
               <% else %>
                 <i class="far fa-heart mr-1"></i> <%= @recipe.likes.count %>
             <% end %>
-
-            <% if @recipe.recipe_category.id == 1 %>
-              <i class="fas fa-drumstick-bite text-omnivore " data-toggle="tooltip" data-placement="top" title="Omnivore"></i>
-            <% elsif @recipe.recipe_category.id == 2 %>
-              <i class="fas fa-cheese text-vegetarian" data-toggle="tooltip" data-placement="top" title="Végétarien"></i>
-            <% elsif @recipe.recipe_category.id == 3 %>
-              <i class="fas fa-seedling text-vegan" data-toggle="tooltip" data-placement="top" title="Végétalien"></i>
-            <% end %>
-
             </li>
+
             <li class="mb-2">
               <span class="h6 text-indigo2">Catégorie</span><br>
                 <% if @recipe.recipe_category.id == 1 %>
-                  <span class="h5 text-omnivore">Omnivore</span>
+                  <span class="h5 text-omnivore"><i class="fas fa-drumstick-bite text-omnivore " data-toggle="tooltip" data-placement="top" title="Omnivore"></i> Omnivore</span>
                 <% elsif @recipe.recipe_category.id == 2 %>
-                  <span class="h5 text-vegetarian">Végétarien</span>
+                  <span class="h5 text-vegetarian"><i class="fas fa-cheese text-vegetarian" data-toggle="tooltip" data-placement="top" title="Végétarien"></i> Végétarien</span>
                 <% elsif @recipe.recipe_category.id == 3 %>
-                  <span class="h5 text-vegan">Végétalien</span>
+                  <span class="h5 text-vegan"><i class="fas fa-seedling text-vegan" data-toggle="tooltip" data-placement="top" title="Végétalien"></i> Végétalien</span>
                 <% end %>
               </span>
             </li>
