@@ -28,6 +28,14 @@ These instructions will get you a copy of the project up and running on your loc
 
 The tests only test some models.
 
+<<<<<<< HEAD
+=======
+
+## Deployment
+
+http://www.batchcookerz.fr/
+
+>>>>>>> 36bac3d8cab586a9371630f41ddfb8dd8af3a34f
 ## Built With
 
 * Rails 5.2.2
